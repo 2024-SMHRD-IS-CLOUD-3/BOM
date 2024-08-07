@@ -15,8 +15,10 @@
 		<input type="text" name="name"><br>
 		<input type="text" name="phone"><br>
 		<input type="text" name="address"><br>
-		<input type="submit" value="신분증 등록">
+		<input type="submit" value="신분증 등록"><br>
+		<input type="text" value="테스트용이에용">
 		<input type="submit" value="확인">
+		
 	</form>
 </body>
 </html>
