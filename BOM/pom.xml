@@ -96,6 +96,13 @@
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
         </dependency>
+        
+        <!--html 파일을 띄우기 위한 thymeleaf 설정-->
+        <dependency>
+        	<groupId>org.springframework.boot</groupId>
+        	<artifactId>spring-boot-starter-thymeleaf</artifactId>
+    	</dependency>
+    	
 	</dependencies>
 
 	<build>
