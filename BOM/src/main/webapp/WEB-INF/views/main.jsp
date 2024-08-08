@@ -18,7 +18,7 @@
 		<input type="submit" value="신분증 등록"><br>
 		<input type="text" value="테스트용이에용">
 		<input type="submit" value="확인">
-		
+		<a href="list">넘어가보자</a>
 	</form>
 </body>
 </html>
