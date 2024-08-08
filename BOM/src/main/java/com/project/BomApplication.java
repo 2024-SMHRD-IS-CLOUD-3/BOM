@@ -5,6 +5,7 @@ import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.web.bind.annotation.GetMapping;
 
 // Spring Boot 시작점을 알리는 어노테이션
 @SpringBootApplication
@@ -21,5 +22,10 @@ public class BomApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BomApplication.class, args);
 	}
-
+	
+    @GetMapping("/")
+    public String index() {
+        return "index"; // "index.html"이 아니라 "index"를 반환
+    }
+	
 }
