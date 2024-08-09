@@ -6,14 +6,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link rel="stylesheet" href="../css/iogin.css">
+    <link rel="stylesheet" href="login.css">
     
 </head>
 <body>
     <div class="login-container">
         <div class="login-header">
             <div class="login-icon">
-                <img src="../images/login_lcon.png" alt="User Icon">
+                <img src="./images/login_lcon.png" alt="User Icon">
             </div>
             <h2>Login Now</h2>
         </div>
@@ -33,7 +33,6 @@
             
             <div class="extra-links">
                 <a href="#">아직 회원이 아니신가요?</a>
-                <a href="#">비밀번호를 잊으셨나요?</a>
             </div>
         </form>
     </div>
