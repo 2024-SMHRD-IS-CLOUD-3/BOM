@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import com.project.entity.UserEntity;
 import com.project.repository.UserRepository;
@@ -57,6 +58,7 @@ public class UserController {
 		return "login";
 	}
 	
+	
 	@RequestMapping("/login")
 	public String login(UserEntity user_info, HttpSession session) {
 		
@@ -76,6 +78,13 @@ public class UserController {
 		}
 		
 		return "Main";
+	}
+	
+	
+	@RequestMapping("/goB_board")
+	public String goB_board() {
+		return "B_board";
+		
 	}
 	
 }

@@ -27,5 +27,7 @@ public class BomApplication {
     public String index() {
         return "index"; // "index.html"이 아니라 "index"를 반환
     }
+    
+
 	
 }
