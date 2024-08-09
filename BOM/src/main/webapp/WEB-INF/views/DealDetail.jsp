@@ -35,7 +35,7 @@
 							<td>
 						<c:if test="${not empty deal.filenames}">
                     <c:forEach var="filename" items="${deal.filenames}">
-                        <img src="/bompj/save1/${filename}" alt="Image" style="max-width: 100%; height: auto; margin: 10px;" />
+                        <img src="/bompj/save/${filename}" alt="Image" style="max-width: 100%; height: auto; margin: 10px;" />
                     </c:forEach>
                 </c:if></td>
 					</tr>

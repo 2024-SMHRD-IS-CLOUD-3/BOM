@@ -9,25 +9,21 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.project.entity.DealEntity;
 import com.project.repository.DealRepository;
 
-
-
 @Controller
 public class DealController {
 
-    @Value("$ {save.path}")
+    @Value("${save.path}")
     private String savePath;
 
     @Autowired
@@ -35,29 +31,28 @@ public class DealController {
 
     @RequestMapping("/list")
     public String DealMain(Model model) {
-        List<DealEntity> list = dealRepo.findAll();
+        List<DealEntity> list = dealRepo.findAllOrderByBIdxDesc();
         model.addAttribute("list", list);
-        return "DealMain";
+        return "B_board";
     }
+
 
     @RequestMapping("/goWrite")
     public String goWrite() {
-    	System.out.println("goWrite성공");
-        return "DealWrite";
+        return "B_content";
     }
 
-    @RequestMapping(value = "/dealWrite", method = RequestMethod.POST)
-    public String dealWrite(DealEntity entity, MultipartFile[] files) {
+    @RequestMapping("/saveWrite")
+    public String saveWrite(DealEntity entity, @RequestParam("files") MultipartFile[] files) {
+    	
         if (entity == null) {
             return "redirect:/goWrite?error=entity_null";
         }
-       
 
-        // Ensure filenames list is initialized
         if (entity.getFilenames() == null) {
-            entity.setFilenames(new ArrayList<String> ()); // Initialize the list if it is null
+            entity.setFilenames(new ArrayList<String>());
         }
-        System.out.println("여기까진 성공 데려오긴함");
+
         if (files == null || files.length == 0) {
             return "redirect:/goWrite?error=no_files";
         }
@@ -74,23 +69,20 @@ public class DealController {
             }
             String filename = uuid + "_" + originalFilename;
             Path path = Paths.get(savePath, filename);
-            System.out.println("여긴어때를 데려오긴함");
             try {
                 Files.createDirectories(path.getParent());
                 file.transferTo(path);
-                entity.getFilenames().add(filename); // Add the filename to the list
+                entity.getFilenames().add(filename);
             } catch (IOException e) {
                 e.printStackTrace();
                 return "redirect:/goWrite?error=io_exception";
             }
-            System.out.println("1를 데려오긴함");
         }
-        
-        dealRepo.save(entity);
-        System.out.println("안됨를 데려오긴함");
 
+        dealRepo.save(entity);
         return "redirect:/list";
     }
+
 
     @RequestMapping("/goDetail")
     public String goDetail(Long idx, Model model) {
@@ -98,7 +90,7 @@ public class DealController {
         if (optionalEntity.isPresent()) {
             DealEntity entity = optionalEntity.get();
             entity.incrementView();
-            dealRepo.save(entity); // 변경 사항 저장
+            dealRepo.save(entity);
             model.addAttribute("deal", entity);
             return "DealDetail";
         } else {
@@ -120,5 +112,10 @@ public class DealController {
         } else {
             return "redirect:/list?notfound";
         }
+    }
+
+    @RequestMapping("/goB_content")
+    public String goB_content() {
+        return "B_content";
     }
 }

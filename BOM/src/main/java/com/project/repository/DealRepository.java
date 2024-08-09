@@ -1,5 +1,8 @@
 package com.project.repository;
 
+import java.util.Date;
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -15,8 +18,12 @@ public interface DealRepository extends JpaRepository<DealEntity, Long> {
 	
 	
 	
-
 	
+	/*
+	 * List<DealEntity>
+	 * findByB_viewsAndB_titleAndCreated_atAndHow_muchAndFiles(Integer b_views,
+	 * String b_title, Date created_at, Long how_much,List<String> filenames);
+	 */
 
 
 	
@@ -27,7 +34,12 @@ public interface DealRepository extends JpaRepository<DealEntity, Long> {
 	    @Modifying
 	    @Query("UPDATE DealEntity b SET b.b_views = b.b_views + 1 WHERE b.id = :id")
 	    void incrementcount(@Param("id") Long id);
-	}
+
+
+		 @Query("SELECT d FROM DealEntity d ORDER BY d.b_idx DESC")
+		  List<DealEntity> findAllOrderByBIdxDesc();
+
+}
 	
 	
 	

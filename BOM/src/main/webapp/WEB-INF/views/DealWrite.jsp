@@ -80,6 +80,8 @@
 				<tr>
 					<td colspan="2">
 						<div class="file-upload-container">
+					
+						
 							<input type="file" id="file-input" name="files" multiple>
 						</div>
 						<div id="file-list"></div>

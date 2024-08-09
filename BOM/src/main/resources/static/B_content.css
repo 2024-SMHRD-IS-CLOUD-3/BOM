@@ -62,13 +62,13 @@
 
 .u-section-1 .u-btn-2 {
   background-image: none;
-  margin: -108px auto 0 359px;
+  margin: -108px  0 359px;
 }
 
 .u-section-1 .u-image-1 {
   width: 300px;
   height: 300px;
-  margin: -384px auto 0 174px;
+  margin: -750px 0 174px;
 }
 
 @media (max-width: 1199px) {

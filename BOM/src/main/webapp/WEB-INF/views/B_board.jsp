@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="en"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,14 +65,15 @@
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-border-2 u-border-grey-30 u-container-style u-group u-group-1" data-href="#">
           <div class="u-container-layout u-valign-bottom u-container-layout-1">
-            <img class="u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="images/stroller.png" alt="" data-image-width="512" data-image-height="512">
-            <h3 class="u-custom-font u-text u-text-default u-text-1">제목이 나올 텍스트</h3>
-            <h6 class="u-custom-font u-text u-text-default u-text-2">가격이 나올 텍스<span style="font-size: 1.125rem;"></span>트 
+            
+            <img class="u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="/bompj/save/${filename}" alt="" data-image-width="512" data-image-height="512">
+            <h3 class="u-custom-font u-text u-text-default u-text-1">제목 ${deal.b_title}</h3>
+            <h6 class="u-custom-font u-text u-text-default u-text-2">가격 ${deal.how_much}<span style="font-size: 1.125rem;"></span>
             </h6>
-            <p class="u-custom-font u-text u-text-default u-text-3">설명이 나올 텍스트 </p>
+            <p class="u-custom-font u-text u-text-default u-text-3">조회수 ${deal.b_view}/ 관심 ♡ </p>
           </div>
         </div>
-        <a href="B_content.html" class="u-btn u-button-style u-custom-color-1 u-hover-custom-color-7 u-btn-1">글 쓰기 </a>
+        <a href="goWrite" class="u-btn u-button-style u-custom-color-1 u-hover-custom-color-7 u-btn-1">글 쓰기 </a>
       </div>
     </section>
     
