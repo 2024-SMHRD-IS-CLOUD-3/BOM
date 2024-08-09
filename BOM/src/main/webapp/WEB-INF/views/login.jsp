@@ -17,15 +17,15 @@
             </div>
             <h2>Login Now</h2>
         </div>
-        <form action="#">
+        <form action="login">
             <label for="userid">아이디</label>
-            <input type="text" id="userid" name="userid" placeholder="아이디를 입력해주세요">
+            <input type="text" id="userid" name="id" placeholder="아이디를 입력해주세요">
             
             <label for="password">비밀번호</label>
-            <input type="password"s id="password" name="password" placeholder="비밀번호를 입력해주세요">
+            <input type="password" id="password" name="pw" placeholder="비밀번호를 입력해주세요">
             
             <div class="remember-me">
-                <input type="checkbox" id="remember-me" name="remember-me">
+                <input type="checkbox" id="remember-me">
                 <label for="remember-me">아이디 기억하기</label>
             </div>
             
