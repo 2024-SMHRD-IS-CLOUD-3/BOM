@@ -17,7 +17,7 @@
             </div>
             <h2>Login Now</h2>
         </div>
-        <form action="login">
+        <form action="login" method="post">
             <label for="userid">아이디</label>
             <input type="text" id="userid" name="id" placeholder="아이디를 입력해주세요">
             
@@ -32,7 +32,7 @@
             <button type="submit">로그인</button>
             
             <div class="extra-links">
-                <a href="#">아직 회원이 아니신가요?</a>
+                <a href="goJoin">아직 회원이 아니신가요?</a>
             </div>
         </form>
     </div>

@@ -1,0 +1,86 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('images/bg.jpg'); /* 백그라운드 이미지 설정 */
+    background-size: cover; /* 이미지가 화면 전체를 덮도록 설정 */
+    background-position: center; /* 이미지를 화면의 중앙에 위치시킴 */
+    background-repeat: no-repeat; /* 이미지가 반복되지 않도록 설정 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.signup-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+input[type="text"], input[type="password"] {
+    width: calc(100% - 100px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="text"]::placeholder, input[type="password"]::placeholder {
+    color: #aaa;
+}
+
+.check-btn {
+    width: 120px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.id-btn, .submit-btn {
+    width: 48%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.id-btn:hover, .submit-btn:hover, .check-btn:hover {
+    background-color: #45a049;
+}

@@ -29,7 +29,7 @@ public class UserController {
 	@RequestMapping("/goJoin")
 	public String goJoin() {
 
-		return "Join";
+		return "join";
 	}
 	
 	// 회원가입
