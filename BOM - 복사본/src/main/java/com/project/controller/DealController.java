@@ -27,8 +27,8 @@ import com.project.repository.DealRepository;
 @Controller
 public class DealController {
 
-    @Value("$ {save.path}")
-    private String savePath;
+    @Value("$ {save1.path}")
+    private String save1Path;
 
     @Autowired
     private DealRepository dealRepo;
@@ -73,7 +73,7 @@ public class DealController {
                 continue;
             }
             String filename = uuid + "_" + originalFilename;
-            Path path = Paths.get(savePath, filename);
+            Path path = Paths.get(save1Path, filename);
             System.out.println("여긴어때를 데려오긴함");
             try {
                 Files.createDirectories(path.getParent());
@@ -85,7 +85,6 @@ public class DealController {
             }
             System.out.println("1를 데려오긴함");
         }
-        
         dealRepo.save(entity);
         System.out.println("안됨를 데려오긴함");
 
