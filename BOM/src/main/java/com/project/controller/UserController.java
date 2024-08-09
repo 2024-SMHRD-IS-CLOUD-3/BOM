@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.project.entity.UserEntity;
 import com.project.repository.UserRepository;
@@ -34,22 +34,28 @@ public class UserController {
 	
 	// 회원가입
 	@RequestMapping("/join")
-	public String join(UserEntity user_info, HttpSession session) {
-		
-		// insert 하기!
-		user_info.setPrinfo("OCR적용 후 해당 정보로 변경 예정!");
-		user_info.setScore(0);
-		user_info.setJoined_at(Date.valueOf(LocalDate.now()));
-		
-		user_info = repo.save(user_info);
-		
-		if(user_info != null) {
-			System.out.println("회원가입 성공!");
-			session.setAttribute("JoinInfo", user_info);
-			System.out.println(session.getAttribute("JoinInfo"));
-		}
-		
-		return "Main";
+	public String join(UserEntity user_info, HttpSession session, @RequestParam("confirmPassword") String confirmPassword) {
+
+	    // 비밀번호와 비밀번호 확인이 일치하는지 확인
+	    if (!user_info.getPw().equals(confirmPassword)) {
+	        System.out.println("비밀번호 불일치");
+	        return "join"; // 비밀번호가 일치하지 않으면 다시 회원가입 페이지로 이동
+	    }
+
+	    // 기타 정보 설정
+	    user_info.setPrinfo("OCR적용 후 해당 정보로 변경 예정!");
+	    user_info.setScore(0);
+	    user_info.setJoined_at(Date.valueOf(LocalDate.now()));
+
+	    // 데이터베이스에 저장
+	    user_info = repo.save(user_info);
+
+	    if (user_info != null) {
+	        session.setAttribute("JoinInfo", user_info);
+	        return "index";
+	    } else {
+	        return "join"; // 실패 시 다시 회원가입 페이지로 이동
+	    }
 	}
 	
 	@RequestMapping("/goLogin")
@@ -73,11 +79,13 @@ public class UserController {
 			System.out.println("로그인 성공!");
 			session.setAttribute("LoginInfo", user_info);
 			System.out.println(session.getAttribute("LoginInfo"));
+			return "index";
 		}else {
 			System.out.println("로그인 실패!");
+			return "login";
 		}
 		
-		return "index";
+		
 	}
 	
 	
