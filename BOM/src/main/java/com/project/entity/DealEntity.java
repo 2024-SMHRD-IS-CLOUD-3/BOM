@@ -5,12 +5,14 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.project.converter.StringListConverter;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,21 +26,21 @@ import lombok.NoArgsConstructor;
 public class DealEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "b_idx")
-    @Column(length = 100, nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(length = 100)
     private Long b_idx;
 
     @Column(length = 100, nullable = false)
     private String category;
 
     @Column(length = 100, nullable = false)
-    private String b_title = " ";
+    private String b_title = "";
 
     @Column(length = 100, nullable = false)
     private String id = "";
 
     @Column(length = 1000)
-    private String b_content = " ";
+    private String b_content = "";
 
     @Column(columnDefinition = "int default 0", insertable = false, nullable = false)
     private Integer b_views = 0;
@@ -50,9 +52,9 @@ public class DealEntity {
     @Column(length = 10, nullable = false)
     private String deal_status = "판매중";
 
-    @ElementCollection
-    @Column(name = "b_file")
-    private List<String> filenames = new ArrayList<>();
+    @Convert(converter = StringListConverter.class)
+    @Column(name = "b_file", columnDefinition = "TEXT")
+    private List<String> filenames = new ArrayList<>();;
 
     @Column(columnDefinition = "datetime default now()", insertable = false, updatable = false)
     private Date created_at;
@@ -71,4 +73,12 @@ public class DealEntity {
         this.deal_status = param.getDeal_status();
         this.how_much = param.getHow_much();
     }
+
+
+
+    public void setFilenames(List<String> filenames) {
+        this.filenames = filenames;
+    }
+
+
 }

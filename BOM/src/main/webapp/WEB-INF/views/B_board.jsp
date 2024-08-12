@@ -29,7 +29,7 @@
   <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body data-path-to-root="./" data-include-products="true" class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-gradient u-header u-header" id="sec-b9bc" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
         <p class="u-align-center u-text u-text-body-alt-color u-text-1">
-          <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-custom-font u-hover-none u-none u-text-body-alt-color u-btn-1" data-href="./">BOM </a>
+          <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-custom-font	 u-hover-none u-none u-text-body-alt-color u-btn-1" data-href="./">BOM </a>
         </p>
         <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
           <div class="menu-collapse u-custom-font" style="font-size: 1rem; letter-spacing: 0px; font-family: PretendardVariable; font-weight: 700;">
@@ -66,11 +66,11 @@
         <div class="u-border-2 u-border-grey-30 u-container-style u-group u-group-1" data-href="#">
           <div class="u-container-layout u-valign-bottom u-container-layout-1">
             
-            <img class="u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="/bompj/save/${filename}" alt="" data-image-width="512" data-image-height="512">
-            <h3 class="u-custom-font u-text u-text-default u-text-1">제목 ${deal.b_title}</h3>
-            <h6 class="u-custom-font u-text u-text-default u-text-2">가격 ${deal.how_much}<span style="font-size: 1.125rem;"></span>
+            <img class="u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="/save/${filename}" alt="" data-image-width="512" data-image-height="512">
+            <h3 class="u-custom-font u-text u-text-default u-text-1">${deal.b_title}</h3>
+            <h6 class="u-custom-font u-text u-text-default u-text-2">${deal.how_much}<span style="font-size: 1.125rem;"></span>
             </h6>
-            <p class="u-custom-font u-text u-text-default u-text-3">조회수 ${deal.b_view}/ 관심 ♡ </p>
+            <p class="u-custom-font u-text u-text-default u-text-3">조회수 ${deal.b_views}/ 관심 ♡ </p>
           </div>
         </div>
         <a href="goWrite" class="u-btn u-button-style u-custom-color-1 u-hover-custom-color-7 u-btn-1">글 쓰기 </a>
