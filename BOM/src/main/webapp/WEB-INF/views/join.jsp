@@ -56,17 +56,32 @@
           $('#idCardFile').change(function() {
               var fileName = $(this).val().split('\\').pop();
               
-              // AJAX 요청으로 파일 이름을 서버로 전송
               $.ajax({
-                  url: 'fileName',  // 컨트롤러의 엔드포인트 URL
+            	    url: 'dataRequest',  // Controller에서 처리할 경로
+            	    type: 'POST',
+            	    success: function(response) {
+            	        // 성공 시 처리 로직
+            	    },
+            	    error: function(xhr, status, error) {
+            	        alert('오류가 발생했습니다.');
+            	    }
+            	});
+
+              // 파일 업로드
+              var formData = new FormData();
+              formData.append("file", $('#idCardFile')[0].files[0]);
+
+              $.ajax({
+                  url: 'uploadFile',  // Spring Boot 서버의 업로드 엔드포인트
                   type: 'POST',
-                  data: { fileName: fileName },  // 서버로 전송할 데이터
+                  data: formData,
+                  processData: false,
+                  contentType: false,
                   success: function(response) {
-                      console.log('File name sent successfully');
-                      console.log('Server response:', response);
+                      alert('파일이 성공적으로 업로드되었습니다: ' + response);
                   },
                   error: function(xhr, status, error) {
-                      console.error('Error sending file name:', error);
+                      alert('파일 업로드 중 오류가 발생했습니다: ' + error);
                   }
               });
           });
