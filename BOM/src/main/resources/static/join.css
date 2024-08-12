@@ -42,7 +42,7 @@ label {
 }
 
 input[type="text"], input[type="password"] {
-    width: calc(100% - 100px);
+    width: 378px;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;

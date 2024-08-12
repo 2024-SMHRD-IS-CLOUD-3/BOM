@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="login.css">
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div class="login-container">
@@ -36,5 +36,13 @@
             </div>
         </form>
     </div>
+     <!-- 로그인 실패 시 팝업 띄우기 -->
+    <% if (request.getAttribute("loginError") != null) { %>
+    <script>
+        $(document).ready(function() {
+            alert("<%= request.getAttribute("loginError") %>");
+        });
+    </script>
+    <% } %>
 </body>
 </html>

@@ -25,5 +25,4 @@ public interface UserRepository extends JpaRepository<UserEntity, String>{
 	
 	// 로그인 기능 메소드 생성
 	public UserEntity findByIdAndPw(String id, String pw);
-	
 }
