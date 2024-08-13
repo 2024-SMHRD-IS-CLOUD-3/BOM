@@ -70,7 +70,7 @@
 							href="b_board" style="padding: 10px 20px;">Market</a></li>
 						<li class="u-nav-item"><a
 							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
-							href="b_board" style="padding: 10px 20px;">Board</a></li>
+							href="goComm" style="padding: 10px 20px;">Board</a></li>
 						<li class="u-nav-item"><a
 							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
 							href="goMyPage" style="padding: 10px 20px;">MyPage</a></li>
@@ -88,7 +88,7 @@
 								<li class="u-nav-item"><a class="u-button-style u-nav-link"
 									href="B_board">Market</a></li>
 								<li class="u-nav-item"><a class="u-button-style u-nav-link"
-									href="B_board">Board</a></li>
+									href="goComm">Board</a></li>
 								<li class="u-nav-item"><a class="u-button-style u-nav-link"
 									href="goMyPage">MyPage</a></li>
 							</ul>
