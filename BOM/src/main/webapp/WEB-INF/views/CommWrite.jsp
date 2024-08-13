@@ -5,10 +5,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<!-- Script 작성을 위한 준비 -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function() {
+		document.getElementById('cb_file').value = ${userId};
+	});
+</script>
 </head>
 <body>
 	<h1>Community Write</h1>
-	<form action="commContent">
+	<form action="commContent" method="POST" enctype="multipart/form-data">
 		제목 <input type="text" name="cb_title"><br>
 		내용 <input type="text" name="cb_content"><br>
 		파일 첨부 <input type="file" name="cb_file" accept="image/*"><br>
