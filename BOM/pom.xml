@@ -87,13 +87,14 @@
          1. jasper
          2. jstl
       -->
-       <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jstl</artifactId>
             <!--스프링 부트가 직접 확인할 수는 없지만 라이브러리에 맞는 설정을 자동적으로 지정하기 때문에
-               이미 해당 버전이 있다(?)고 안내를 하는 것-->
-            <version>1.2</version>
-        </dependency>
+               이미 해당 버전이 있다(?)고 안내를 하는 것
+               이것도 웹소켓에서 필요함!-->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
         <!--jasper : 톰캣의 내장 jsp 컴파일러 라이브러리
            jsp 컴파일 : jsp 파일을 java 소스코드로 변환/컴파일하여 java 클래스로 생성하는 기능-->
         <dependency>
@@ -117,6 +118,22 @@
     	<dependency>
 	    	<groupId>com.fasterxml.jackson.core</groupId>
 	    	<artifactId>jackson-databind</artifactId>
+		</dependency>
+		
+		<!-- 웹소켓용!
+			https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.9</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/javax.websocket/javax.websocket-api -->
+		<dependency>
+			<groupId>javax.websocket</groupId>
+			<artifactId>javax.websocket-api</artifactId>
+			<version>1.1</version>
+			<scope>provided</scope>
 		</dependency>
 	       
    </dependencies>
