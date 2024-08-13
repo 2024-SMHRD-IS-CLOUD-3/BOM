@@ -1,2 +1,2 @@
-select * from user_info;
+select * from USED_PRODUCT_INFO;
 

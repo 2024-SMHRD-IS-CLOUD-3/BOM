@@ -81,11 +81,22 @@
 		// 팝업에서 "저장" 버튼 클릭 시
         $('#savePopupText').click(function() {
             var updatedText = $('#popupTextarea').val();
-            $('#extractedText').val(updatedText); // hidden input에 수정된 텍스트 저장
-            $('#popup').hide(); // 팝업 닫기
+            var nameFieldText = $('#name').val();
+            var parsedText = JSON.parse(updatedText);
+            
+            if (parsedText["이름"] !== nameFieldText.trim()) {
+                alert('입력하신 이름과 추출된 정보가 일치하지 않습니다!');
+                return; // 일치하지 않으면 저장하지 않고 함수 종료
+            }else{
+            	// 주소 값을 HTML input 요소에 넣기
+            	document.getElementById('addr').value = parsedText["주소"];
+                $('#extractedText').val(updatedText); // hidden input에 수정된 텍스트 저장
+                $('#popup').hide(); // 팝업 닫기
+            }
         });
 
 	});
+	
 </script>
 </head>
 <body>
@@ -119,7 +130,7 @@
 
 			<!-- 주소 -->
 			<label for="addr">주소</label> <input type="text" id="addr" name="addr"
-				placeholder="주소를 입력해주세요" required>
+				placeholder="신분증 등록 시 자동 입력됩니다." required readonly>
 
 			<!-- Flask로부터 받은 extractedText를 저장할 hidden 필드 -->
 			<input type="hidden" id="extractedText" name="extractedText" value="">
