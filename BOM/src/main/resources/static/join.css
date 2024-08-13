@@ -84,3 +84,26 @@ input[type="text"]::placeholder, input[type="password"]::placeholder {
 .id-btn:hover, .submit-btn:hover, .check-btn:hover {
     background-color: #45a049;
 }
+
+/* 팝업 창 스타일 */
+#popup {
+    display: none; /* 초기에는 보이지 않음 */
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+#popup textarea {
+    width: 100%;
+    height: 200px;
+}
+#popup .button-group {
+    text-align: right;
+    margin-top: 10px;
+}

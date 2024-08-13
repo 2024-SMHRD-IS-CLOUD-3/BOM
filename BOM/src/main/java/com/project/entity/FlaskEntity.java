@@ -10,7 +10,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class FlaskEntity {
-	private String name;
-	private int age;
-	private String email;
+	private String content;
 }
