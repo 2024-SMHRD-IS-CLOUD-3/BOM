@@ -243,7 +243,7 @@ public class UserController {
 
 		if (user_info != null) {
 			System.out.println("로그인 성공!");
-			session.setAttribute("LoginInfo", user_info);
+			session.setAttribute("userId", user_info.getId());
 			return "index";
 		} else {
 			System.out.println("로그인 실패!");

@@ -24,8 +24,11 @@ public class CommEntity {
 	private Integer cb_idx;
 	
 	private String cb_title;
+	
 	private String cb_content;
+	
 	private String cb_file;
+	
 	private java.sql.Date created_at;
 	
 	@Column(columnDefinition = "int default 0")

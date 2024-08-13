@@ -1,2 +1,2 @@
-select * from USED_PRODUCT_INFO;
+select * from COMMUNITY_INFO;
 
