@@ -7,8 +7,8 @@
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>B_board</title>
-    <link rel="stylesheet" href="nicepage.css" media="screen">
+    <title>B_board</title>    <link rel="stylesheet" href="nicepage.css" media="screen">
+
 <link rel="stylesheet" href="B_board.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
@@ -41,8 +41,8 @@
           </div>
           <div class="u-custom-menu u-nav-container">
             <ul class="u-custom-font u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1" href="./" style="padding: 10px 20px;">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1" href="goB_board" style="padding: 10px 20px;">Market</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1" href="goB_board" style="padding: 10px 20px;">Board</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1" href="b_board" style="padding: 10px 20px;">Market</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1" href="b_board" style="padding: 10px 20px;">Board</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1" href="goLogin" style="padding: 10px 20px;">MyPage</a>
 </li></ul>
           </div>
@@ -51,8 +51,8 @@
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
                 <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="./">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="goB_board">Market</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="goB_board">Board</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="b_board">Market</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="b_board">Board</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="goLogin">MyPage</a>
 </li></ul>
               </div>
@@ -106,19 +106,18 @@
             <article class="product-card">
           <a class="card-link ga-click" data-event-label="812679979" data-event-category="show_article_from" data-event-action="hot_region" href="/articles/812679979">
             <div class="card-photo ">
-                <img alt="참기름. 들기름" src="https://dnvefa72aowie.cloudfront.net/origin/article/202408/4ece5cd48292131b9e16d855100b6e9cd53d80aae07b56516760873640c60a75_0.webp?f=webp&amp;q=82&amp;s=300x300&amp;t=crop" />
-            </div>
+                <img alt="참기름. 들기름" src="/bompj/save/${filename}">
             <div class="card-desc">
-              <h2 class="card-title">참기름. 들기름</h2>
+              <h2 class="card-title">${deal.b_title}</h2>
               <div class="price">
-                5,000원
+            ${deal.how_much}
               </div>
               <div class="card-region-name">
                 부산 부산진구 개금제2동
               </div>
               <div class="card-counts">
                   <span>
-                    관심 6
+                    ${deal.b_views}
                   </span>
                 ∙
                 <span>

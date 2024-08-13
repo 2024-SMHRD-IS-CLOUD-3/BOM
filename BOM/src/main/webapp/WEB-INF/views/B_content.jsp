@@ -90,10 +90,10 @@
 							href="./" style="padding: 10px 20px;">Home</a></li>
 						<li class="u-nav-item"><a
 							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
-							href="goB_board" style="padding: 10px 20px;">Market</a></li>
+							href="b_board" style="padding: 10px 20px;">Market</a></li>
 						<li class="u-nav-item"><a
 							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
-							href="goB_board" style="padding: 10px 20px;">Board</a></li>
+							href="b_board" style="padding: 10px 20px;">Board</a></li>
 						<li class="u-nav-item"><a
 							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
 							href="goLogin" style="padding: 10px 20px;">MyPage</a></li>
@@ -109,9 +109,9 @@
 								<li class="u-nav-item"><a class="u-button-style u-nav-link"
 									href="./">Home</a></li>
 								<li class="u-nav-item"><a class="u-button-style u-nav-link"
-									href="goB_board">Market</a></li>
+									href="b_board">Market</a></li>
 								<li class="u-nav-item"><a class="u-button-style u-nav-link"
-									href="goB_board">Board</a></li>
+									href="b_board">Board</a></li>
 								<li class="u-nav-item"><a class="u-button-style u-nav-link"
 									href="goLogin">MyPage</a></li>
 							</ul>

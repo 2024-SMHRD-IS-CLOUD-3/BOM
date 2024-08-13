@@ -74,6 +74,6 @@
         </div>
     </main>
 
-    <script src="market_d.js"></script>
+    <script src="B_detail.js"></script>
 </body>
 </html>

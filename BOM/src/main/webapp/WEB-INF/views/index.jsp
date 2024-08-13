@@ -40,8 +40,8 @@
           </div>
           <div class="u-custom-menu u-nav-container">
             <ul class="u-custom-font u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1" href="./" style="padding: 10px 20px;">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1" href="goB_board" style="padding: 10px 20px;">Market</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1" href="goB_board" style="padding: 10px 20px;">Board</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1" href="b_board" style="padding: 10px 20px;">Market</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1" href="b_board" style="padding: 10px 20px;">Board</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1" href="goLogin" style="padding: 10px 20px;">MyPage</a>
 </li></ul>
           </div>
