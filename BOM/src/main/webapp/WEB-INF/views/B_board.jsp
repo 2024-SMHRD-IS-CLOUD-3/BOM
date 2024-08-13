@@ -66,10 +66,195 @@
         <div class="u-border-2 u-border-grey-30 u-container-style u-group u-group-1" data-href="#">
           <div class="u-container-layout u-valign-bottom u-container-layout-1">
             
-            <img class="u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="/save/${filename}" alt="" data-image-width="512" data-image-height="512">
+            <img class="u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="/bompj/save/${filename}" alt="" data-image-width="512" data-image-height="512">
             <h3 class="u-custom-font u-text u-text-default u-text-1">${deal.b_title}</h3>
             <h6 class="u-custom-font u-text u-text-default u-text-2">${deal.how_much}<span style="font-size: 1.125rem;"></span>
-            </h6>
+            </h6><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM</title>
+    <link rel="stylesheet" href="B_board.css">
+</head>
+
+<body>
+    <header>
+        <h1>BOM</h1>
+        <nav>
+            <a href="#" class="nav-link">Home</a>
+            <div class="dropdown">
+              <a href="#" class="active"></a>
+              <div class="dropdown-content">
+                  <a href="#">남아의류</a>
+                  <a href="#">여아의류</a>
+                  <a href="#">장난감류</a>
+                  <a href="#">도서교구</a>
+                  <a href="#">아이가구</a>
+                  <a href="#">육아출산</a>
+                  <a href="#">유모차</a>
+              </div>
+          </div>
+            <a href="#" class="nav-link">Board</a>
+            <a href="#" class="nav-link">MyPage</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="product-grid">
+            <article class="product-card">
+          <a class="card-link ga-click" data-event-label="812679979" data-event-category="show_article_from" data-event-action="hot_region" href="/articles/812679979">
+            <div class="card-photo ">
+                <img alt="참기름. 들기름" src="https://dnvefa72aowie.cloudfront.net/origin/article/202408/4ece5cd48292131b9e16d855100b6e9cd53d80aae07b56516760873640c60a75_0.webp?f=webp&amp;q=82&amp;s=300x300&amp;t=crop" />
+            </div>
+            <div class="card-desc">
+              <h2 class="card-title">참기름. 들기름</h2>
+              <div class="price">
+                5,000원
+              </div>
+              <div class="card-region-name">
+                부산 부산진구 개금제2동
+              </div>
+              <div class="card-counts">
+                  <span>
+                    관심 6
+                  </span>
+                ∙
+                <span>
+                    채팅 9
+                  </span>
+              </div>
+            </div>
+        </a></article>
+        <article class="product-card ">
+          <a class="card-link ga-click" data-event-label="812778556" data-event-category="show_article_from" data-event-action="hot_region" href="/articles/812778556">
+            <div class="card-photo ">
+                <img alt="필리핀 페소" src="https://dnvefa72aowie.cloudfront.net/origin/article/202408/ff85b0967165892f52583afd6a140315b57a8100f1bec482eb197a15d179685e.jpg?f=webp&amp;q=82&amp;s=300x300&amp;t=crop" />
+            </div>
+            <div class="card-desc">
+              <h2 class="card-title">필리핀 페소</h2>
+              <div class="price">
+                107,000원
+              </div>
+              <div class="card-region-name">
+                서울 송파구 방이동
+              </div>
+              <div class="card-counts">
+                  <span>
+                    관심 2
+                  </span>
+                ∙
+                <span>
+                    채팅 26
+                  </span>
+              </div>
+            </div>
+        </a></article>
+        <article class="product-card ">
+          <a class="card-link ga-click" data-event-label="812946913" data-event-category="show_article_from" data-event-action="hot_region" href="/articles/812946913">
+            <div class="card-photo ">
+                <img alt="트립트랩 뉴본세트" src="https://dnvefa72aowie.cloudfront.net/origin/article/202408/228106497db310cdc8a57b041b375e3447ae4cc61b0ef33705276fc5d2e0c828.jpg?f=webp&amp;q=82&amp;s=300x300&amp;t=crop" />
+            </div>
+            <div class="card-desc">
+              <h2 class="card-title">트립트랩 뉴본세트</h2>
+              <div class="price">
+                95,000원
+              </div>
+              <div class="card-region-name">
+                경기도 성남시 분당구 구미동
+              </div>
+              <div class="card-counts">
+                  <span>
+                    관심 2
+                  </span>
+                ∙
+                <span>
+                    채팅 20
+                  </span>
+              </div>
+            </div>
+        </a></article>
+        <article class="product-card ">
+          <a class="card-link ga-click" data-event-label="811696999" data-event-category="show_article_from" data-event-action="hot_region" href="/articles/811696999">
+            <div class="card-photo ">
+                <img alt="릴선. 엄청길어요." src="https://dnvefa72aowie.cloudfront.net/origin/article/202408/54c7fe7d13c9d7fd73f23eac8e99c8a171b9529962b8e9a47cf365b3a11daa8e_0.webp?f=webp&amp;q=82&amp;s=300x300&amp;t=crop" />
+            </div>
+            <div class="card-desc">
+              <h2 class="card-title">릴선. 엄청길어요.</h2>
+              <div class="price">
+                12,000원
+              </div>
+              <div class="card-region-name">
+                경남 김해시 삼문동
+              </div>
+              <div class="card-counts">
+                  <span>
+                    관심 3
+                  </span>
+                ∙
+                <span>
+                    채팅 9
+                  </span>
+              </div>
+            </div>
+        </a></article>
+        <article class="product-card ">
+          <a class="card-link ga-click" data-event-label="812977744" data-event-category="show_article_from" data-event-action="hot_region" href="/articles/812977744">
+            <div class="card-photo ">
+                <img alt="클라쎄 244리터 냉장고 3만원" src="https://dnvefa72aowie.cloudfront.net/origin/article/202408/8267632de0334ee91e1f5ef293db154826a601f3b1bc76281506450fb815b5bf.jpg?f=webp&amp;q=82&amp;s=300x300&amp;t=crop" />
+            </div>
+            <div class="card-desc">
+              <h2 class="card-title">클라쎄 244리터 냉장고 3만원</h2>
+              <div class="price">
+                30,000원
+              </div>
+              <div class="card-region-name">
+                인천 남동구 간석동
+              </div>
+              <div class="card-counts">
+                  <span>
+                    관심 9
+                  </span>
+                ∙
+                <span>
+                    채팅 21
+                  </span>
+              </div>
+            </div>
+        </a></article>
+        <article class="product-card ">
+          <a class="card-link ga-click" data-event-label="812585781" data-event-category="show_article_from" data-event-action="hot_region" href="/articles/812585781">
+            <div class="card-photo ">
+                <img alt="캠핑용 에어컨" src="https://dnvefa72aowie.cloudfront.net/origin/article/202408/003a6571557cf352a0ffd3b05e261718959f40adae487d52898c3c9819bc392f_0.webp?f=webp&amp;q=82&amp;s=300x300&amp;t=crop" />
+            </div>
+            <div class="card-desc">
+              <h2 class="card-title">캠핑용 에어컨</h2>
+              <div class="price">
+                5,000원
+              </div>
+              <div class="card-region-name">
+                충남 천안시 서북구 성정동
+              </div>
+              <div class="card-counts">
+                  <span>
+                    관심 10
+                  </span>
+                ∙
+                <span>
+                    채팅 23
+                  </span>
+              </div>
+            </div>
+        </a></article>
+        
+          </section>
+        </section>
+            <button class="write-btn">글 쓰기</button>
+    </main>
+</body>
+
+</html>
             <p class="u-custom-font u-text u-text-default u-text-3">조회수 ${deal.b_views}/ 관심 ♡ </p>
           </div>
         </div>
