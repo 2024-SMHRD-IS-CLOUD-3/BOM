@@ -34,13 +34,13 @@ public class DealEntity {
     private String category;
 
     @Column(length = 100, nullable = false)
-    private String b_title = "";
+    private String b_title;
 
     @Column(length = 100, nullable = false)
-    private String id = "";
+    private String id;
 
     @Column(length = 1000)
-    private String b_content = "";
+    private String b_content;
 
     @Column(columnDefinition = "int default 0", insertable = false, nullable = false)
     private Integer b_views = 0;
@@ -52,9 +52,9 @@ public class DealEntity {
     @Column(length = 10, nullable = false)
     private String deal_status = "판매중";
 
-    @Convert(converter = StringListConverter.class)
-    @Column(name = "b_file", columnDefinition = "TEXT")
-    private List<String> filenames = new ArrayList<>();;
+
+    @Column(name = "b_file")
+    private String filenames;
 
     @Column(columnDefinition = "datetime default now()", insertable = false, updatable = false)
     private Date created_at;
@@ -62,23 +62,16 @@ public class DealEntity {
     @Column(length = 100, nullable = false)
     private Long how_much;
 
-    public void copyFrom(DealEntity param) {
-        this.category = param.getCategory();
-        this.b_title = param.getB_title();
-        this.b_content = param.getB_content();
-        this.filenames = param.getFilenames();
-        this.created_at = param.getCreated_at();
-        this.b_views = param.getB_views();
-        this.id = param.getId();
-        this.deal_status = param.getDeal_status();
-        this.how_much = param.getHow_much();
-    }
 
 
 
-    public void setFilenames(List<String> filenames) {
-        this.filenames = filenames;
-    }
+
+
+
+   public DealEntity(Long resultidx, String resultb_title, String resultb_content, Integer resultb_views,
+         String resultcategory, Date resultcreated_at, String resultdeal_status, String resultfilenames,
+         Long resulthow_much, String resultid) {
+   }
 
 
 }

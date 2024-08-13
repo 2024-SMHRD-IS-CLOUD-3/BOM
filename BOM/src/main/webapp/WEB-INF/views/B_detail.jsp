@@ -70,7 +70,7 @@
                     네고 안됩니다
                 </p>
             </div>
-            <button class="chat-btn">채팅하기</button>
+           <a href="goChat"> <button class="chat-btn">채팅하기</button></a>
         </div>
     </main>
 

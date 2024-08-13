@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="en"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -66,9 +66,9 @@
         <div class="u-border-2 u-border-grey-30 u-container-style u-group u-group-1" data-href="#">
           <div class="u-container-layout u-valign-bottom u-container-layout-1">
             
-            <img class="u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="/bompj/save/${filename}" alt="" data-image-width="512" data-image-height="512">
-            <h3 class="u-custom-font u-text u-text-default u-text-1">${deal.b_title}</h3>
-            <h6 class="u-custom-font u-text u-text-default u-text-2">${deal.how_much}<span style="font-size: 1.125rem;"></span>
+            <img class="u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="" alt="" data-image-width="512" data-image-height="512">
+            <h3 class="u-custom-font u-text u-text-default u-text-1"></h3>
+            <h6 class="u-custom-font u-text u-text-default u-text-2"><span style="font-size: 1.125rem;"></span>
             </h6><!DOCTYPE html>
 <html lang="en">
 
@@ -104,20 +104,20 @@
     <main>
         <section class="product-grid">
             <article class="product-card">
-          <a class="card-link ga-click" data-event-label="812679979" data-event-category="show_article_from" data-event-action="hot_region" href="/articles/812679979">
+          <a class="card-link ga-click"  href="goDetail">
             <div class="card-photo ">
-                <img alt="참기름. 들기름" src="/bompj/save/${filename}">
+                <img alt="참기름. 들기름" src="">
             <div class="card-desc">
-              <h2 class="card-title">${deal.b_title}</h2>
+              <h2 class="card-title"></h2>
               <div class="price">
-            ${deal.how_much}
+          
               </div>
               <div class="card-region-name">
                 부산 부산진구 개금제2동
               </div>
               <div class="card-counts">
                   <span>
-                    ${deal.b_views}
+                  
                   </span>
                 ∙
                 <span>
@@ -254,7 +254,7 @@
 </body>
 
 </html>
-            <p class="u-custom-font u-text u-text-default u-text-3">조회수 ${deal.b_views}/ 관심 ♡ </p>
+            <p class="u-custom-font u-text u-text-default u-text-3">조회수/ 관심 ♡ </p>
           </div>
         </div>
         <a href="goWrite" class="u-btn u-button-style u-custom-color-1 u-hover-custom-color-7 u-btn-1">글 쓰기 </a>

@@ -86,7 +86,7 @@
 								<li class="u-nav-item"><a class="u-button-style u-nav-link"
 									href="./">Home</a></li>
 								<li class="u-nav-item"><a class="u-button-style u-nav-link"
-									href="B_board">Market</a></li>
+									href="b_board">Market</a></li>
 								<li class="u-nav-item"><a class="u-button-style u-nav-link"
 									href="goComm">Board</a></li>
 								<li class="u-nav-item"><a class="u-button-style u-nav-link"
