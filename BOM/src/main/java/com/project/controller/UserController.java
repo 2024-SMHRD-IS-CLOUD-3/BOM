@@ -36,6 +36,7 @@ import org.springframework.ui.Model;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
+import com.project.entity.DealEntity;
 import com.project.entity.FlaskEntity;
 import com.project.entity.UserEntity;
 import com.project.repository.UserRepository;
@@ -202,12 +203,33 @@ public class UserController {
 			return "join"; // 실패 시 다시 회원가입 페이지로 이동
 		}
 	}
+	
+	   // /goLogin 요청을 받았을 때, 로그인 여부에 따라 다른 페이지로 리다이렉트
+    @RequestMapping("/goMyPage")
+    public String goLogin(HttpSession session) {
+        UserEntity loginInfo = (UserEntity) session.getAttribute("LoginInfo");
+        if (loginInfo != null) {
+            return "MyPageDetail"; // 로그인된 상태라면 myPageDetail 리턴
+        } else {
+            return "login"; // 로그인되지 않은 상태라면 login 리턴
+        }
+    }
 
-	@RequestMapping("/goLogin")
-	public String goLogin() {
 
-		return "login";
-	}
+
+    @RequestMapping("/logout")
+    public String logout(HttpSession session) {
+        session.invalidate(); // 세션 무효화 (로그아웃)
+        return "redirect:/"; // 로그아웃 후 메인 페이지로 리다이렉트
+    }
+
+	
+
+//	@RequestMapping("/goLogin")
+//	public String goLogin() {
+//
+//		return "login";
+//	}
 
 	@RequestMapping("/login")
 	public String login(UserEntity user_info, HttpSession session, Model model) {
@@ -230,5 +252,63 @@ public class UserController {
 		}
 
 	}
+	
+	
+	
+	
+	
+	/////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	
+	@PostMapping("/updateProfile")
+	public String updateProfile(
+	        @RequestParam("profilePicture") MultipartFile profilePicture,
+	        @RequestParam("password") String password,
+	        @RequestParam("confirmPassword") String confirmPassword,
+	        @RequestParam("email") String email,
+	        @RequestParam("nickname") String nickname,
+	        HttpSession session,
+	        Model model) {
+
+	    UserEntity loginInfo = (UserEntity) session.getAttribute("LoginInfo");
+
+	    if (loginInfo == null) {
+	        return "redirect:/goLogin"; // 로그인되어 있지 않으면 로그인 페이지로 리다이렉트
+	    }
+
+	    if (!password.equals(confirmPassword)) {
+	        model.addAttribute("error", "비밀번호가 일치하지 않습니다.");
+	        return "myPageDetail"; // 비밀번호가 일치하지 않으면 다시 수정 페이지로
+	    }
+
+	    // 사용자 정보 업데이트
+	    loginInfo.setPw(password);
+//	    loginInfo.setEmail(email);
+	    loginInfo.setName(nickname);
+
+	    // 프로필 사진 저장
+	    if (!profilePicture.isEmpty()) {
+	        try {
+	            String fileName = UUID.randomUUID().toString() + "_" + profilePicture.getOriginalFilename();
+	            Path filePath = Paths.get("path/to/save", fileName); // 파일 저장 경로 설정
+	            Files.write(filePath, profilePicture.getBytes());
+	            loginInfo.setPrinfo(fileName); // DB에 프로필 사진 경로 저장
+	        } catch (IOException e) {
+	            model.addAttribute("error", "프로필 사진 저장 중 오류가 발생했습니다.");
+	            return "myPageDetail";
+	        }
+	    }
+
+	    // DB에 저장
+	    repo.save(loginInfo);
+
+	    session.setAttribute("LoginInfo", loginInfo); // 세션 업데이트
+	    model.addAttribute("success", "회원 정보가 성공적으로 업데이트되었습니다.");
+
+	    return "myPageDetail"; // 수정 후 다시 마이페이지로 리다이렉트
+	}
+
+	
 
 }

@@ -27,7 +27,7 @@ import com.project.repository.UserRepository;
 @Controller
 public class DealController {
 
-    @Value("${save.path}")
+    @Value("${file.upload-dir.board}")
     private String savePath;
 
     @Autowired
