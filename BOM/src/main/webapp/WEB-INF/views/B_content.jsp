@@ -125,18 +125,18 @@
 	<section class="u-clearfix u-grey-10 u-section-1" id="sec-a774">
 		<div class="u-clearfix u-sheet u-sheet-1">
 			<div class="u-form u-form-1">
-				<form id="SubmitWrite" action="saveWrite" 
+				<form id="SubmitWrite" action="dealWrite" 
 					 class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" enctype="multipart/form-data"
-    source="custom" name="form" style="padding: 10px;" method="post">
+    source="custom" style="padding: 10px;" method="post">
 					<div class="u-form-group u-form-select u-label-top u-form-group-1">
 						<label for="select-06fa" class="u-label">카테고리</label>
 						<div class="u-form-select-wrapper">
 							<select id="select-06fa" name="category"
 								class="u-border-2 u-border-grey-10 u-custom-font u-input u-input-rectangle u-radius u-input-1">
 								<option value="유아가구" data-calc="유아가구">유아가구</option>
-								<option value="남아의류" data-calc="남아의류">남아 의류</option>
-								<option value="여아의류" data-calc="여아의류">여아 의류</option>
-								<option value="장난감 " data-calc="장난감류">장난감 류</option>
+								<option value="남아의류" data-calc="남아의류">남아의류</option>
+								<option value="여아의류" data-calc="여아의류">여아의류</option>
+								<option value="장난감 " data-calc="장난감류">장난감류</option>
 								<option data-calc="도서교구" value="도서교구">도서교구</option>
 							</select>
 							<svg class="u-caret u-caret-svg" version="1.1" id="Layer_1"
@@ -167,7 +167,7 @@
 							placeholder="​게시글 내용을 작성해주세요.( 판매금지 품목은 게시가 제한될 수 있어요 .)신뢰할 수 있는 거래를 위해 자세히 적어주세요."></textarea>
 					</div>
 					<div class="u-align-right u-form-group u-form-submit u-label-top">
-						<a href="#" onclick="submitForm(); return false;"
+						<a href="dealWrite" onclick="submitForm(); return false;"
 							class="u-active-custom-color-7 u-btn u-btn-submit u-button-style u-custom-color-1 u-hover-custom-color-7 u-btn-1">완료
 						</a> 
 					</div>
@@ -177,15 +177,19 @@
 						send your message. Please fix errors then try again.</div>
 					<input type="hidden" value="" name="recaptchaResponse">
 				
-			</div>
-			<input type="file" id="file-input" name="files" multiple
+		
+			<input type="file" id="file-input" name="file" 
 				class="u-active-custom-color-7 u-btn u-button-style u-custom-color-1 u-hover-custom-color-7 u-btn-2"><span
 				class="u-icon"></span>&nbsp;Button </a> <img
 				class="u-image u-image-contain u-image-default u-preserve-proportions u-image-1"
 				src="images/stroller.png" alt="" data-image-width="512"
 				data-image-height="512">
+			</form>
+			
+			</div>
+		
 		</div>
-		</form>
+		
 	</section>
 
 

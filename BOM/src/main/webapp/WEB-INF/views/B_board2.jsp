@@ -80,7 +80,7 @@
 </head>
 
 <body>
-
+<c:forEach items="${deal}" var="deal" varStatus="i"> 
     <header>
     
         <h1>BOM</h1>
@@ -90,7 +90,9 @@
               <a href="#" class="active"></a>
               <div class="dropdown-content">
                      
-            
+                  <a href="#">${deal.filenames}</a>
+                  <a href="#">${deal.b_title}</a>
+                  <a href="#"> ${deal.how_much}</a>
                   <a href="#">도서교구</a>
                   <a href="#">아이가구</a>
                   <a href="#">육아출산</a>
@@ -104,13 +106,13 @@
     </header>
 
     <main>
- <c:forEach items="${deal}" var="deal" varStatus="i"> 
+ 
         <section class="product-grid">
             
             <article class="product-card">
           <a class="card-link ga-click"  href="goDetail?idx=${deal.b_idx}">
             <div class="card-photo ">
-                <img alt="파일 경로 확인" src="uploads/${deal.filenames}">
+                <img alt="참기름. 들기름" src="/uploads/${deal.filenames}">
                 					
             <div class="card-desc">
               <h2 class="card-title">${deal.b_title}</h2>
@@ -134,9 +136,9 @@
         
         
         <article class="product-card ">
-          <a class="card-link ga-click" data-event-label="812778556" data-event-category="show_article_from" data-event-action="hot_region" href="goDetail?idx=${deal.b_idx}">
-            <div class="card-photo">
-                <img alt="두번째로도 경로 확인하기" src="uploads/${deal.filenames}" />
+          <a class="card-link ga-click" data-event-label="812778556" data-event-category="show_article_from" data-event-action="hot_region" href="/articles/812778556">
+            <div class="card-photo ">
+                <img alt="필리핀 페소" src="https://dnvefa72aowie.cloudfront.net/origin/article/202408/ff85b0967165892f52583afd6a140315b57a8100f1bec482eb197a15d179685e.jpg?f=webp&amp;q=82&amp;s=300x300&amp;t=crop" />
             </div>
             <div class="card-desc">
               <h2 class="card-title">${deal.b_title} </h2>
@@ -154,18 +156,112 @@
                 <span>
                     채팅 26
                   </span>
-                  
               </div>
             </div>
         </a></article>
-      
+        <article class="product-card ">
+          <a class="card-link ga-click" data-event-label="812946913" data-event-category="show_article_from" data-event-action="hot_region" href="/articles/812946913">
+            <div class="card-photo ">
+                <img alt="트립트랩 뉴본세트" src="https://dnvefa72aowie.cloudfront.net/origin/article/202408/228106497db310cdc8a57b041b375e3447ae4cc61b0ef33705276fc5d2e0c828.jpg?f=webp&amp;q=82&amp;s=300x300&amp;t=crop" />
+            </div>
+            <div class="card-desc">
+              <h2 class="card-title">${deal.b_title}</h2>
+              <div class="price">
+                ${deal.how_much}
+              </div>
+              <div class="card-region-name">
+                경기도 성남시 분당구 구미동
+              </div>
+              <div class="card-counts">
+                  <span>
+                    관심 2
+                  </span>
+                ∙
+                <span>
+                    채팅 20
+                  </span>
+              </div>
+            </div>
+        </a></article>
+        <article class="product-card ">
+          <a class="card-link ga-click" data-event-label="811696999" data-event-category="show_article_from" data-event-action="hot_region" href="/articles/811696999">
+            <div class="card-photo ">
+                <img alt="릴선. 엄청길어요." src="https://dnvefa72aowie.cloudfront.net/origin/article/202408/54c7fe7d13c9d7fd73f23eac8e99c8a171b9529962b8e9a47cf365b3a11daa8e_0.webp?f=webp&amp;q=82&amp;s=300x300&amp;t=crop" />
+            </div>
+            <div class="card-desc">
+              <h2 class="card-title">${deal.b_title}</h2>
+              <div class="price">
+               ${deal.how_much}
+              </div>
+              <div class="card-region-name">
+                경남 김해시 삼문동
+              </div>
+              <div class="card-counts">
+                  <span>
+                    관심 3
+                  </span>
+                ∙
+                <span>
+                    채팅 9
+                  </span>
+              </div>
+            </div>
+        </a></article>
+        <article class="product-card ">
+          <a class="card-link ga-click" data-event-label="812977744" data-event-category="show_article_from" data-event-action="hot_region" href="/articles/812977744">
+            <div class="card-photo ">
+                <img alt="클라쎄 244리터 냉장고 3만원" src="https://dnvefa72aowie.cloudfront.net/origin/article/202408/8267632de0334ee91e1f5ef293db154826a601f3b1bc76281506450fb815b5bf.jpg?f=webp&amp;q=82&amp;s=300x300&amp;t=crop" />
+            </div>
+            <div class="card-desc">
+              <h2 class="card-title">${deal.b_title}</h2>
+              <div class="price">
+               ${deal.how_much}
+              </div>
+              <div class="card-region-name">
+                인천 남동구 간석동
+              </div>
+              <div class="card-counts">
+                  <span>
+                    관심 9
+                  </span>
+                ∙
+                <span>
+                    채팅 21
+                  </span>
+              </div>
+            </div>
+        </a></article>
+        <article class="product-card ">
+          <a class="card-link ga-click" data-event-label="812585781" data-event-category="show_article_from" data-event-action="hot_region" href="/articles/812585781">
+            <div class="card-photo ">
+                <img alt="캠핑용 에어컨" src="https://dnvefa72aowie.cloudfront.net/origin/article/202408/003a6571557cf352a0ffd3b05e261718959f40adae487d52898c3c9819bc392f_0.webp?f=webp&amp;q=82&amp;s=300x300&amp;t=crop" />
+            </div>
+            <div class="card-desc">
+              <h2 class="card-title">${deal.b_title}</h2>
+              <div class="price">
+                ${deal.how_much}
+              </div>
+              <div class="card-region-name">
+                충남 천안시 서북구 성정동
+              </div>
+              <div class="card-counts">
+                  <span>
+                    관심 10
+                  </span>
+                ∙
+                <span>
+                    채팅 23
+                  </span>
+              </div>
+            </div>
+        </a></article>
         
           </section>
-     
+        </section>
             <button class="write-btn">글 쓰기</button>
-            </c:forEach>
+            
     </main>
-    	 
+    	 </c:forEach>
 </body>
 
 </html>

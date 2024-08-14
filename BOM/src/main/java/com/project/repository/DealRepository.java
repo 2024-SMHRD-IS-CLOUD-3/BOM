@@ -2,6 +2,7 @@ package com.project.repository;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.apache.ibatis.annotations.Param;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -30,15 +31,10 @@ public interface DealRepository extends JpaRepository<DealEntity, Long> {
 	// spring boot에서는 sql문장을 지양한다!
 	// JPA를 사용하여 자바언어로 구성된 sql 실행 메소드 사용!
 	
+	@Query("SELECT d FROM DealEntity d ORDER BY d.b_idx DESC")
+	List<DealEntity> findAllOrderByBIdxDesc();
 
-	    @Modifying
-	    @Query("UPDATE DealEntity b SET b.b_views = b.b_views + 1 WHERE b.id = :id")
-	    void incrementcount(@Param("id") Long id);
-
-
-		 @Query("SELECT d FROM DealEntity d ORDER BY d.b_idx DESC")
-		  List<DealEntity> findAllOrderByBIdxDesc();
-
+		
 }
 	
 	

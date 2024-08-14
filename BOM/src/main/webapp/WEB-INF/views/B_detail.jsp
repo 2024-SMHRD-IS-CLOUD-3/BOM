@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +10,7 @@
 <body>
 
 </body>
-</html><!DOCTYPE html>
+</html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -40,38 +41,35 @@
     </header>
 
     <main>
+     <c:forEach items="${deal}" var="deal" varStatus="i"> 
         <div class="product-container">
             <div class="slider">
-                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            
                 <div class="slides">
-                    <img src="../../images/img29.jpg" class="slide" alt="Product Image 1">
-                    <img src="../../images/img33.jpg" class="slide" alt="Product Image 2">
-                    <img src="../../images/img34.jpg" class="slide" alt="Product Image 3">
-                    <img src="../../images/img35.jpg" class="slide" alt="Product Image 4">
-                    <img src="../../images/img33.jpg" class="slide" alt="Product Image 5">
+                    <img src="uploads/${deal.filenames}" class="slide" alt="Product Image 1">
+              
                 </div>
-                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+          
             </div>
             <div class="product-details">
                 <div class="seller-info">  
                     <img src="../../images/free-icon-person-4203951.png" alt="Seller Icon" class="seller-icon">
                     <div>
-                        <p class="seller-name">땅꾼</p>
-                        <p class="location">남구 달동</p>
+                        <p class="seller-name">${deal.id}</p>
+                        
+                        <p class="location">주소 </p>
+                        
                     </div>
                 </div>
-                <h2>남자애옷 판매합니다</h2>
-                <p class="price">15,000원</p>
+                <h2>${deal.b_title}</h2>
+                <p class="price">${deal.how_much}</p>
                 <p class="description">
-                    남자애옷 팝니다.한복 외에도 많아요<br>
-                    판매한 시간이 없어서 싸게 내놓습니다.<br>
-                    <br>
-                    필요하시면 연락주세요.<br>
-                    네고 안됩니다
+                    ${deal.b_content}
                 </p>
             </div>
            <a href="goChat"> <button class="chat-btn">채팅하기</button></a>
         </div>
+         </c:forEach>
     </main>
 
     <script src="B_detail.js"></script>
