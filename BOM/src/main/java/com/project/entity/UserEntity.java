@@ -26,7 +26,7 @@ public class UserEntity {
     private String prinfo;
     private String addr;
     private Integer score;
-    private java.sql.Date joined_at;
+    private java.sql.Timestamp joined_at;
     private String userPp;
     
 }

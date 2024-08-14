@@ -8,7 +8,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
@@ -192,7 +194,11 @@ public class UserController {
       // 기타 정보 설정
       user_info.setPrinfo(decodedText);
       user_info.setScore(0);
-      user_info.setJoined_at(Date.valueOf(LocalDate.now()));
+      
+      // 현재 날짜와 시간 설정
+      LocalDateTime now = LocalDateTime.now();
+      Timestamp timestamp = Timestamp.valueOf(now);
+      user_info.setJoined_at(timestamp);
 
       // 데이터베이스에 저장
       user_info = repo.save(user_info);

@@ -4,7 +4,9 @@ import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
@@ -59,7 +61,11 @@ public class CommController {
 	    comm_info.setCb_title(title);
 	    comm_info.setCb_content(content);
 	    comm_info.setId(userId);
-	    comm_info.setCreated_at(Date.valueOf(LocalDate.now()));
+	    
+	    // 현재 날짜와 시간 설정
+	    LocalDateTime now = LocalDateTime.now();
+	    Timestamp timestamp = Timestamp.valueOf(now);
+	    comm_info.setCreated_at(timestamp);
 
 
 	    // 파일 업로드 처리

@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 
@@ -20,7 +21,9 @@ import lombok.NoArgsConstructor;
 public class CommEntity {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "community_info_seq_gen")
+    //@SequenceGenerator(name = "community_info_seq_gen", sequenceName = "community_info_seq", allocationSize = 1)
 	private Integer cb_idx;
 	
 	private String cb_title;
@@ -29,10 +32,10 @@ public class CommEntity {
 	
 	private String cb_file;
 	
-	private java.sql.Date created_at;
+	private java.sql.Timestamp created_at;
 	
 	@Column(columnDefinition = "int default 0")
-	private Integer cb_views;
+	private Integer cb_views = 0;
 	
 	private String id;
 	

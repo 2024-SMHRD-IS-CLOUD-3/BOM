@@ -8,6 +8,26 @@
 </head>
 <body>
 	<h1>CommMain</h1>
-	<a href="goCommWrite">작성하기</a>
+	<div>
+        <table id="commList">
+            <tr>
+                <td>번호</td>
+                <td>제목</td>
+                <td>작성자</td>
+                <td>시간</td>
+                <td>조회수</td>
+            </tr>
+            
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+         
+        </table>
+        <a href="goCommWrite">작성하기</a>
+    </div>
 </body>
 </html>
