@@ -99,7 +99,7 @@ public class DealController {
 	public String goDetail(Model model, HttpSession session, Long b_idx) {
 
 		List<DealEntity> deal = dealRepo.findAll();
-		model.addAttribute("deal", deal);
+		
 		
 
 		List<UserEntity> user = repo.findAll();
@@ -110,7 +110,11 @@ public class DealController {
 		for(int i=0; i<deal.size(); i++) {
         	for(int l=0; l<user.size();l++) {
         		if(deal.get(i).getId().equals(user.get(l).getId())) {
+        			
+        			model.addAttribute("deal", deal.get(i));
+        			model.addAttribute("user", user.get(l));
         			String duAddr = user.get(l).getAddr();
+        			
         			model.addAttribute("duAddr", duAddr);
         			
         			
