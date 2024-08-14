@@ -6,20 +6,20 @@ function loadImage(event) {
     }
 }
 
-function submitForm(event) {
+/*function submitForm(event) {
     event.preventDefault();
     const formData = new FormData(document.getElementById('upload-form'));
 
     const setAsMain = formData.get('setAsMain') ? '대표 이미지로 설정됨' : '일반 이미지로 설정됨';
-    console.log('제목:', formData.get('title'));
-    console.log('가격:', formData.get('price'));
-    console.log('카테고리:', formData.get('category'));
-    console.log('설명:', formData.get('description'));
+    console.log('제목:', formData.get('b_title'));
+    console.log('가격:', formData.get('how_much'));
+	console.log('카테고리:', formData.get('category'));
+    console.log('설명:', formData.get('b_content'));
     console.log(setAsMain);
     // 실제 서버로 전송하는 부분은 구현 필요
-}
+}*/
 
 // 저장안하고 그냥 게시판으로가기
 function goBack() {
-    window.location.href = 'dd.html';  // dd.html로 이동
+    window.location.href = 'b_board';  // dd.html로 이동
 }

@@ -35,7 +35,7 @@
     </header>
 
     <main>
-     <c:forEach items="${deal}" var="deal" varStatus="i"> 
+     <c:forEach items="${deal}" var="deal"> 
         <section class="products" id="product-grid">
             <article class="product-card">
                 <a class="card-link" href="goDetail?idx=${deal.b_idx}">
@@ -64,28 +64,30 @@
             </article>
         </section>
 		</c:forEach>
-        <a href="writing.html"><button class="write-btn">글 쓰기</button></a>
+        <a href="goWrite"><button class="write-btn">글 쓰기</button></a>
     </main>
     
     
 
     <script>
-document.addEventListener("DOMContentLoaded", function() {
+/* document.addEventListener("DOMContentLoaded", function() {
     // 로컬 스토리지에서 모든 상품 데이터를 불러옴
     let products = JSON.parse(localStorage.getItem('products')) || [];
 
     // 모든 상품을 화면에 추가
     renderProducts(products);
-});
+}); */
 
-function renderProducts(products) {
+function renderProducts(deal) {
     const productGrid = document.getElementById('product-grid');
     productGrid.innerHTML = '';  // 기존 내용을 비우고 새로 추가
 
-    products.forEach((product, index) => {
+    products.forEach((deal, index) => {
         const productHTML = `
             <article class="product-card">
-                <a class="card-link" href="#" onclick="viewProduct(${index})">
+        	/* onclick="viewProduct(${index})" */
+        	<c:forEach items="${deal}" var="deal" > 
+                <a class="card-link" href="goDetail?idx=${deal.b_idx}" >
                     <div class="image">
                         <img alt="${product.title}" src="${product.image}" />
                     </div>
@@ -108,21 +110,22 @@ function renderProducts(products) {
                         </div>
                     </div>
                 </a>
+                </c:forEach>
             </article>
         `;
         productGrid.innerHTML += productHTML;
     });
 }
-
+/* 
 function viewProduct(index) {
     // 로컬 스토리지에 선택된 상품 인덱스를 저장
     localStorage.setItem('selectedProductIndex', index);
 
     // market_d.html로 이동
     window.location.href = 'market_d.html';
-}
+} */
 
-
+/* 
 function addProduct(product) {
     // 로컬 스토리지에서 기존 상품 목록을 불러옴
     let products = JSON.parse(localStorage.getItem('products')) || [];
@@ -132,9 +135,9 @@ function addProduct(product) {
 
     // 로컬 스토리지에 갱신된 상품 목록 저장
     localStorage.setItem('products', JSON.stringify(products));
-
+ */
     // 새로운 상품만 화면에 추가
-    const productGrid = document.getElementById('product-grid');
+ /*    const productGrid = document.getElementById('product-grid');
     const productHTML = `
         <article class="product-card">
             <a class="card-link" href="#">
@@ -161,16 +164,13 @@ function addProduct(product) {
                 </div>
             </a>
         </article>
-    `;
+    `; 
 
     productGrid.innerHTML += productHTML;
-}
+}*/
 
     </script>
-        <footer class="u-align-center u-clearfix u-footer u-grey-10 u-footer" id="sec-199d"><div class="u-clearfix u-sheet u-sheet-1">
-        <p class="u-custom-font u-small-text u-text u-text-variant u-text-1">광주 서구 송암로 60 2층 6교육관<br>고객센터 담당자 채수민 
-        </p>
-      </div></footer>
+        
 </body>
 
 </html>

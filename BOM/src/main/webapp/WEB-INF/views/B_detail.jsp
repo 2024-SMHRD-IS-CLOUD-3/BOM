@@ -13,6 +13,7 @@
 </head>
 
 <body>
+
     <header>
         <h1>BOM</h1>
         <nav>
@@ -35,7 +36,7 @@
     </header>
 
     <main>
-    <c:forEach items="${deal}" var="deal"> 
+  
         <!-- 돌아가기 버튼 추가 -->
         <div style="text-align: left; margin: 20px 0;" >
             <button onclick="goBack()" class="back-btn">← 돌아가기</button>
@@ -45,7 +46,7 @@
                     <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
                     <div class="slides">
                         <!-- 이미지 슬라이드가 필요한 경우 이곳에 이미지를 추가할 수 있습니다. -->
-                        <img src="uploads/${deal.filenames}" id="product-image" class="slide" alt="Product Image">
+                        <img src="uploads/${yoyo.filenames}" id="product-image" class="slide" alt="Product Image">
                     </div>
                     <button class="next" onclick="moveSlide(1)">&#10095;</button>
                 </div>
@@ -53,24 +54,24 @@
                     <div class="seller-info">
                         <img src="${duInfo}" alt="Seller Icon" class="seller-icon">
                         <div>
-                            <p class="seller-name">${deal.id}</p>
+                            <p class="seller-name">${yoyo.id}</p>
                             <p class="region">${duAddr}</p>
                         </div>
                     </div>
-                    <h2 id="product-title">${deal.b_title}</h2>
-                    <p id="product-price" class="price">${deal.how_much}원</p>
+                    <h2 id="product-title">${yoyo.b_title}</h2>
+                    <p id="product-price" class="price">${yoyo.how_much}원</p>
                     <p id="product-description" class="description">
-                        ${deal.b_content}
+                        ${yoyo.b_content}
                     </p>
                 </div>
                 <a href="goChat"> <button class="chat-btn">채팅하기</button></a>
             </div>
-              </c:forEach>
+              
     </main>
 
 
     </script>
-    <script src="market_d.js"></script>
+   <!--  <script src="market_d.js"></script> -->
 </body>
 
 </html>

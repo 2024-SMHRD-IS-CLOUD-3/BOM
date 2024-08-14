@@ -57,7 +57,7 @@ function viewProduct(index) {
     localStorage.setItem('selectedProductIndex', index);
 
     // market_d.html로 이동
-    window.location.href = 'market_d.html';
+    window.location.href = 'b_board';
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -78,10 +78,10 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
         // 선택된 상품이 없는 경우 또는 잘못된 접근의 경우 처리
         alert("상품 정보를 불러올 수 없습니다.");
-        window.location.href = 'dd.html';
+        window.location.href = 'b_board';
     }
 });
 
 function goBack() {
-    window.location.href = 'dd.html';  // dd.html로 이동
+    window.location.href = 'b_board';  // dd.html로 이동
 }

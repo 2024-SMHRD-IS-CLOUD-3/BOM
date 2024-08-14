@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -29,15 +33,16 @@
     </header>
 
     <main>
-                <!-- 돌아가기 버튼 추가 -->
-                <div style="text-align: left; margin-top: 20px; " >
-                    <button onclick="goBack()" class="back-btn">← 돌아가기</button>
+        <div style="text-align: left; margin-top: 20px;">
+            <button onclick="goBack()" class="back-btn">← 돌아가기</button>
+        </div>
         <div class="upload-container">
             <div class="image-preview">
                 <img src="image-placeholder.png" id="preview" alt="Image Preview">
             </div>
             <div class="form-container">
-                <form id="upload-form" onsubmit="submitForm(event)">
+
+              <form id="upload-form"  action="dealWrite" method="post" enctype="multipart/form-data">
                     <label for="category">카테고리</label>
                     <select id="category" name="category">
                         <option value="유아가구">유아가구</option>
@@ -50,21 +55,20 @@
                         <option value="유모차">유모차</option>
                     </select>
 
-                    
                     <label for="title">제목</label>
-                    <input type="text" id="title" name="title" placeholder="제목을 입력해 주세요">
+                    <input type="text" id="title" name="b_title" placeholder="제목을 입력해 주세요">
 
                     <label for="price">가격</label>
-                    <input type="text" id="price" name="price" placeholder="가격을 입력해 주세요">
+                    <input type="text" id="price" name="how_much" placeholder="가격을 입력해 주세요">
 
                     <label for="description">내용</label>
-                    <textarea id="description" name="description" rows="5" placeholder="게시글 내용을 작성해주세요."></textarea>
+                    <textarea id="description" name="b_content" rows="5" placeholder="게시글 내용을 작성해주세요."></textarea>
 
                     <div class="file-upload">
-                        <input type="file" id="imageUpload" name="image" style="display: none;" onchange="loadImage(event)">
+                        <input type="file" id="imageUpload" name="file" style="display: none;" onchange="loadImage(event)">
                         <label for="imageUpload" class="file-select-btn">파일선택</label>
                     </div><br>
-                    
+
                     <button type="submit" class="submit-btn">완료</button>
                 </form>
             </div>
@@ -80,35 +84,10 @@
             }
         }
 
-        function submitForm(event) {
-    event.preventDefault();
-
-    const title = document.getElementById('title').value;
-    const price = document.getElementById('price').value;
-    const category = document.getElementById('category').value;
-    const description = document.getElementById('description').value;
-    const imageUpload = document.getElementById('imageUpload').files[0];
-
-    if (!imageUpload) {
-        alert("이미지를 선택해 주세요.");
-        return;
-    }
-
-    const product = { title, price, category, image: URL.createObjectURL(imageUpload) };
-
-    // 기존의 products 배열을 가져와 새로운 상품 추가
-    let products = JSON.parse(localStorage.getItem('products')) || [];
-    products.push(product);
-
-    // 로컬 스토리지에 갱신된 products 저장
-    localStorage.setItem('products', JSON.stringify(products));
-
-    // 페이지를 이동합니다.
-    window.location.href = 'dd.html';
-}
-function goBack() {
-    window.location.href = 'dd.html';  // dd.html로 이동
-}
+      
+        function goBack() {
+            window.location.href = 'b_board'; // 돌아가기 버튼
+        }
     </script>
 </body>
 </html>
