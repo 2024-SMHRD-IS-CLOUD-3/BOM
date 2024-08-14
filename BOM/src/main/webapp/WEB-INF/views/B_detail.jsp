@@ -1,23 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
 
-</body>
-</html>
+<!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Page</title>
-    <link rel="stylesheet" href="B_detail.css">
+    <link rel="stylesheet" href="market_d.css">
 </head>
+
 <body>
     <header>
         <h1>BOM</h1>
@@ -41,37 +35,42 @@
     </header>
 
     <main>
-     <c:forEach items="${deal}" var="deal" varStatus="i"> 
-        <div class="product-container">
-            <div class="slider">
-            
-                <div class="slides">
-                    <img src="uploads/${deal.filenames}" class="slide" alt="Product Image 1">
-              
-                </div>
-          
-            </div>
-            <div class="product-details">
-                <div class="seller-info">  
-                    <img src="../../images/free-icon-person-4203951.png" alt="Seller Icon" class="seller-icon">
-                    <div>
-                        <p class="seller-name">${deal.id}</p>
-                        
-                        <p class="location">주소 </p>
-                        
+    <c:forEach items="${deal}" var="deal" varStatus=i> 
+        <!-- 돌아가기 버튼 추가 -->
+        <div style="text-align: left; margin: 20px 0;" >
+            <button onclick="goBack()" class="back-btn">← 돌아가기</button>
+        </div>        
+            <div class="product-container">
+                <div class="slider">
+                    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                    <div class="slides">
+                        <!-- 이미지 슬라이드가 필요한 경우 이곳에 이미지를 추가할 수 있습니다. -->
+                        <img src="uploads/${deal.filenames}" id="product-image" class="slide" alt="Product Image">
                     </div>
+                    <button class="next" onclick="moveSlide(1)">&#10095;</button>
                 </div>
-                <h2>${deal.b_title}</h2>
-                <p class="price">${deal.how_much}</p>
-                <p class="description">
-                    ${deal.b_content}
-                </p>
+                <div class="product-details">
+                    <div class="seller-info">
+                        <img src="${duInfo}" alt="Seller Icon" class="seller-icon">
+                        <div>
+                            <p class="seller-name">${deal.id}</p>
+                            <p class="region">${duAddr}</p>
+                        </div>
+                    </div>
+                    <h2 id="product-title">${deal.b_title}</h2>
+                    <p id="product-price" class="price">${deal.how_much}원</p>
+                    <p id="product-description" class="description">
+                        ${deal.b_content}
+                    </p>
+                </div>
+                <a href="goChat"> <button class="chat-btn">채팅하기</button></a>
             </div>
-           <a href="goChat"> <button class="chat-btn">채팅하기</button></a>
-        </div>
-         </c:forEach>
+              </c:forEach>
     </main>
 
-    <script src="B_detail.js"></script>
+
+    </script>
+    <script src="market_d.js"></script>
 </body>
+
 </html>

@@ -10,5 +10,9 @@ public class config implements WebMvcConfigurer{
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/uploads/**")
                 .addResourceLocations("file:///C:/Users/smhrd/git/bom/BOM/src/uploads/");
+        
+        registry.addResourceHandler("/forComm/**")
+        .addResourceLocations("file:///C:/Users/smhrd/git/bom/BOM/forComm");
+
     }
 }

@@ -64,8 +64,12 @@ nav a.active {
     background-color: #f1f1f1;
 }
 
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 .back-btn {
-    margin-left: 350px; 
+    margin-left: 490px; /* product-container의 왼쪽 여백과 동일한 크기로 설정 */
     padding: 10px 20px;
     background-color: #69c173; /* 버튼 색상 */
     color: white; /* 텍스트 색상 */
@@ -80,97 +84,114 @@ nav a.active {
     background-color: #57a763; /* 버튼 호버 효과 */
 }
 
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-.upload-container {
+.product-container {
     display: flex;
     justify-content: space-between;
-    padding: 40px;
-    max-width: 1200px;
-    margin: 40px auto;
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative; /* 채팅하기 버튼의 위치를 정하기 위해 상대 위치 설정 */
 }
 
-.image-preview {
-    flex: 1;
+.slider {
+    position: relative;
+    width: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slides {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-right: 40px;
+    transition: transform 0.3s ease-in-out;
 }
 
-.image-preview img {
-    max-width: 100%;
+.slide {
+    min-width: 100%;
     height: auto;
     border-radius: 10px;
-    border: 2px dashed #ccc;
-    padding: 20px;
 }
 
-.form-container {
-    flex: 1;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-input[type="text"], textarea, select {
-    margin-bottom: 20px;
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
     padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    cursor: pointer;
+    border-radius: 50%;
 }
 
-textarea {
-    resize: none;
+.prev {
+    left: 10px;
 }
 
-.file-upload {
+.next {
+    right: 10px;
+}
+
+.product-details {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.seller-info {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
-.file-select-btn {
-    background-color: #69c173;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+.seller-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     margin-right: 10px;
-    display: inline-block;
 }
 
-.file-select-btn:hover {
-    background-color: #57a763;
+.seller-name {
+    font-weight: bold;
+    margin: 0;
 }
 
-input[type="checkbox"] {
-    margin-right: 5px;
+.location {
+    color: #888;
+    margin: 0;
 }
 
-.submit-btn {
+h2 {
+    font-size: 1.5em;
+    margin-top: 0;
+}
+
+.price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+.description {
+    margin-top: 15px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.chat-btn {
     background-color: #69c173;
     color: white;
     border: none;
     padding: 10px 20px;
     font-size: 1em;
-    border-radius: 5px;
+    position: absolute; /* 버튼을 div 내부의 고정 위치에 배치 */
+    bottom: 20px; /* 아래에서 20px 위로 */
+    right: 20px; /* 오른쪽에서 20px 왼쪽으로 */
     cursor: pointer;
-    align-self: flex-end;
+    border-radius: 5px;
 }
 
-.submit-btn:hover {
+.chat-btn:hover {
     background-color: #57a763;
 }

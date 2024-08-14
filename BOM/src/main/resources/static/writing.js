@@ -18,3 +18,8 @@ function submitForm(event) {
     console.log(setAsMain);
     // 실제 서버로 전송하는 부분은 구현 필요
 }
+
+// 저장안하고 그냥 게시판으로가기
+function goBack() {
+    window.location.href = 'dd.html';  // dd.html로 이동
+}
