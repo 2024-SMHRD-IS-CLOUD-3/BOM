@@ -7,13 +7,18 @@ import java.sql.Date;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -36,7 +41,14 @@ public class CommController {
 	private String uploadDir;
 
 	@RequestMapping("/goComm")
-	public String goComm() {
+	public String goComm(Model model) {
+		
+		// 데이터베이스에서 게시물 목록을 조회
+        List<CommEntity> posts = com_repo.findAll();
+
+        // 모델에 게시물 목록을 추가하여 JSP로 전달
+        model.addAttribute("posts", posts);
+		
 		return "CommMain";
 	}
 
@@ -98,4 +110,5 @@ public class CommController {
 			return "CommWrite";
 		}
 	}
+	
 }

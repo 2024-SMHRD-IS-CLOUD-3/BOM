@@ -36,7 +36,7 @@
                 <img src="image-placeholder.png" id="preview" alt="Image Preview">
             </div>
             <div class="form-container">
-                <form id="commContent" method="POST" enctype="multipart/form-data">
+                <form action="commContent" method="POST" enctype="multipart/form-data">
 
                     <label for="title">제목</label>
                     <input type="text" id="title" name="cb_title" placeholder="제목을 입력해 주세요">
@@ -51,8 +51,7 @@
                         <input type="file" id="imageUpload" name="cb_file" accept="image/*" style="display: none;">
                         <label for="imageUpload" class="file-select-btn">파일선택</label>           
                     </div><br>
-                    <button type="button" class="submit-btn">작성</button>
-                    <input type="submit" style="display : none;" id="okay">
+                    <button type="submit" class="submit-btn">작성</button>
                 </form>
             </div>
         </div>
