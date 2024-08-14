@@ -227,6 +227,7 @@ public class UserController {
       if (user_info != null) { // 로그인 성공 시
          System.out.println("로그인 성공!");
          session.setAttribute("LoginInfo", user_info); // 세션에 사용자 정보 저장
+         session.setAttribute("userId", user_info.getId());
          return "redirect:/"; // 로그인 성공 후 메인 페이지로 리다이렉트
       } 
        else  {

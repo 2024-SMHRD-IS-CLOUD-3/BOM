@@ -3,6 +3,8 @@ package com.project.controller;
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
@@ -26,52 +28,68 @@ public class CommController {
 
 	@Autowired
 	private CommRepository com_repo;
-	
+
 	// 파일 저장 경로
 	@Value("${file.upload-dir.commu}")
-    private String uploadDir;
-	
+	private String uploadDir;
+
 	@RequestMapping("/goComm")
 	public String goComm() {
 		return "CommMain";
 	}
-	
+
 	@RequestMapping("/goCommWrite")
 	public String commWrite(HttpSession session) {
-		if(session.getAttribute("userId")!=null) {
+		if (session.getAttribute("userId") != null) {
 			return "CommWrite";
-		}else {
+		} else {
 			return "login";
 		}
 	}
-	
+
 	@RequestMapping("/commContent")
-	public String dealWrite(CommEntity comm_info, MultipartFile file) {
-			
-		String uuid = UUID.randomUUID().toString();
+	public String dealWrite(@RequestParam("cb_title") String title,
+						    @RequestParam("cb_content") String content,
+						    @RequestParam("cb_file") MultipartFile file,
+						    @RequestParam("id") String userId,
+						    RedirectAttributes redirectAttributes) {
 
-		// 사용자가 선택한 파일의 이름 가져오기!
-		String filename = uuid + "_" + file.getOriginalFilename();
+		// 새로운 CommEntity 객체 생성 및 필드 설정
+	    CommEntity comm_info = new CommEntity();
+	    comm_info.setCb_title(title);
+	    comm_info.setCb_content(content);
+	    comm_info.setId(userId);
+	    comm_info.setCreated_at(Date.valueOf(LocalDate.now()));
 
-		// 파일 저장을 위한 경로 작업진행!
-		Path path = Paths.get(uploadDir + filename);
 
-		// 해당 경로에 파일 저장 작업!-> try/catch
-		try {
-			comm_info.setCb_file(filename); 
-			file.transferTo(path);
-	     } catch (Exception e) {
-	        e.printStackTrace();
-	     }
-  
-      // 나머지 필드 저장
-      comm_info = com_repo.save(comm_info); // -> insert sql 문장 실행
-      
-      if(comm_info != null) {
-    	  System.out.println("DB저장완료");
-    	  return "CommMain";
-      }else {
-    	  return "CommWrite";
-      }
+	    // 파일 업로드 처리
+	    if (!file.isEmpty()) {
+	        String uuid = UUID.randomUUID().toString();
+	        String filename = uuid + "_" + file.getOriginalFilename();
+
+	        Path path = Paths.get(uploadDir + filename);
+
+	        try {
+	            file.transferTo(path);
+	            comm_info.setCb_file(filename);
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	            redirectAttributes.addFlashAttribute("message", "File upload failed!");
+	            return "CommWrite";
+	        }
+	    } else {
+	        comm_info.setCb_file(null);
+	    }
+
+		// 나머지 필드 저장
+		comm_info = com_repo.save(comm_info); // -> insert sql 문장 실행
+
+		if (comm_info != null) {
+			System.out.println("DB저장완료");
+			return "CommMain";
+		} else {
+			System.out.println("DB저장실패");
+			return "CommWrite";
+		}
 	}
 }

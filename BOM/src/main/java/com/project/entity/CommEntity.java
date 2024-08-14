@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
 public class CommEntity {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer cb_idx;
 	
 	private String cb_title;
