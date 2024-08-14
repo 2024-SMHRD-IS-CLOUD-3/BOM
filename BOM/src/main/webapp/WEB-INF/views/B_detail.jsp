@@ -35,7 +35,7 @@
     </header>
 
     <main>
-    <c:forEach items="${deal}" var="deal" varStatus=i> 
+    <c:forEach items="${deal}" var="deal"> 
         <!-- 돌아가기 버튼 추가 -->
         <div style="text-align: left; margin: 20px 0;" >
             <button onclick="goBack()" class="back-btn">← 돌아가기</button>

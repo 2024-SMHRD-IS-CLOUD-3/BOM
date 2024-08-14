@@ -1,134 +1,142 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f0f0f0;
 }
 
 header {
-    background: linear-gradient(to right, #6a9bc6, #89d499);
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+	background: linear-gradient(to right, #6a9bc6, #89d499);
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 header h1 {
-    margin: 0;
-    color: white;
-    font-family: 'Comic Sans MS', cursive;
+	margin: 0;
+	color: white;
+	font-family: 'Comic Sans MS', cursive;
 }
 
 nav {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 nav a {
-    color: black;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-    transition: color 0.3s ease;
+	color: black;
+	text-decoration: none;
+	margin: 0 15px;
+	font-weight: bold;
+	transition: color 0.3s ease;
 }
 
 nav a.active {
-    color: #f50c6e;
+	color: #f50c6e;
 }
 
 .dropdown {
-    position: relative;
+	position: relative;
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%; /* Parent height */
-    left: 0;
-    background-color: white;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    border-radius: 4px;
-    min-width: 160px;
+	display: none;
+	position: absolute;
+	top: 100%; /* Parent height */
+	left: 0;
+	background-color: white;
+	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+	border-radius: 4px;
+	min-width: 160px;
 }
 
 .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    font-size: 0.9em;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	font-size: 0.9em;
 }
 
 .dropdown-content a:hover {
-    background-color: #f1f1f1;
+	background-color: #f1f1f1;
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+	display: block;
 }
 
 .products {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	padding: 20px;
+	max-width: 1200px;
+	margin: 0 auto;
 }
 
 .product-card {
-    background-color: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
+	background-color: white;
+	padding: 15px;
+	border-radius: 10px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	text-align: center;
 }
 
-.card-photo img {
-    
-    height: 150px;
-    width: 150px;
-    border-radius: 10px;
+/* 이미지 크기를 설정하는 CSS */
+.product-card .image img {
+	width: 150px;
+	height: 150px;
+	object-fit: cover; /* 이미지가 잘리지 않도록 비율을 유지하면서 크기 조정 */
+	border-radius: 10px; /* 선택적으로 둥근 모서리 추가 */
+	
+}	
+	
+ .card-photo img { height :
+	150px;
+	width: 150px;
+	border-radius: 10px;
 }
 
 .card-desc {
-    margin-top: 10px;
+	margin-top: 10px;
 }
 
 .card-title {
-    font-size: 1.2em;
-    margin: 10px 0;
+	font-size: 1.2em;
+	margin: 10px 0;
 }
 
 .price {
-    font-size: 1.1em;
-    color: #e74c3c;
+	font-size: 1.1em;
+	color: #e74c3c;
 }
 
 .card-region-name {
-    color: #888;
-    margin-top: 5px;
+	color: #888;
+	margin-top: 5px;
 }
 
 .card-counts {
-    margin-top: 10px;
-    color: #888;
+	margin-top: 10px;
+	color: #888;
 }
 
 .write-btn {
-    background-color: #69c173;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
-    border-radius: 5px;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
+	background-color: #69c173;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	font-size: 1em;
+	cursor: pointer;
+	border-radius: 5px;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
 }
 
 .write-btn:hover {
-    background-color: #57a763;
+	background-color: #57a763;
 }
