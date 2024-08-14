@@ -27,6 +27,7 @@ public class UserEntity {
     private String addr;
     private Integer score;
     private java.sql.Date joined_at;
+    private String userPp;
     
 }
 

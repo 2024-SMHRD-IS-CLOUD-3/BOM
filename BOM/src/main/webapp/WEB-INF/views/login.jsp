@@ -17,7 +17,7 @@
             </div>
             <h2>Login Now</h2>
         </div>
-        <form action="login" method="post">
+        <form action="loginCh" method="post">
             <label for="userid">아이디</label>
             <input type="text" id="userid" name="id" placeholder="아이디를 입력해주세요">
             
