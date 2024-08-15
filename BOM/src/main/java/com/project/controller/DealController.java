@@ -48,21 +48,24 @@ public class DealController {
 	public String dealMain(Model model, DealEntity entity) {
 		List<DealEntity> list = dealRepo.findAllOrderByBIdxDesc();
 		for(int i=0; i<list.size(); i++) {
-		System.out.println(list.get(i));
+			
 		}
 		model.addAttribute("deal", list);
 		
 
 		return "B_board";
 	}
-
+	
+	
 	@RequestMapping("/goWrite")
-	public String goWrite(HttpSession session) {
-		UserEntity loginInfo = (UserEntity) session.getAttribute("LoginInfo");
-		
-		return "B_write";
-	}
+	   public String goWrite(HttpSession session) {
+	      UserEntity loginInfo = (UserEntity) session.getAttribute("LoginInfo");
+	      
+	      
+	      return "B_write";
+	   }
 
+	
 	@RequestMapping("/dealWrite")
     public String dealWrite(
             @RequestParam("b_title") String title,
@@ -171,17 +174,31 @@ public class DealController {
 	}
 
 	@RequestMapping("/dealModify")
-	public String dealModify(Model model, DealEntity entity, Long b_idx) {
+	public String dealModify(Model model, DealEntity entity, Long idx) {
 
-		Optional<DealEntity> optionalEntity = dealRepo.findById(b_idx);
+		Optional<DealEntity> optionalEntity = dealRepo.findById(idx);
 
 		entity = optionalEntity.get();
 		model.addAttribute("deal", entity);
 		return "B_Modify";
 	}
 
+	@RequestMapping("/goRoom")
+	public String room(){
+		return "room";
+	}
+	
 	@RequestMapping("/goChat")
-	public String chat() {
+	public String chat(Model model, Long idx) {
+		List<DealEntity> deal = dealRepo.findAll();
+		System.out.println(idx);
+		for(int i=0; i<deal.size(); i++) {
+			if(deal.get(i).getB_idx().equals(idx)) {
+				System.out.println(deal.get(i));
+				model.addAttribute("chat", deal.get(i));
+			}
+		}
+		
 		return "chat";
 	}
 

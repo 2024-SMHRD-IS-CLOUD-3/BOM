@@ -1,71 +1,105 @@
-/*
-		웹소캣 사용하기 전에 미리 했으면 좋겠다, 라고 생각되는 것은 
-	1. 메세지 양식 지정 
-	   JSON : JavaScript Object Notation ( 자바스크립트의 객체 문법대로 작성된 데이터 )
-	  let test =  { 
-		"키" : " 값" , 
-	   "key" : "value"
-   		}
-		
-	   메세지 데이터를 저장할 자바스크립트 객체 생성을 해둬야 밑에서 유용하게 사용할 수 있다.
-*/
-
 let chat = {
-	"id" : "",
-	"chat" : ""
-}
+    "id": "",
+    "chat": ""
+};
 
-/*
-	2. 사용자의 id 가져오기
-*/
+let socket;
 
-let socket;  
+// 사용자가 ID를 설정하면 웹소켓을 연결하고 버튼 상태를 변경합니다.
+$('#idSelect').on("click", function() {
+    chat.id = $('#userId').val();
+    
+    if (chat.id.trim() === "") {
+        alert("Please enter a valid ID.");
+        return;
+    }
 
-$('#idSelect').on("click", function(){
-	
-	chat.id = $('#userId').val();
-	// chat.jsp button에 disabled가 적용되어 있으므로 disabled 속성을 없애줘야 한다.
-	$('#button-send').removeAttr('disabled');
-	$(this).attr('disabled', 'disabled'); // id를 한 번 입력했으면 수정 할 수 없도록 하는 것
-	// this : idSelect 버튼
-	
-	// Id를 결정한 시점에서 WebSocket과 연결하기 = WebSocket 객체 생성
-	// new WebSocket("Socket에 연결하기 위한 URL");
-	socket = new WebSocket("ws://localhost:8081/WebSocket/chat"); 
-	socket.onopen = onOpen; // 함수의 기능을 가져오고 싶은 것이므로 소괄호가 필요없다.
-	socket.onclose = onClose;
-	socket.onmessage = onMessage;
-	
+    $('#button-send').removeAttr('disabled');
+    $(this).attr('disabled', 'disabled');
+    
+    // 웹소켓 연결
+    socket = new WebSocket("ws://localhost:8081/WebSocket/chat");
+    
+    // 웹소켓 이벤트 핸들러 설정
+    socket.onopen = onOpen;
+    socket.onclose = onClose;
+    socket.onmessage = onMessage;
 });
 
-$('#button-send').on("click", function(){
-	// 1) 사용자가 작성한 데이터 가져오기
-	chat.chat= $('#msg').val();
-	
-	// 2) chat 객체를 JSON 데이터로 변환
-	// Javascript Object --> json String
-	let json = JSON.stringify(chat); 
-	
-	// 3) WebSocket으로 메세지 전송
-	// socket.send("보내고 싶은 문자열");
-	socket.send(json);
+// 메시지를 전송하는 버튼의 클릭 이벤트 핸들러
+$('#button-send').on("click", function() {
+    chat.chat = $('#msg').val();
+    
+    if (chat.chat.trim() === "") {
+        return; // 빈 메시지는 전송하지 않음
+    }
+    
+    // 메시지를 화면에 추가
+    let messageHtml = `
+        <div class='row'>
+            <div class='col-sm-6'></div>
+            <div class='col-sm-6'>
+                <div class='alert alert-secondary'>
+                    <b>${chat.chat}</b>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    $('#chatBody').append(messageHtml);
+    $('#chatBody').scrollTop($('#chatBody')[0].scrollHeight);
+    
+    // 메시지를 JSON으로 변환하여 웹소켓을 통해 전송
+    socket.send(JSON.stringify(chat));
+    
+    // 입력 필드를 비움
+    $('#msg').val('');
 });
 
-// 웹소캣과 연결하는 기능을 구현하기 전에 3개의 함수를 정의해두면 편리하다.
-// 웹소캣과 연결이 잘 되었을 경우 실행되는 메서드
-function onOpen(){
-	
+// 웹소켓 연결이 열릴 때 호출되는 함수
+function onOpen() {
+    console.log("WebSocket connection opened.");
 }
-// 웹소캣과 연결이 잘 끊어졌을 경우 실행되는 메서드
-function onClose(){
-	
-}
-// 메세지가 입력되었을 경우 실행되는 메서드
-function onMessage(msg){ //msg: 받은 메세지가 저장되는 변수
-	console.log(msg.data);
 
-	// json String --> Javascript Object
-	let data = JSON.parse(msg.data);
-	console.log(data.id);
-	console.log(data.chat);	
+// 웹소켓 연결이 닫힐 때 호출되는 함수
+function onClose() {
+    console.log("WebSocket connection closed.");
+}
+
+// 웹소켓으로부터 메시지를 수신했을 때 호출되는 함수
+function onMessage(msg) {
+    console.log(msg.data);
+    
+    // 메시지 데이터를 JSON으로 파싱
+    let data = JSON.parse(msg.data);
+    console.log(data.id);
+    console.log(data.chat);
+    
+    // 메시지 유형에 따라 화면에 추가
+    let messageHtml;
+    if (data.id === chat.id) {
+        messageHtml = `
+            <div class='row'>
+                <div class='col-sm-6'></div>
+                <div class='col-sm-6'>
+                    <div class='alert alert-secondary'>
+                        <b>${data.chat}</b>
+                    </div>
+                </div>
+            </div>
+        `;
+    } else {
+        messageHtml = `
+            <div class='row'>
+                <div class='col-6'>
+                    <div class='alert alert-warning'>
+                        <b>${data.id}: ${data.chat}</b>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    $('#chatBody').append(messageHtml);
+    $('#chatBody').scrollTop($('#chatBody')[0].scrollHeight);
 }

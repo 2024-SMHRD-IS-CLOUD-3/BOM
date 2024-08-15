@@ -14,7 +14,7 @@
     <header>
         <h1>BOM</h1>
         <nav>
-            <a href="./">Home</a>
+              <a href="./">Home</a>
             <div class="dropdown">
                 <a href="b_board" class="active">Market</a>
                 <div class="dropdown-content">
@@ -34,7 +34,9 @@
 
     <main>
         <div style="text-align: left; margin-top: 20px;">
-            <button onclick="goBack()" class="back-btn">← 돌아가기</button>
+           <form action="car_main" method="get">
+           		 <button type="submit" class="back-btn">← 돌아가기</button>
+        	</form>
         </div>
         <div class="upload-container">
             <div class="image-preview">
@@ -42,27 +44,26 @@
             </div>
             <div class="form-container">
 
-              <form id="upload-form"  action="dealWrite" method="post" enctype="multipart/form-data">
-                    <label for="category">카테고리</label>
-                    <select id="category" name="category">
+              <form id="upload-form"  action="carWrite" method="post" enctype="multipart/form-data">
+                    <label for="car_rank">상태</label>
+                    <select id="car_rank" name="car_rank">
+                        
+                        <option value="S급">S급</option>
+                        <option value="A급">A급</option>
+                        <option value="B급">B급</option>
                        
-                        <option value="남아의류">남아의류</option>
-                        <option value="여아의류">여아의류</option>
-                        <option value="장난감류">장난감류</option>
-                        <option value="도서교구">도서교구</option>
-                        <option value="아이가구">아이가구</option>
-                        <option value="육아출산">육아출산</option>
-                        <option value="유모차">유모차</option>
                     </select>
 
                     <label for="title">제목</label>
-                    <input type="text" id="title" name="b_title" placeholder="제목을 입력해 주세요">
-
+                    <input type="text" id="title" name="car_title" placeholder="제목을 입력해 주세요">
+					
                     <label for="price">가격</label>
-                    <input type="text" id="price" name="how_much" placeholder="가격을 입력해 주세요">
+                    <input type="text" id="price" name="car_price" placeholder="가격을 입력해 주세요">
+
+
 
                     <label for="description">내용</label>
-                    <textarea id="description" name="b_content" rows="5" placeholder="게시글 내용을 작성해주세요."></textarea>
+                    <textarea id="description" name="car_content" rows="5" placeholder="게시글 내용을 작성해주세요."></textarea>
 
                     <div class="file-upload">
                         <input type="file" id="imageUpload" name="file" style="display: none;" onchange="loadImage(event)">
@@ -76,21 +77,16 @@
     </main>
 
     <script>
-    // 페이지 상단으로 스크롤하는 함수
-    function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // 스크롤을 감지해서 버튼의 표시 여부를 결정하는 함수
-    window.onscroll = function() {
-        const scrollToTopBtn = document.querySelector('.scroll-to-top');
-        if (document.documentElement.scrollTop > 100) {
-            scrollToTopBtn.style.display = 'block'; // 스크롤이 100px 이상 내려가면 버튼 보이기
-        } else {
-            scrollToTopBtn.style.display = 'none';  // 상단에 있으면 버튼 숨기기
+        function loadImage(event) {
+            const imagePreview = document.getElementById('preview');
+            imagePreview.src = URL.createObjectURL(event.target.files[0]);
+            imagePreview.onload = function() {
+                URL.revokeObjectURL(imagePreview.src);
+            }
         }
-    };
-</script>
 
+      
+     
+    </script>
 </body>
 </html>

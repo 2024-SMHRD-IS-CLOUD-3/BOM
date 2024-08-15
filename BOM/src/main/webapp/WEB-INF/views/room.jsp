@@ -39,13 +39,13 @@
 
 						<!-- 채팅방 목록 -->
 						<div class="card bg-success text-white"
-							onclick="window.location.href='chat.jsp?room=cat'">
-							<div class="card-body">cat 채팅방</div>
+							onclick="goChat?idx=${chat.b_idx}">
+							<div class="card-body">${chat.id} 채팅방</div>
 						</div>
 						<br>
 
 						<div class="card bg-success text-white"
-							onclick="window.location.href='chat.jsp?room=dog'">
+							onclick="window.location.href='goChat?idx=${chat.id}'">
 							<div class="card-body">dog 채팅방</div>
 						</div>
 						<br>

@@ -1,0 +1,273 @@
+@charset "UTF-8";
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background: linear-gradient(to right, #4CAF50, #81C784);
+            color: white;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            /* 아래쪽 여백 추가 */
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        #backButton {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 20px;
+            /* BOM 글자 옆에 붙이기
+             위해 왼쪽 여백으로 수정 */
+        }
+
+        .menu {
+            display: flex;
+            gap: 20px;
+            padding-right: 20px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .menu a:hover {
+            text-decoration: underline;
+        }
+
+        .main-content {
+            display: flex;
+            padding: 0;
+            margin: 0;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .friend-list {
+            width: 250px;
+            background: #ffffff;
+            border-radius: 20px 20px 20px 20px;
+            /* 모서리를 더 둥글게 설정 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            overflow-y: auto;
+            height: 1000px;
+            border: 1px solid #ddd;
+        }
+
+        .friend-item {
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .friend-item:last-child {
+            border-bottom: none;
+        }
+
+        .friend-item:hover {
+            background: #f0f0f0;
+        }
+
+        .friend-item.active {
+            background: #d3d3d3;
+        }
+
+        .friend-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            background-color: #ccc;
+            background-size: cover;
+        }
+
+        .friend-name {
+            font-weight: bold;
+        }
+
+        .friend-last-message {
+            font-size: 12px;
+            color: #888;
+            margin-top: 5px;
+            margin-left: auto;
+        }
+
+        .more-button {
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            color: #6cb36f;
+            font-weight: bold;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+
+        .more-button:hover {
+            background: #f0f0f0;
+        }
+
+        .container {
+            flex-grow: 1;
+            margin: 0;
+            background: #ffffff;
+            border-radius: 20px 20px 20px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border: 1px solid #ddd;
+
+        }
+
+        .current-friend {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background: #f0f0f0;
+            margin-bottom: 10px;
+            /* 아래쪽 여백 추가 */
+            margin-top: 10px;
+            /* 위쪽 여백 추가 */
+        }
+
+        .current-friend-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 20px 20px 20px 20px;
+            margin-right: 10px;
+            background-size: cover;
+        }
+
+        .chat-messages {
+            height: calc(100vh - 360px);
+            /* 전체 뷰포트에서 header, current-friend, chat-input 등의 높이를 뺀 값을 사용 */
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            overflow-y: auto;
+            border-radius: 20px 20px 20px 20px;
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 20px;
+            /* 기존의 padding: 0; 을 변경해 여백을 채움 */
+            margin: 0;
+            /* margin을 0으로 설정해 여백 제거 */
+            border-top: 1px solid #ddd;
+            /* 위쪽에 경계선 추가 (옵션) */
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 0;
+        }
+
+        .chat-input button {
+            padding: 15px;
+            border: none;
+            background: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .message-container {
+            margin: 5px 0;
+            display: flex;
+            flex-direction: column;
+            border-radius: 20px 20px 20px 20px;
+        }
+
+        .message {
+            border-radius: 10px;
+            padding: 10px;
+            display: inline-block;
+            max-width: 70%;
+            word-wrap: break-word;
+            clear: both;
+            margin-bottom: 5px;
+        }
+
+        .message.user {
+            background-color: #b2ff59;
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .message.other {
+            background-color: #b9eec9;
+            text-align: left;
+            max-width: fit-content;
+            margin-right: auto;
+        }
+
+        .chat-input button:hover {
+            background: #91db95;
+        }
+
+        .message-time {
+            font-size: 10px;
+            color: #aaa;
+            margin-top: 5px;
+            text-align: right;
+        }
+
+        .message-time.left {
+            text-align: left;
+        }
+
+        .my-name {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .my-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            background-image: url('https://randomuser.me/api/portraits/men/1.jpg');
+            background-size: cover;
+        }
+
+        .reaction-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+        }
+
+        .reaction {
+            cursor: pointer;
+            font-size: 16px;
+        }

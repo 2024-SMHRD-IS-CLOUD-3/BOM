@@ -14,5 +14,7 @@ public class config implements WebMvcConfigurer{
         registry.addResourceHandler("/forComm/**")
         .addResourceLocations("file:///C:/Users/smhrd/git/bom/BOM/forComm");
 
+        registry.addResourceHandler("/babyCar/**")
+        .addResourceLocations("file:///C:/Users/smhrd/git/bom/BOM/src/babyCar/");
     }
 }

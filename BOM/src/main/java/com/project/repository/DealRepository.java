@@ -34,6 +34,27 @@ public interface DealRepository extends JpaRepository<DealEntity, Long> {
 	@Query("SELECT d FROM DealEntity d ORDER BY d.b_idx DESC")
 	List<DealEntity> findAllOrderByBIdxDesc();
 
+	@Query("SELECT d FROM DealEntity d WHERE d.category = '남아의류' ORDER BY d.b_idx DESC")
+	List<DealEntity> findByCategoryMOrderByBIdxDesc();
+	
+	@Query("SELECT d FROM DealEntity d WHERE d.category = '여아의류' ORDER BY d.b_idx DESC")
+	List<DealEntity> findByCategoryWOrderByBIdxDesc();
+	
+	@Query("SELECT d FROM DealEntity d WHERE d.category = '장난감류' ORDER BY d.b_idx DESC")
+	List<DealEntity> findByCategoryTOrderByBIdxDesc();
+	
+	@Query("SELECT d FROM DealEntity d WHERE d.category = '도서교구' ORDER BY d.b_idx DESC")
+	List<DealEntity> findByCategoryBOrderByBIdxDesc();
+	
+	@Query("SELECT d FROM DealEntity d WHERE d.category = '아이가구' ORDER BY d.b_idx DESC")
+	List<DealEntity> findByCategoryFOrderByBIdxDesc();
+	
+	@Query("SELECT d FROM DealEntity d WHERE d.category = '육아출산' ORDER BY d.b_idx DESC")
+	List<DealEntity> findByCategoryNOrderByBIdxDesc();
+	
+	@Query("SELECT d FROM DealEntity d WHERE d.category = '유모차' ORDER BY d.b_idx DESC")
+	List<DealEntity> findByCategoryCOrderByBIdxDesc();
+
 		
 }
 	
