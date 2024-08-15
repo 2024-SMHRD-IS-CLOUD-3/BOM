@@ -52,7 +52,7 @@ public class CommController {
         List<CommEntity> posts = com_repo.findAll();
 
         // 페이지 정보를 포함한 게시물 조회
-        Pageable pageable = PageRequest.of(page, PAGE_SIZE, Sort.by(Sort.Direction.ASC, "idx"));
+        Pageable pageable = PageRequest.of(page, PAGE_SIZE, Sort.by(Sort.Direction.DESC, "idx"));
         Page<CommEntity> postsPage = com_repo.findAll(pageable);
 
         // 페이지 정보와 게시물 리스트를 모델에 추가
