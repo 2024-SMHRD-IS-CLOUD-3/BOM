@@ -35,8 +35,8 @@
     </header>
 
     <main>
-     <c:forEach items="${deal}" var="deal"> 
         <section class="products" id="product-grid">
+     <c:forEach items="${deal}" var="deal"> 
             <article class="product-card">
                 <a class="card-link" href="goDetail?idx=${deal.b_idx}">
                     <div class="image">
@@ -52,19 +52,20 @@
                         </div>
                         <div class="card-counts">
                             <span class="like-counts">
-                                관심 6
+                                관심 0
                             </span>
                             ∙
                             <span class="chat-counts">
-                                채팅 9
+                                채팅 0
                             </span>
                         </div>
                     </div>
                 </a>
             </article>
-        </section>
 		</c:forEach>
+        </section>
         <a href="goWrite"><button class="write-btn">글 쓰기</button></a>
+        <button class="scroll-to-top" onclick="scrollToTop()">↑</button>
     </main>
     
     
@@ -114,6 +115,13 @@ function renderProducts(deal) {
             </article>
         `;
         productGrid.innerHTML += productHTML;
+    });
+}
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // 부드럽게 스크롤
     });
 }
 /* 
