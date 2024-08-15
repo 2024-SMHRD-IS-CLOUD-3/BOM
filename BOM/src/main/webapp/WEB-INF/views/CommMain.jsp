@@ -23,8 +23,8 @@
                 </nav>
                 <nav class="main-nav">
                     <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="#">Market</a></li>
+                        <li><a href="./">Home</a></li>
+                        <li><a href="b_board">Market</a></li>
                         <li><a href="goComm">Board</a></li>
                         <li><a href="goMyPage">MyPage</a></li>
                     </ul>
@@ -37,6 +37,11 @@
             <div class="search-bar">
                 <input type="text" id="searchInput" placeholder="Search posts..." onkeyup="searchPosts()">
             </div>
+
+           	<!-- 작성하기 버튼 -->
+           	<form action="goCommWrite" align="right">
+           		<button type="submit" id="write-btn">작성하기</button>
+           	</form>
 
             <!-- Table of posts -->
             <table class="board-table" id="postsTable">
@@ -52,7 +57,7 @@
                 <tbody>
                 	<c:forEach var="post" items="${posts}">
 	                		<tr>
-		                		<td>${post.cb_idx}</td>
+		                		<td>${post.idx}</td>
 		                		<td><a href="goWriteDetail">${post.cb_title}</a></td>
 		                		<td>${post.id}</td>
 		                		<td>${post.created_at}</td>
@@ -60,22 +65,31 @@
 	                		</tr>
                 	</c:forEach>
                 </tbody>
-				
             </table>
-            <div class="pagination">
-                <a href="#">&laquo;</a>
-                <a href="#" class="active">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <a href="#">5</a>
-                <a href="#">6</a>
-                <a href="#">7</a>
-                <a href="#">8</a>
-                <a href="#">9</a>
-                <a href="#">10</a>
-                <a href="#">&raquo;</a>
-            </div>
+            
+            <!-- 페이징 처리 -->
+            <c:if test="${totalPages > 0}">
+	            <div class="pagination">
+	                <c:if test="${currentPage > 0}">
+	                    <a href="goComm?page=${currentPage - 1}">Previous</a>
+	                </c:if>
+	
+	                <c:forEach begin="0" end="${totalPages - 1}" var="i">
+	                    <c:choose>
+	                        <c:when test="${i == currentPage}">
+	                            <span>${i + 1}</span>
+	                        </c:when>
+	                        <c:otherwise>
+	                            <a href="goComm?page=${i}">${i + 1}</a>
+	                        </c:otherwise>
+	                    </c:choose>
+	                </c:forEach>
+	
+	                <c:if test="${currentPage < totalPages - 1}">
+	                    <a href="goComm?page=${currentPage + 1}">Next</a>
+	                </c:if>
+	            </div>
+          	</c:if>
         </main>
         <footer>
             <p>@BOM</p>

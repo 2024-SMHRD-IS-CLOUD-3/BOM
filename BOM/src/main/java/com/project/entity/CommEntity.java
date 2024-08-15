@@ -22,9 +22,8 @@ public class CommEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-    //@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "community_info_seq_gen")
-    //@SequenceGenerator(name = "community_info_seq_gen", sequenceName = "community_info_seq", allocationSize = 1)
-	private Integer cb_idx;
+	@Column(name = "cb_idx") // DB의 컬럼명 명시적으로 매핑
+	private Integer idx;
 	
 	private String cb_title;
 	

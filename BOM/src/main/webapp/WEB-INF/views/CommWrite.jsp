@@ -12,9 +12,9 @@
     <header>
         <h1>BOM</h1>
         <nav>
-            <a href="/">Home</a>
+            <a href="./">Home</a>
             <div class="dropdown">
-                <a href="#" class="active">Market</a>
+                <a href="b_board" class="active">Market</a>
                 <div class="dropdown-content">
                     <a href="#">남아의류</a>
                     <a href="#">여아의류</a>
