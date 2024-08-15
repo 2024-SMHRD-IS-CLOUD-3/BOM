@@ -5,6 +5,10 @@ let chat = {
 
 let socket;
 
+
+// 우리 모두 다함께 열심히 뜯어봅시다. 화이팅!!
+
+
 // 사용자가 ID를 설정하면 웹소켓을 연결하고 버튼 상태를 변경합니다.
 $('#idSelect').on("click", function() {
     chat.id = $('#userId').val();
