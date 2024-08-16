@@ -20,10 +20,12 @@
         <div class="logo">BOM</div>
         <button id="backButton" onclick="goBack()">Back</button>
         <div class="menu">
-            <a href="#">Home</a>
-            <a href="#">Menu</a>
-            <a href="#">Board</a>
-            <a href="#">My page</a>
+           <ul>
+               <li><a href="./">Home</a></li>
+               <li><a href="b_board">Market</a></li>
+               <li><a href="goComm">Board</a></li>
+               <li><a href="goMyPage">MyPage</a></li>
+           </ul>
         </div>
     </div>
 

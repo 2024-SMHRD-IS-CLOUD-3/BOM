@@ -22,11 +22,11 @@
 
 
 	<!-- username  -->
-				<script type="text/javascript">
-					var nick = "${nick}";
-					var b_idx = "${deal.b_idx}"
-					
-				</script>
+	<script type="text/javascript">
+		var nick = "${nick}";
+		var b_idx = "${deal.b_idx}"
+		
+	</script>
 
 	<div class="header">
 		<div class="logo">BOM</div>
@@ -49,7 +49,7 @@
 				<div class="my-name" style="height: 600px;">
 					<div class="my-avatar"></div>
 					<!-- 내 닉네임 표기할 장소 -->
-					내 닉네임 표기할 장소 ${nick}
+					내 닉네임 : ${nick}
 				</div>
 
 				<!--  채팅목록 -->
@@ -152,7 +152,6 @@
 
 	<!-- webapp 을 기준으로 하면 된다. 내 jsp파일이 어디에 있는게 중요한 것이 아니라 webapp을 기준으로 src를 작성하면 된다 -->
 	<script type="text/javascript" src="asset/js/chat.js"></script>
-
 
 
 

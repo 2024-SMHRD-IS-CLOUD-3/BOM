@@ -3,6 +3,7 @@ package com.project.controller;
 
 
 import java.io.IOException;
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +14,9 @@ import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.google.gson.Gson;
 import com.project.entity.ChatEntity;
@@ -21,7 +25,8 @@ import com.project.repository.DealRepository;
 
 
 // 사용자들이 연결할 Socket 클래스! (이 클래스에 메세지를 보내고, 이 클래스에서 다시 메세지를 보내는)
-@ServerEndpoint("/chat")  // Socket에 연결하기 위한 URL Mapping 지정
+//@ServerEndpoint("/chat")  // Socket에 연결하기 위한 URL Mapping 지정
+//@Controller
 public class ChatController {
 	
 	
@@ -88,6 +93,17 @@ public class ChatController {
 			}
 		}
 		
-		
 	}
+	
+	@RequestMapping("/chat")
+    public String chatPage(Model model, Principal principal) {
+        // 로그인된 사용자의 아이디를 Principal로부터 가져오기
+        String username = principal.getName();
+
+        // 모델에 사용자 이름 추가
+        model.addAttribute("nick", username);
+        
+        return "chat";  // chat.jsp로 이동
+    }
+	
 }

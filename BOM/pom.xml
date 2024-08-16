@@ -141,6 +141,21 @@
 			<artifactId>hibernate-jpa-2.1-api</artifactId>
 			<version>1.0.0.Final</version>
 		</dependency>
+		
+		<!--연주 : 웹 소켓 의존성 추가-->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-websocket</artifactId>
+		</dependency>
+		
+		<!--연주 : 웹 소켓의 Stomp 프로토콜, SockJS를 사용하기 위한 의존성 추가-->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-websocket</artifactId>
+		</dependency>
+
+
+		
 	</dependencies>
 
 	<build>
