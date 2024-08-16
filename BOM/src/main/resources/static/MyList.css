@@ -99,6 +99,10 @@ header {
     color: red;
     margin-right: auto;
 }
+.faborite-score{
+	font-size:24px;
+	
+}
 
 .profile-btn {
     padding: 10px 20px;

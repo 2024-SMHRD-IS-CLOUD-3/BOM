@@ -82,7 +82,7 @@
 							href="goComm" style="padding: 10px 20px;">Board</a></li>
 						<li class="u-nav-item"><a
 							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
-							href="goMyPage" style="padding: 10px 20px;">MyPage</a></li>
+							href="goMyList" style="padding: 10px 20px;">MyPage</a></li>
 					</ul>
 				</div>
 				<div class="u-custom-menu u-nav-container-collapse">
@@ -101,7 +101,7 @@
 								<li class="u-nav-item"><a class="u-button-style u-nav-link"
 									href="goComm">Board</a></li>
 								<li class="u-nav-item"><a class="u-button-style u-nav-link"
-									href="goMyPage">MyPage</a></li>
+									href="goMyList">MyPage</a></li>
 							</ul>
 						</div>
 					</div>

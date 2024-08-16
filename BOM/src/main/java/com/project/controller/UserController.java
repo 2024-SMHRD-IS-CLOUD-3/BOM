@@ -227,9 +227,23 @@ public class UserController {
    }
    
    @RequestMapping("/goMyList")
-   public String goMyList() {
-	   
-	   return "MyList";
+   public String goMyList(HttpSession session, Model model) {
+       // 세션에서 현재 로그인된 사용자 정보 가져오기
+       UserEntity loginInfo = (UserEntity) session.getAttribute("LoginInfo");
+
+       if (loginInfo == null) {  // 로그인되지 않은 경우
+           return "redirect:/login";  // 로그인 페이지로 리다이렉트
+       }
+
+       // 데이터베이스에서 현재 사용자 정보를 다시 조회하여 최신 정보 유지
+       UserEntity userInfo = repo.findById(loginInfo.getId()).orElse(null);
+
+       if (userInfo != null) {
+           model.addAttribute("user", userInfo);  // 모델에 사용자 정보를 추가
+           return "MyList";  // 유저 정보를 가지고 MyList 페이지로 이동
+       } else {
+           return "redirect:/login";  // 사용자 정보를 찾을 수 없는 경우 로그인 페이지로 리다이렉트
+       }
    }
    
 
@@ -348,6 +362,32 @@ public class UserController {
        model.addAttribute("success", "회원 정보가 성공적으로 업데이트되었습니다.");  // 성공 메시지를 모델에 추가
 
        return "redirect:/goMyPage";  // 수정 완료 후 마이페이지로 리다이렉트
+   }
+   
+   
+   @RequestMapping("/exit")
+   public String exit(HttpSession session, RedirectAttributes redirectAttributes) {
+	    // 세션에서 로그인된 사용자 정보를 가져옵니다.
+	    UserEntity loginInfo = (UserEntity) session.getAttribute("LoginInfo");
+	   
+	    try {
+	        // 데이터베이스에서 해당 사용자 삭제
+	        repo.deleteById(loginInfo.getId());
+
+	        // 세션 무효화 (회원 탈퇴 후 로그아웃 효과)
+	        session.invalidate();
+
+	        // 성공 메시지를 추가하고 메인 페이지로 리다이렉트
+	        redirectAttributes.addFlashAttribute("message", "회원 탈퇴가 성공적으로 처리되었습니다.");
+	        return "redirect:/";
+
+	    } catch (Exception e) {
+	        e.printStackTrace();
+
+	        // 오류가 발생하면 메시지를 추가하고 다시 마이페이지로 리다이렉트
+	        redirectAttributes.addFlashAttribute("error", "회원 탈퇴 중 오류가 발생했습니다.");
+	        return "redirect:/goMyPage";
+	    }
    }
 
 
