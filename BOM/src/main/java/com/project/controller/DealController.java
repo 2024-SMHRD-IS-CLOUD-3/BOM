@@ -47,9 +47,7 @@ public class DealController {
 	@RequestMapping("/b_board")
 	public String dealMain(Model model, DealEntity entity) {
 		List<DealEntity> list = dealRepo.findAllOrderByBIdxDesc();
-		for(int i=0; i<list.size(); i++) {
-			
-		}
+	
 		model.addAttribute("deal", list);
 		
 
@@ -101,7 +99,8 @@ public class DealController {
         entity.setB_content(description);
         entity.setFilenames(filename);
         entity.setId(userId);
-          LocalDateTime now = LocalDateTime.now();
+         
+        LocalDateTime now = LocalDateTime.now();
 	    Timestamp timestamp = Timestamp.valueOf(now);
         entity.setCreated_at(timestamp);
 
@@ -111,6 +110,8 @@ public class DealController {
         return "redirect:/b_board";
     }
 
+	
+	// 게시판 상세내용
 	@RequestMapping("/goDetail")
 	public String goDetail(Model model, HttpSession session, Long idx) {
 
@@ -138,7 +139,7 @@ public class DealController {
         			model.addAttribute("duAddr", duAddr);
         			
         			
-        			String duInfo = user.get(l).getUserPp();
+        			String duInfo = user.get(l).getUserFile();
         			if(duInfo != null) {
         				duInfo= "forComm/duInfo";
         			} else {

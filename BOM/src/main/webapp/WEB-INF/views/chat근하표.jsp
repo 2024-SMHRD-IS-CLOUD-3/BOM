@@ -64,8 +64,6 @@
     </div>
     <script>
 
-        let currentFriend = '';
-        const chatHistory = {};
 
         function selectFriend(friendName, element) {
             currentFriend = friendName;

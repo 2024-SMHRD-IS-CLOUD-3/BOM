@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
@@ -20,7 +19,8 @@
 </head>
 
 <body>
-	
+
+
 	<!-- username  -->
 				<script type="text/javascript">
 					var nick = "${nick}";
@@ -97,7 +97,7 @@
 			<!-- 메세지가 작성되는 영역 -->
 
 			<div class="chat-input">
-				<input type="text" id="messageInput" placeholder="메시지를 입력하세요..."
+				<input type="text" id="msg" placeholder="메시지를 입력하세요..."
 					onkeypress="checkEnter(event)" />
 
 				<!-- onClick으로 답이 무조건 오게 설정되어있음. -->

@@ -14,7 +14,9 @@
 
 <body>
     <header>
-        <h1>BOM</h1>
+          <a href="./" style="text-decoration: none; color: inherit;">
+         <h1>BOM</h1>
+      </a>
         <nav>
               <a href="./">Home</a>
             <div class="dropdown">
@@ -26,7 +28,7 @@
                   <a href="book">도서교구</a>
                   <a href="furniture">아이가구</a>
                   <a href="newBorn">육아출산</a>
-                  <a href="car_main">유모차</a>
+                  <a href="babyCar">유모차</a>
                 </div>
             </div>
             <a href="goComm">Board</a>

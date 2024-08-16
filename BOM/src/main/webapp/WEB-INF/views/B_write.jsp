@@ -24,7 +24,7 @@
                   <a href="book">도서교구</a>
                   <a href="furniture">아이가구</a>
                   <a href="newBorn">육아출산</a>
-                  <a href="car_main">유모차</a>
+                  <a href="babyCar">유모차</a>
                 </div>
             </div>
             <a href="goComm">Board</a>
@@ -76,6 +76,15 @@
     </main>
 
     <script>
+    
+    function loadImage(event) {
+        const imagePreview = document.getElementById('preview');
+        imagePreview.src = URL.createObjectURL(event.target.files[0]);
+        imagePreview.onload = function() {
+            URL.revokeObjectURL(imagePreview.src);
+        }
+    }
+    
     // 페이지 상단으로 스크롤하는 함수
     function scrollToTop() {
         window.scrollTo({ top: 0, behavior: 'smooth' });

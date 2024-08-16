@@ -12,18 +12,36 @@ import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.google.gson.Gson;
 import com.project.entity.ChatEntity;
+import com.project.repository.ChatRepository;
+import com.project.repository.DealRepository;
 
 
 // 사용자들이 연결할 Socket 클래스! (이 클래스에 메세지를 보내고, 이 클래스에서 다시 메세지를 보내는)
 @ServerEndpoint("/chat")  // Socket에 연결하기 위한 URL Mapping 지정
 public class ChatController {
+	
+	
+	private static List<Session> userList = new ArrayList<Session>();
+
+
+
+
+	@Autowired
+	private DealRepository dealRepo;
+	
+	@Autowired
+	private ChatRepository chatRepo;
+	
 
 	// 아래 onOpen의 session에서 받은 내용을 저장할 수 있는 변수
-	// static은 전역변수로 사용하겠다는 뜻ㅇ
-	private static List<Session> userList = new ArrayList<Session>();
+	// static은 전역변수로 사용하겠다는 뜻
 	
+	
+
 	
 	// 웹소켓의 3가지 이벤트
 	// 1. 사용자가 웹소켓과 연결됐을 때 // 웹소켓과 연결됐을 때 아래의 기능을 하겠다
@@ -48,7 +66,7 @@ public class ChatController {
 	@OnMessage
 	public void onMessage(Session session, String payload) {
 		// payload : 사용자가 보낸 메세지
-		System.out.println(payload);
+		System.out.println("받은 메시지 : " + payload);
 		
 		// 1) 메시지 처리, 기능 실행
 		// JSON --> Java Object

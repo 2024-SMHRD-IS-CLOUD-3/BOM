@@ -26,10 +26,10 @@
                   <a href="book">도서교구</a>
                   <a href="furniture">아이가구</a>
                   <a href="newBorn">육아출산</a>
-                  <a href="car_main">유모차</a>
+                  <a href="babyCar">유모차</a>
                 </div>
             </div>
-            <a href="#">stroller</a>
+            <a href="stroller">stroller</a>
             <a href="goComm">Board</a>
             <a href="goMyPage">MyPage</a>
         </nav>
@@ -37,11 +37,11 @@
 
     <main>
         <section class="products" id="product-grid">
-     <c:forEach items="${deal}" var="deal"> 
+     <c:forEach items="${list}" var="deal"> 
             <article class="product-card">
                 <a class="card-link" href="goDetail?idx=${deal.b_idx}">
                     <div class="image">
-                        <img alt="파일 경로 확인" src="uploads/${deal.filenames}" />
+                        <img alt="파일 경로 확인" src="stroller/${deal.filenames}" />
                     </div>
                     <div class="card-desc">
                         <h2 class="card-title">${deal.b_title}</h2>
@@ -65,7 +65,7 @@
             </article>
       </c:forEach>
         </section>
-        <a href="goWrite"><button class="write-btn">글 쓰기</button></a>
+        <a href="gogo"><button class="write-btn">글 쓰기</button></a>
         <button class="scroll-to-top" onclick="scrollToTop()">↑</button>
     </main>
     
