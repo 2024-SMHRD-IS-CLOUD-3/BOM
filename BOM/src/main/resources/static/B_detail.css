@@ -2,13 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #d9d9d9;
-} 
-html {
-    height: 100vh;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
+    background-color: #e0e0e0;
 }
 
 header {
@@ -49,7 +43,7 @@ nav a.active {
 .dropdown-content {
     display: none;
     position: absolute;
-    top: 100%;
+    top: 100%; /* Parent height */
     left: 0;
     background-color: white;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
@@ -70,175 +64,113 @@ nav a.active {
     background-color: #f1f1f1;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-footer {
-    width: 100%;
-    height: 100px;
-    background: linear-gradient(to right, #6a9bc6, #89d499);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-}
-
-main {
-    margin-top: 120px; /* 헤더 높이 + 20px 간격 */
-    margin-bottom: 100px; /* 푸터 공간 */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    width: 100%;
-    overflow: auto;
-}
-
 .back-btn {
-    position: absolute;
-    top: 120px; /* 헤더 아래 20px 간격 */
-    left: 500px; /* 왼쪽으로 20px 떨어진 위치 */
-    padding: 10px 20px;
-    background-color: #69c173;
-    color: white;
+    margin-left: 350px; 
+    padding: 10px 20px; 
+    background-color: #69c173; /* 버튼 색상 */
+    color: white; /* 텍스트 색상 */
     border: none;
     border-radius: 5px;
     font-size: 1em;
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .back-btn:hover {
+    background-color: #57a763; /* 버튼 호버 효과 */
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.upload-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.image-preview {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 40px;
+}
+
+.image-preview img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px dashed #ccc;
+    padding: 20px;
+}
+
+.form-container {
+    flex: 1;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="text"], textarea, select {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    resize: none;
+}
+
+.file-upload {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.file-select-btn {
+    background-color: #69c173;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.file-select-btn:hover {
     background-color: #57a763;
 }
 
-
-.product-container {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    max-width: 900px;
-    width: 100%;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    margin-top: 50px;
-    margin-bottom: 20px; 
+input[type="checkbox"] {
+    margin-right: 5px;
 }
 
-.slider {
-    position: relative;
-    width: 50%;
-    height: auto;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-.slides {
-    display: flex;
-    transition: transform 0.3s ease-in-out;
-}
-
-.slide {
-    min-width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.2);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 50%;
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
-
-.product-details {
-    flex: 1;
-    margin-left: 20px;
-}
-
-h2 {
-    font-size: 1.5em;
-    margin-top: 0;
-}
-
-.price {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #333;
-}
-
-.description {
-    margin-top: 15px;
-    color: #555;
-    line-height: 1.6;
-}
-
-.chat-btn {
+.submit-btn {
     background-color: #69c173;
     color: white;
     border: none;
     padding: 10px 20px;
     font-size: 1em;
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    cursor: pointer;
     border-radius: 5px;
-}
-
-.chat-btn:hover {
-    background-color: #57a763;
-}
-
-.seller-info {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.seller-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin-left: auto;
-}
-
-.change-btn, .del-btn {
-    background-color: #69c173;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    font-size: 0.8em;
     cursor: pointer;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    align-self: flex-end;
 }
 
-.change-btn:hover, .del-btn:hover {
+.submit-btn:hover {
     background-color: #57a763;
-}
-
-.seller-info img {
-    width: 40px;
-    height: 40px;
 }
