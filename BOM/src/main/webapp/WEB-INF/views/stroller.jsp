@@ -10,6 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BOM의 유모차</title>
     <link rel="stylesheet" href="dd.css">
+    
+    <script>
+
+</script>
 </head>
 
 <body>
@@ -29,7 +33,7 @@
                   <a href="babyCar">유모차</a>
                 </div>
             </div>
-            <a href="stroller">stroller</a>
+            <a href="goCarWrite">stroller</a>
             <a href="goComm">Board</a>
             <a href="goMyPage">MyPage</a>
         </nav>
@@ -39,14 +43,14 @@
         <section class="products" id="product-grid">
      <c:forEach items="${list}" var="deal"> 
             <article class="product-card">
-                <a class="card-link" href="goDetail?idx=${deal.b_idx}">
+                <a class="card-link" href="goDetail?idx=${deal.car_idx}">
                     <div class="image">
-                        <img alt="파일 경로 확인" src="stroller/${deal.filenames}" />
+                        <img alt="파일 경로 확인" src="stroller/${deal.car_file}" />
                     </div>
                     <div class="card-desc">
-                        <h2 class="card-title">${deal.b_title}</h2>
+                        <h2 class="card-title">${deal.car_title}</h2>
                         <div class="price">
-                            ${deal.how_much}
+                            ${deal.car_price}
                         </div>
                         <div class="region">
                             ${duAddr}

@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
+import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -45,18 +46,44 @@ public class CarController {
 	private CarRepository carRepo;
 
 	@RequestMapping("/car")
-	private String carMain(Model model, DealEntity entity, HttpSession session) {
+	public String car(HttpSession session) {
 
-		List<DealEntity> carList = dealRepo.findByCategoryCarOrderByBIdxDesc();
-		System.out.println(carList);
-		model.addAttribute("list", carList);
+	    String userId = (String) session.getAttribute("userId");
+	      if(userId == null) {
+	    	  return "login";
+	      }
+	    
+	      if (userId.equals("test")) {
+	    	 
+	    	  return "redirect:/pathAdmin";
+	      } else {
+	    	  return "redirect:/goCar";
+	      }
+	  
+	  
+	   }
+	
 		
-		UserEntity LoginInfo = (UserEntity) session.getAttribute("LoginInfo");
-		if(LoginInfo.getId().equals("test")){
-			return "#";
-				
-		}
-		return "stroller";
+	 @RequestMapping("/pathAdmin")
+	 public String pathAdmin(Model model) {
+		 List<CarEntity> entity = carRepo.findAllDesc();
+
+		 System.out.println("나에게 엔티티를 보여줘" + entity);
+		 model.addAttribute("deal", entity);
+		 
+		 
+		 return "admin";
+	 }
+		
+	
+	@RequestMapping("goCar")
+	private String goCar(Model model){
+
+		List<CarEntity> entity = carRepo.findAllDesc();
+		model.addAttribute("list", entity);
+	
+	return "stroller";
+	
 	}
 
 	@RequestMapping("/gogo")
@@ -66,19 +93,29 @@ public class CarController {
 
 		if (loginInfo == null) {
 			return "login";
+		} else if (loginInfo.getId().equals("test")){
+			return  "redirect:/pathAdmin";
 		} else {
-
+			
 			return "redirect:/goCarWrite";
 		}
 	}
 
 	@RequestMapping("/goCarWrite")
-	private String goCarWrite() {
-
-		return "strollerWrite";
-
+	private String goCarWrite(HttpSession session, Model model) {
+		UserEntity loginInfo = (UserEntity) session.getAttribute("LoginInfo");
+		if (loginInfo.getId() != null) {
+			model.addAttribute("id", loginInfo.getId());
+			return "strollerWrite";
+		} else if(loginInfo.getId().equals("test")) {
+			return "admin";
+		}else {
+		
+		return "redirect:/doLogin";
+		}
 	}
 
+	@Transactional
 	@RequestMapping("/carWrite")
 	private String carWrite(@RequestParam("b_title") String title,
 			@RequestParam("how_much") Long price,
@@ -107,23 +144,29 @@ public class CarController {
 			return "redirect:/goCarWrite";
 		}
 
-		DealEntity entity = new DealEntity();
-		entity.setB_title(title);
-		entity.setHow_much(price);
-		entity.setCategory(category);
-		entity.setB_content(content);
-		entity.setFilenames(filename);
-		entity.setId(userId);
+		CarEntity carEntity = new CarEntity();
+		carEntity.setCar_content(content);
+		carEntity.setCar_cours("신청");
+		carEntity.setCar_file(filename);
+		carEntity.setCar_price(price);
+		carEntity.setCar_title(title);
+		carEntity.setId(userId);
+		
+		System.out.println("보여줘 너의 엔티티를 " + carEntity);
+		
+		
 		
 		LocalDateTime now = LocalDateTime.now();
 		Timestamp timestamp = Timestamp.valueOf(now);
-		entity.setCreated_at(timestamp);
-
-		dealRepo.save(entity);
+		carEntity.setCard_at(timestamp);
+		
+		carRepo.save(carEntity);
 
 		
 
-		return "redirect:/car";
+		
+
+		return "index";
 	}
 	
 	@RequestMapping("goCarDetail")

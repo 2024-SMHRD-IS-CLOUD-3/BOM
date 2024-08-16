@@ -62,6 +62,10 @@
                             <p class="seller-name">${yoyo.id}</p>
                             <p class="region">${duAddr}</p>
                         </div>
+                        <div class="seller-buttons">
+                        <button class="change-btn">수정하기</button>
+                        <button class="del-btn">삭제하기</button>
+                    </div>
                         
                     </div>
                     

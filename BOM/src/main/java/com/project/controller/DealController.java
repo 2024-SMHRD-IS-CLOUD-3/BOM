@@ -57,10 +57,16 @@ public class DealController {
 	
 	@RequestMapping("/goWrite")
 	   public String goWrite(HttpSession session) {
-	      UserEntity loginInfo = (UserEntity) session.getAttribute("LoginInfo");
+	   
+	  	UserEntity loginInfo = (UserEntity) session.getAttribute("LoginInfo");
+
+		if (loginInfo == null) {
+			return "login";
+		} else {
+
+			return "B_write";
 	      
-	      
-	      return "B_write";
+		}
 	   }
 
 	
@@ -112,12 +118,26 @@ public class DealController {
 
 	
 	// 게시판 상세내용
-	@RequestMapping("/goDetail")
-	public String goDetail(Model model, HttpSession session, Long idx) {
-
+	@RequestMapping("/writeOr")
+	public String writeOr(HttpSession session, Long idx) {
+		UserEntity loginInfo = (UserEntity) session.getAttribute("LoginInfo");
+		List<DealEntity> deal = dealRepo.findByIdx(idx);
+		System.out.println("어쩌라구"+deal);
+		/*
+		 * System.out.println("로그인정보" +loginInfo.getId().equals(deal.get().getId()));
+		 * 
+		 * if (loginInfo.getId().equals(deal.get().getId())) { return
+		 * "redirect:/gogoWriter"; } else {
+		 */
+			return "redirect:/goDetail";
+			/* } */
+		
+	}
+	
+	@RequestMapping("/gogoWriter")
+	public String gogoWriter(Model model, HttpSession session, Long idx) {
 		List<DealEntity> deal = dealRepo.findAll();
 
-	
 		List<UserEntity> user = repo.findAll();
 	
 		System.out.println("보여죵"+idx);
@@ -128,27 +148,74 @@ public class DealController {
 		}
 		
 		
+		
 		for(int i=0; i<deal.size(); i++) {
         	for(int l=0; l<user.size();l++) {
         		if(deal.get(i).getId().equals(user.get(l).getId())) {
         		
-        			
         			model.addAttribute("user", user.get(l));
-        			String duAddr = user.get(l).getAddr();
-        			
-        			model.addAttribute("duAddr", duAddr);
-        			
+        			model.addAttribute("duAddr", user.get(l).getAddr());
         			
         			String duInfo = user.get(l).getUserFile();
         			if(duInfo != null) {
-        				duInfo= "forComm/duInfo";
+        				 model.addAttribute("duInfo", duInfo);
         			} else {
-        				duInfo= "uploads/free-icon-person-4203951.png";
+        				 duInfo= "free-icon-person-4203951.png";
+        				 model.addAttribute("duInfo", duInfo);
         			}
         			
         			deal.get(i).setB_views(deal.get(i).getB_views()+1);
         			
-        			model.addAttribute("duInfo", duInfo);
+        		}
+        		
+        	}
+        	
+        }
+		
+	
+	
+		dealRepo.saveAll(deal); // 변경 사항 저장
+		return "B_WriteDetail";
+	}
+	
+	
+	
+	
+	@RequestMapping("/goDetail")
+	public String goDetail(Model model, HttpSession session, Long idx) {
+
+		
+		
+		List<DealEntity> deal = dealRepo.findAll();
+
+		List<UserEntity> user = repo.findAll();
+	
+		System.out.println("보여죵"+idx);
+		for(int i=0; i<deal.size(); i++) {
+			if(deal.get(i).getB_idx().equals(idx)) {
+			model.addAttribute("yoyo", deal.get(i));
+			}
+		}
+		
+		
+		
+		for(int i=0; i<deal.size(); i++) {
+        	for(int l=0; l<user.size();l++) {
+        		if(deal.get(i).getId().equals(user.get(l).getId())) {
+        		
+        			model.addAttribute("user", user.get(l));
+        			model.addAttribute("duAddr", user.get(l).getAddr());
+        			
+        			String duInfo = user.get(l).getUserFile();
+        			if(duInfo != null) {
+        				 model.addAttribute("duInfo", duInfo);
+        			} else {
+        				 duInfo= "free-icon-person-4203951.png";
+        				 model.addAttribute("duInfo", duInfo);
+        			}
+        			
+        			deal.get(i).setB_views(deal.get(i).getB_views()+1);
+        			
         		}
         		
         	}

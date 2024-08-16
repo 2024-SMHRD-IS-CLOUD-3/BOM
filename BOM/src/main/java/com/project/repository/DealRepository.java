@@ -9,13 +9,15 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.project.entity.DealEntity;
 
 
 @Repository
 public interface DealRepository extends JpaRepository<DealEntity, Long> {
-
+	
+	
 	
 	
 	
@@ -57,6 +59,9 @@ public interface DealRepository extends JpaRepository<DealEntity, Long> {
 	
 	@Query("SELECT d FROM DealEntity d WHERE d.category = '유모차' ORDER BY d.b_idx DESC")
 	List<DealEntity> findByCategoryCOrderByBIdxDesc();
+	
+	@Query("SELECT d FROM DealEntity d WHERE d.b_idx = :b_idx ORDER BY d.b_idx DESC")
+	List<DealEntity> findByIdx(@RequestParam("b_idx") Long b_idx);
 
 		
 }
