@@ -54,7 +54,7 @@
                 </div>
                 <div class="product-details">
                     <div class="seller-info">
-                        <img src="${duInfo}" alt="Seller Icon" class="seller-icon">
+                        <img src="uploads/${duInfo}" alt="Seller Icon" class="seller-icon">
                         <div>
                             <p class="seller-name">${yoyo.id}</p>
                             <p class="region">${duAddr}</p>
