@@ -35,7 +35,7 @@
         <main>
             <!-- Search bar -->
             <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Search posts..." onkeyup="searchPosts()">
+                <input type="text" id="searchInput" placeholder="검색어를 입력하세요" onkeyup="searchPosts()">
             </div>
 
            	<!-- 작성하기 버튼 -->

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,12 +85,20 @@
 
 				    <!-- 댓글 목록 -->
 				    <div class="comments">
-				        <c:forEach var="comment" items="${comments}">
-				            <div class="comment-item">
-				                <p><strong>${comment.id}</strong>: ${comment.ccmt_content}    ${comment.created_at}</p>
-				            </div>
-				        </c:forEach>
+				       <c:choose>
+					        <c:when test="${empty comments}">
+					            <p>댓글이 없습니다.</p>
+					        </c:when>
+					        <c:otherwise>
+					            <c:forEach var="comment" items="${comments}">
+					                <div class="comment-item">
+					                    <p><strong>${comment.id}</strong>: ${comment.ccmt_content} / ${comment.created_at}</p>
+					                </div>
+					            </c:forEach>
+					        </c:otherwise>
+					    </c:choose>
 				    </div>
+				    
                 </div>
             </div>
 

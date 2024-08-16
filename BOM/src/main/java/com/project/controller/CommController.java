@@ -143,17 +143,19 @@ public class CommController {
 
         if (post == null) {
             model.addAttribute("message", "Post not found");
+            System.out.println(model.getAttribute("message"));
             // return "errorPage";
         }
         
         // 조회수 증가
         post.setViews(post.getViews() + 1);
-        com_repo.save(post);  // Save the updated views count to the database
-
+        com_repo.save(post);  // 업데이트된 조회수를 DB에 저장
+        
         model.addAttribute("post", post);
         
         // 게시물에 달린 댓글 목록 불러오기
         List<MentEntity> comments = ment_repo.findByCbIdx(idx);
+        System.out.println("댓글 수 : "+comments.size());
         model.addAttribute("comments", comments);
 
         return "CommDetail";

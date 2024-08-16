@@ -340,7 +340,7 @@ public class UserController {
        session.setAttribute("LoginInfo", currentUser);
        model.addAttribute("success", "회원 정보가 성공적으로 업데이트되었습니다.");  // 성공 메시지를 모델에 추가
 
-       return "MyPageDetail";  // 수정 완료 후 마이페이지로 리다이렉트
+       return "redirect:/goMyPage";  // 수정 완료 후 마이페이지로 리다이렉트
    }
 
 
