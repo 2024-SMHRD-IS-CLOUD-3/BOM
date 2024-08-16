@@ -225,6 +225,13 @@ public class UserController {
 
       return "login";
    }
+   
+   @RequestMapping("/goMyList")
+   public String goMyList() {
+	   
+	   return "MyList";
+   }
+   
 
    @RequestMapping("/loginCh")
    public String login(@RequestParam("id") String id, @RequestParam("pw") String pw, HttpSession session,

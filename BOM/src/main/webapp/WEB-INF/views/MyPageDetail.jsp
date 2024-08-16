@@ -66,7 +66,7 @@
    </header>
 
    <div class="container">
-      <h2>프로필 수정</h2>
+      <h2>프로필 수정</h2> <a href="goMyList"><button href="goMyList">내가 쓴 똥</button></a>
       
       <form action="updateProfile" method="post" enctype="multipart/form-data">
          <!-- 프로필 사진 변경 -->
