@@ -48,42 +48,38 @@ public class CarController {
 	@RequestMapping("/car")
 	public String car(HttpSession session) {
 
-	    String userId = (String) session.getAttribute("userId");
-	      if(userId == null) {
-	    	  return "login";
-	      }
-	    
-	      if (userId.equals("test")) {
-	    	 
-	    	  return "redirect:/pathAdmin";
-	      } else {
-	    	  return "redirect:/goCar";
-	      }
-	  
-	  
-	   }
-	
-		
-	 @RequestMapping("/pathAdmin")
-	 public String pathAdmin(Model model) {
-		 List<CarEntity> entity = carRepo.findAllDesc();
+		String userId = (String) session.getAttribute("userId");
+		if (userId == null) {
+			return "login";
+		}
 
-		 System.out.println("나에게 엔티티를 보여줘" + entity);
-		 model.addAttribute("deal", entity);
-		 
-		 
-		 return "admin";
-	 }
-		
-	
+		if (userId.equals("test")) {
+
+			return "redirect:/pathAdmin";
+		} else {
+			return "redirect:/goCar";
+		}
+
+	}
+
+	@RequestMapping("/pathAdmin")
+	public String pathAdmin(Model model) {
+		List<CarEntity> entity = carRepo.findAllDesc();
+
+		System.out.println("나에게 엔티티를 보여줘" + entity);
+		model.addAttribute("deal", entity);
+
+		return "admin";
+	}
+
 	@RequestMapping("goCar")
-	private String goCar(Model model){
+	private String goCar(Model model) {
 
 		List<CarEntity> entity = carRepo.findAllDesc();
 		model.addAttribute("list", entity);
-	
-	return "stroller";
-	
+
+		return "stroller";
+
 	}
 
 	@RequestMapping("/gogo")
@@ -93,10 +89,10 @@ public class CarController {
 
 		if (loginInfo == null) {
 			return "login";
-		} else if (loginInfo.getId().equals("test")){
-			return  "redirect:/pathAdmin";
+		} else if (loginInfo.getId().equals("test")) {
+			return "redirect:/pathAdmin";
 		} else {
-			
+
 			return "redirect:/goCarWrite";
 		}
 	}
@@ -107,23 +103,20 @@ public class CarController {
 		if (loginInfo.getId() != null) {
 			model.addAttribute("id", loginInfo.getId());
 			return "strollerWrite";
-		} else if(loginInfo.getId().equals("test")) {
+		} else if (loginInfo.getId().equals("test")) {
 			return "admin";
-		}else {
-		
-		return "redirect:/doLogin";
+		} else {
+
+			return "redirect:/doLogin";
 		}
 	}
 
 	@Transactional
 	@RequestMapping("/carWrite")
-	private String carWrite(@RequestParam("b_title") String title,
-			@RequestParam("how_much") Long price,
-			@RequestParam("category") String category, 
-			@RequestParam("b_content") String content,
-			@RequestParam("file") MultipartFile file, 
-			HttpSession session, Model model,
-			 RedirectAttributes redirectAttributes) {
+	private String carWrite(@RequestParam("b_title") String title, @RequestParam("how_much") Long price,
+			@RequestParam("category") String category, @RequestParam("b_content") String content,
+			@RequestParam("file") MultipartFile file, HttpSession session, Model model,
+			RedirectAttributes redirectAttributes) {
 
 		String userId = (String) session.getAttribute("userId");
 		if (file.isEmpty()) {
@@ -134,10 +127,10 @@ public class CarController {
 		String uuid = UUID.randomUUID().toString();
 		String filename = uuid + "_" + file.getOriginalFilename();
 		Path path = Paths.get(savePath + filename);
-	
+
 		try (InputStream inputStream = file.getInputStream()) {
-		       Files.copy(inputStream, path, StandardCopyOption.REPLACE_EXISTING);
-		
+			Files.copy(inputStream, path, StandardCopyOption.REPLACE_EXISTING);
+
 		} catch (IOException e) {
 			e.printStackTrace();
 			redirectAttributes.addFlashAttribute("message", "파일 업로드 실패.");
@@ -151,24 +144,18 @@ public class CarController {
 		carEntity.setCar_price(price);
 		carEntity.setCar_title(title);
 		carEntity.setId(userId);
-		
+
 		System.out.println("보여줘 너의 엔티티를 " + carEntity);
-		
-		
-		
+
 		LocalDateTime now = LocalDateTime.now();
 		Timestamp timestamp = Timestamp.valueOf(now);
 		carEntity.setCard_at(timestamp);
-		
+
 		carRepo.save(carEntity);
-
-		
-
-		
 
 		return "index";
 	}
-	
+
 	@RequestMapping("goCarDetail")
 	public String carDetail(Long idx, Model model) {
 		List<CarEntity> car = carRepo.findAll();
