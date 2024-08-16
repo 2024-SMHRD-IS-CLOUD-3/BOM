@@ -24,7 +24,13 @@
 		"@context": "http://schema.org",
 		"@type": "Organization",
 		"name": ""
-}</script>
+}
+</script>
+<script>
+
+
+</script>
+
 <meta name="theme-color" content="#478ac9">
 <meta property="og:title" content="Start page">
 <meta property="og:type" content="website">
@@ -69,8 +75,8 @@
 							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
 							href="b_board" style="padding: 10px 20px;">Market</a></li>
 						<li class="u-nav-item"><a
-							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
-							href="car" style="padding: 10px 20px;">stroller</a></li>
+							id="car" class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
+							href="car" style="padding: 10px 20px;">Stroller</a></li>
 						<li class="u-nav-item"><a
 							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
 							href="goComm" style="padding: 10px 20px;">Board</a></li>
@@ -91,7 +97,7 @@
 								<li class="u-nav-item"><a class="u-button-style u-nav-link"
 									href="b_board">Market</a></li>
 								<li class="u-nav-item"><a class="u-button-style u-nav-link"
-									href="car">stroller</a></li>
+									href="car">Stroller</a></li>
 								<li class="u-nav-item"><a class="u-button-style u-nav-link"
 									href="goComm">Board</a></li>
 								<li class="u-nav-item"><a class="u-button-style u-nav-link"
