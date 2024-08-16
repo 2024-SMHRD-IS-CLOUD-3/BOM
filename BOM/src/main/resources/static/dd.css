@@ -4,6 +4,19 @@
     font-weight: 400;
     font-style: normal;
 }
+body,
+section,
+header,
+footer,
+.dropdown {
+  position: relative;
+}
+
+section > *,
+header > *,
+footer > * {
+  position: relative;
+}
 
 body {
     font-family: 'Pretendard-Regular', Arial, sans-serif;
@@ -12,12 +25,19 @@ body {
     background-color: #f0f0f0;
 }
 
+
 header {
-    background: linear-gradient(to right, #6a9bc6, #89d499);
+    background-image: url('./images/bg.jpg'); /* 첫페이지 이미지를 헤드이미지로 사용해보잣! */
+    background-repeat: no-repeat;
+    background-position: top; /* 이미지의 상단만 보여주기 */
+    background-size: 100% auto; /* 가로를 100%로 채우고, 세로는 자동 크기 조정 */
+    overflow: hidden; /* 헤더 영역 밖의 이미지는 숨김 */
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 1; /* 헤더의 z-index 설정 (낮은 값) */
+    overflow: visible; /* 헤더 내 요소가 잘리지 않도록 설정 */
 }
 
 header h1 {
@@ -29,6 +49,8 @@ header h1 {
 nav {
     display: flex;
     align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
 nav a {
@@ -44,10 +66,6 @@ nav a.active {
     color: #f50c6e;
 }
 
-.dropdown {
-    position: relative;
-}
-
 .dropdown-content {
     display: none;
     position: absolute;
@@ -55,10 +73,11 @@ nav a.active {
     left: 0;
     background-color: white;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    z-index: 10; /* 드롭다운 메뉴가 헤더 위로 오도록 설정 */
     border-radius: 4px;
     min-width: 160px;
-    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
+    font-family: 'Pretendard-Regular', Arial, sans-serif;
+    overflow: visible; /* 드롭다운 메뉴 내에서 잘리지 않도록 설정 */
 }
 
 .dropdown-content a {
@@ -68,6 +87,20 @@ nav a.active {
     display: block;
     font-size: 0.9em;
     font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 10; /* 드롭다운 메뉴가 헤더 위로 오도록 설정 */
+    border-radius: 4px;
+    min-width: 160px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif;
+    overflow: visible; /* 드롭다운 메뉴 내에서 잘리지 않도록 설정 */
 }
 
 .dropdown-content a:hover {

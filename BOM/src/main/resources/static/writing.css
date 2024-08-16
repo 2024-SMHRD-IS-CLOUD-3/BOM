@@ -13,7 +13,11 @@ body {
 }
 
 header {
-    background: linear-gradient(to right, #6a9bc6, #89d499);
+    background-image: url('./images/bg.jpg'); /* 첫페이지 이미지를 헤드이미지로 사용해보잣! */
+    background-repeat: no-repeat;
+    background-position: top; /* 이미지의 상단만 보여주기 */
+    background-size: 100% auto; /* 가로를 100%로 채우고, 세로는 자동 크기 조정 */
+    overflow: hidden; /* 헤더 영역 밖의 이미지는 숨김 */
     padding: 20px;
     display: flex;
     justify-content: space-between;
