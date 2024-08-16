@@ -150,25 +150,6 @@
 				</div>
 			</div>
 		</div>
-	</section>
-
-
-
-	<footer class="u-align-center u-clearfix u-footer u-grey-10 u-footer"
-		id="sec-199d">
-		<div class="u-clearfix u-sheet u-sheet-1">
-			<p class="u-custom-font u-small-text u-text u-text-variant u-text-1">
-				광주 서구 송암로 60 2층 6교육관<br>고객센터 담당자 채수민
-			</p>
-		</div>
-	</footer>
-	<section class="u-backlink u-clearfix u-grey-80">
-		<p class="u-text">
-			<span>This site was created with the </span> <a class="u-link"
-				href="https://nicepage.com/" target="_blank" rel="nofollow"> <span>Nicepage</span>
-			</a>
-		</p>
-	</section>
-
+	</section>	
 </body>
 </html>
