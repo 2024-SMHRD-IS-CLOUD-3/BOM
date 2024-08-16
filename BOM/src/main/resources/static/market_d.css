@@ -1,5 +1,12 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
     margin: 0;
     padding: 0;
     background-color: #e0e0e0;
@@ -16,7 +23,7 @@ header {
 header h1 {
     margin: 0;
     color: white;
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 nav {
@@ -30,6 +37,7 @@ nav a {
     margin: 0 15px;
     font-weight: bold;
     transition: color 0.3s ease;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 nav a.active {
@@ -43,13 +51,14 @@ nav a.active {
 .dropdown-content {
     display: none;
     position: absolute;
-    top: 100%; /* Parent height */
+    top: 100%;
     left: 0;
     background-color: white;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
     border-radius: 4px;
     min-width: 160px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 .dropdown-content a {
@@ -58,6 +67,7 @@ nav a.active {
     text-decoration: none;
     display: block;
     font-size: 0.9em;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 .dropdown-content a:hover {
@@ -69,19 +79,20 @@ nav a.active {
 }
 
 .back-btn {
-    margin-left: 490px; /* product-container의 왼쪽 여백과 동일한 크기로 설정 */
+    margin-left: 490px;
     padding: 10px 20px;
-    background-color: #69c173; /* 버튼 색상 */
-    color: white; /* 텍스트 색상 */
+    background-color: #69c173;
+    color: white;
     border: none;
     border-radius: 5px;
     font-size: 1em;
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 .back-btn:hover {
-    background-color: #57a763; /* 버튼 호버 효과 */
+    background-color: #57a763;
 }
 
 .product-container {
@@ -93,7 +104,8 @@ nav a.active {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative; /* 채팅하기 버튼의 위치를 정하기 위해 상대 위치 설정 */
+    position: relative;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 .slider {
@@ -137,6 +149,7 @@ nav a.active {
 .product-details {
     flex: 1;
     margin-left: 20px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 .seller-info {
@@ -155,28 +168,33 @@ nav a.active {
 .seller-name {
     font-weight: bold;
     margin: 0;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 .location {
     color: #888;
     margin: 0;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 h2 {
     font-size: 1.5em;
     margin-top: 0;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 .price {
     font-size: 1.2em;
     font-weight: bold;
     color: #333;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 .description {
     margin-top: 15px;
     color: #555;
     line-height: 1.6;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 .chat-btn {
@@ -185,11 +203,12 @@ h2 {
     border: none;
     padding: 10px 20px;
     font-size: 1em;
-    position: absolute; /* 버튼을 div 내부의 고정 위치에 배치 */
-    bottom: 20px; /* 아래에서 20px 위로 */
-    right: 20px; /* 오른쪽에서 20px 왼쪽으로 */
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
     cursor: pointer;
     border-radius: 5px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 .chat-btn:hover {
