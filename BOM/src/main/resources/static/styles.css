@@ -178,6 +178,11 @@ footer {
     margin-top: 20px;
 }
 
+/* 마지막 버튼의 오른쪽 여백 없애기 */
+.back-button a:last-child {
+    margin-right: 0; /* 마지막 버튼의 오른쪽 여백을 없앱니다 */
+}
+
 .button {
     display: inline-block;
     padding: 10px 20px;
@@ -188,6 +193,7 @@ footer {
     border-radius: 8px;
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease;
+    margin-right: 20px; /* 버튼 간 간격 조정하기! */
 }
 
 .button:hover {

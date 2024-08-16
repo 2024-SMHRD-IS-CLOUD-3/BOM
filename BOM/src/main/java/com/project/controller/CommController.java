@@ -200,4 +200,29 @@ public class CommController {
         return "redirect:/goWriteDetail?idx=" + cb_idx;
     }
 	
+    // 수정하기 --- 미완성 헤헤 
+//    @RequestMapping("/editPost")
+//    public String editPost(@RequestParam("idx") Integer idx, Model model) {
+//        CommEntity post = com_repo.findById(idx).orElse(null);
+//
+//        if (post == null) {
+//            return "errorPage";
+//        }
+//
+//        model.addAttribute("post", post);
+//        return "CommEdit";  // 수정 페이지로 이동
+//    }
+    
+    // 게시물 삭제하기
+    @RequestMapping("/deletePost")
+    public String deletePost(@RequestParam("idx") Integer idx, HttpSession session) {
+        CommEntity post = com_repo.findById(idx).orElse(null);
+
+        if (post != null && session.getAttribute("userId").equals(post.getId())) {
+            com_repo.delete(post);  // 게시글 삭제
+        }
+
+        return "redirect:/goComm";  // 게시글 목록 페이지로 리다이렉트
+    }
+    
 }

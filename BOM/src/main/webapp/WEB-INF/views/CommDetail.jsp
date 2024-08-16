@@ -69,8 +69,8 @@
 	            
                 <div class="post-footer">
                     <div class="like-comment-section">
-                        <span class="like-count">좋아요 0</span>
-                        <span class="comment-count">댓글 0</span>
+                        <!-- <span class="like-count">좋아요 0</span> -->
+                        <span class="comment-count">댓글 ${comments.size()}</span>
                     </div>
                 </div>
 
@@ -104,6 +104,11 @@
 
             <div class="back-button">
                 <a href="goPostList" class="button">목록</a>
+                <!-- 수정 및 삭제 버튼 -->
+                <c:if test="${sessionScope.userId == post.id}">
+                    <a href="editPost?idx=${post.idx}" class="button">수정</a>
+                    <a href="deletePost?idx=${post.idx}" class="button" onclick="return confirm('정말 삭제하시겠습니까?');">삭제</a>
+                </c:if>
             </div>
         </main>
 
