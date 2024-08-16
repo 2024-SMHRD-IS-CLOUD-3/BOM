@@ -10,19 +10,13 @@ let socket;
 
 
 // 사용자가 ID를 설정하면 웹소켓을 연결하고 버튼 상태를 변경합니다.
-$('#idSelect').on("click", function() {
-    chat.id = $('#userId').val();
-    
-    if (chat.id.trim() === "") {
-        alert("Please enter a valid ID.");
-        return;
-    }
-
-    $('#button-send').removeAttr('disabled');
-    $(this).attr('disabled', 'disabled');
+$(nick).on("click", function() {
+    chat.id = $('#nick').val();
+ 
+ 
     
     // 웹소켓 연결
-    socket = new WebSocket("ws://localhost:8081/WebSocket/chat");
+    socket = new WebSocket("ws://localhost:8088/bompj/goChat?idx="+deal.b_idx);
     
     // 웹소켓 이벤트 핸들러 설정
     socket.onopen = onOpen;

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
@@ -19,12 +20,23 @@
 </head>
 
 <body>
+	
+	<!-- username  -->
+				<script type="text/javascript">
+					var nick = "${nick}";
+					var b_idx = "${deal.b_idx}"
+					
+				</script>
 
 	<div class="header">
 		<div class="logo">BOM</div>
 		<div class="menu">
-			<a href="#">Home</a> <a href="#">Menu</a> <a href="#">Board</a> <a
-				href="#">My page</a>
+			<a href="./">Home</a>
+			<div class="dropdown">
+				<a href="b_board" class="active">Market</a>
+				<div class="dropdown-content"></div>
+			</div>
+			<a href="goComm">Board</a> <a href="goMyPage">MyPage</a>
 		</div>
 
 	</div>
@@ -37,7 +49,7 @@
 				<div class="my-name" style="height: 600px;">
 					<div class="my-avatar"></div>
 					<!-- 내 닉네임 표기할 장소 -->
-					내 닉네임 표기할 장소
+					내 닉네임 표기할 장소 ${nick}
 				</div>
 
 				<!--  채팅목록 -->
@@ -62,28 +74,28 @@
 					style="font-size: 18px; font-weight: bold;"></div>
 			</div>
 			<div class="chat-messages" id="chatMessages">
-			<div class='row'>
-			<div class='col-sm-6'></div>
-			<div class='col-sm-6'>
-				<div class='alert alert-secondary'>
-					<b>메세지 내용</b>
+				<div class='row'>
+					<div class='col-sm-6'></div>
+					<div class='col-sm-6'>
+						<div class='alert alert-secondary'>
+							<b>메세지 내용</b>
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
 
-		<!-- 남이 보낸 메세지 예시 -->
-		<div class='row'>
-			<div class='col-6'>
-				<div class='alert alert-warning'>
-					<b>보낸 사람 : 메세지 내용</b>
+				<!-- 남이 보낸 메세지 예시 -->
+				<div class='row'>
+					<div class='col-6'>
+						<div class='alert alert-warning'>
+							<b>보낸 사람 : 메세지 내용</b>
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
 
-			
+
 			</div>
 			<!-- 메세지가 작성되는 영역 -->
-			
+
 			<div class="chat-input">
 				<input type="text" id="messageInput" placeholder="메시지를 입력하세요..."
 					onkeypress="checkEnter(event)" />
@@ -94,7 +106,7 @@
 		</div>
 
 		<!-- 내가 보낸 메세지 예시 -->
-		
+
 
 	</div>
 	<!-- chat body end -->
@@ -104,9 +116,10 @@
 			<div class="col-lg-1"></div>
 			<div class="input-group col-lg-10">
 
-				<!-- username  -->
-				<input id="userId" class="form-control"
-					placeholder="아이디를 입력해야 채팅 사용가능">
+			
+
+			<!-- 	<input id="userId" class="form-control"
+					placeholder="아이디를 입력해야 채팅 사용가능"> -->
 
 				<button id="idSelect" class="btn btn-sm btn-success">아이디 결정</button>
 
@@ -139,5 +152,9 @@
 
 	<!-- webapp 을 기준으로 하면 된다. 내 jsp파일이 어디에 있는게 중요한 것이 아니라 webapp을 기준으로 src를 작성하면 된다 -->
 	<script type="text/javascript" src="asset/js/chat.js"></script>
+
+
+
+
 </body>
 </html>

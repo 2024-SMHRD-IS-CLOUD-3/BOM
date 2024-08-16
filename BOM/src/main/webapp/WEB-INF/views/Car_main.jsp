@@ -16,21 +16,21 @@
     <header>
         <h1>BOM</h1>
         <nav>
-            <a href="./" class="nav-link">Home</a>
+           <a href="./">Home</a>
             <div class="dropdown">
-              <a href="/b_board" class="active">Market</a>
-              <div class="dropdown-content">
-                  <a href="#">남아의류</a>
-                  <a href="#">여아의류</a>
-                  <a href="#">장난감류</a>
-                  <a href="#">도서교구</a>
-                  <a href="#">아이가구</a>
-                  <a href="#">육아출산</a>
+                <a href="b_board" class="active">Market</a>
+                <div class="dropdown-content">
+                     <a href="boyC">남아의류</a>
+                  <a href="girlC">여아의류</a>
+                  <a href="toy">장난감류</a>
+                  <a href="book">도서교구</a>
+                  <a href="furniture">아이가구</a>
+                  <a href="newBorn">육아출산</a>
                   <a href="car_main">유모차</a>
-              </div>
-          </div>
-            <a href="goComm" class="nav-link">Board</a>
-            <a href="goMyPage" class="nav-link">MyPage</a>
+                </div>
+            </div>
+            <a href="goComm">Board</a>
+            <a href="goMyPage">MyPage</a>
         </nav>
     </header>
 
