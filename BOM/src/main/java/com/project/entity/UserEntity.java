@@ -2,6 +2,7 @@ package com.project.entity;
 
 import java.sql.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -27,7 +28,10 @@ public class UserEntity {
     private String addr;
     private Integer score;
     private java.sql.Timestamp joined_at;
-    private String userPp;
+    private String marker;
+    
+    @Column(name = "user_pp")
+	private String userFile;
     
 }
 

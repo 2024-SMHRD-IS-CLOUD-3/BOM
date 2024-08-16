@@ -48,6 +48,9 @@ import com.project.repository.UserRepository;
 @Controller
 public class UserController {
 
+	@Value("${file.upload-dir.board}")
+	private String savePath;
+	
    @Autowired
    private UserRepository repo;
 
@@ -319,11 +322,11 @@ public class UserController {
                // 파일 이름 생성 (UUID를 사용하여 중복 방지)
                String fileName = UUID.randomUUID().toString() + "_" + profilePicture.getOriginalFilename();
                // 파일 저장 경로 설정 (실제 파일 저장 경로로 수정 필요)
-               Path filePath = Paths.get("path/to/save", fileName);
+               Path filePath = Paths.get(savePath + fileName);
                // 파일 저장
                Files.write(filePath, profilePicture.getBytes());
                // DB에 프로필 사진 경로 저장 (DB 컬럼: user_pp)
-               currentUser.setUserPp(fileName);
+               currentUser.setUserFile(fileName);
            } catch (IOException e) {  // 파일 저장 중 오류가 발생한 경우
                model.addAttribute("error", "프로필 사진 저장 중 오류가 발생했습니다.");  // 에러 메시지를 모델에 추가
                return "MyPageDetail";  // 다시 마이페이지로 돌아감

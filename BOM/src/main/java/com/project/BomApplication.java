@@ -19,15 +19,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 // : SpringBoot Container에 경로들을 저장하고 생성된 bean을 자동으로 연결
 public class BomApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(BomApplication.class, args);
-	}
-	
+   public static void main(String[] args) {
+      SpringApplication.run(BomApplication.class, args);
+   }
+   
     @GetMapping("/")
     public String index() {
         return "index"; // "index.html"이 아니라 "index"를 반환
     }
     
 
-	
+   
 }
