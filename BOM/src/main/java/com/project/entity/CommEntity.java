@@ -33,8 +33,8 @@ public class CommEntity {
 	
 	private java.sql.Timestamp created_at;
 	
-	@Column(columnDefinition = "int default 0")
-	private Integer cb_views = 0;
+	@Column(columnDefinition = "int default 0", name = "cb_views")
+	private Integer views = 0;
 	
 	private String id;
 	

@@ -94,9 +94,13 @@ main {
     font-size: 20px;
     border-radius: 6px 6px 0 0;
 }
+.popular-row {
+    background-color: black !important; /* 연한 초록색 배경 */
+}
+
 
 .board-table td {
-    background-color: #f7f7f7;
+    background-color: white;
     border-bottom: 2px solid #eaeaea;
     font-size: 16px;
     color: #555;
@@ -285,4 +289,28 @@ button:hover {
 .view-count {
     font-size: 0.9em;
     color: #777;
+}
+
+form[action="goCommWrite"] {
+    position: relative;
+    top: -20px; 
+}
+
+form[action="goCommWrite"] button {
+    background-color: #4CAF50; /* Next 버튼과 동일한 배경색 */
+    color: white; /* Next 버튼의 글자 색상 */
+    border: none; /* Next 버튼과 동일한 테두리 */
+    border-radius: 8px; /* Next 버튼과 동일한 둥근 모서리 */
+    padding: 10px 16px; 
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease; /* 동일한 전환 효과 */
+}
+
+form[action="goCommWrite"] button:hover {
+    background-color: #45a049; /* Next 버튼 호버 시 색상 */
+}
+
+.popular-row td{
+    background-color: #f7f7f7;
+    font-weight: bold;
 }

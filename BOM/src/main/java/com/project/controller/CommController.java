@@ -27,15 +27,22 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.project.entity.CommEntity;
 import com.project.entity.DealEntity;
+import com.project.entity.MentEntity;
 import com.project.entity.UserEntity;
 import com.project.repository.CommRepository;
+import com.project.repository.MentRepository;
 import com.project.repository.UserRepository;
 
 @Controller
 public class CommController {
 
+	// 게시물 repo
 	@Autowired
 	private CommRepository com_repo;
+	
+	// 댓글 repo
+	@Autowired
+    private MentRepository ment_repo;
 	
 	// 페이지당 표시할 게시물 수 설정
     private static final int PAGE_SIZE = 10;
@@ -55,7 +62,12 @@ public class CommController {
         Pageable pageable = PageRequest.of(page, PAGE_SIZE, Sort.by(Sort.Direction.DESC, "idx"));
         Page<CommEntity> postsPage = com_repo.findAll(pageable);
 
+        // 인기글 (cb_views 상위 3개 조회)
+        Pageable topThreePageable = PageRequest.of(0, 3, Sort.by(Sort.Direction.DESC, "views"));
+        List<CommEntity> topThreePosts = com_repo.findAll(topThreePageable).getContent();
+        
         // 페이지 정보와 게시물 리스트를 모델에 추가
+        model.addAttribute("topThreePosts", topThreePosts);
         model.addAttribute("posts", postsPage.getContent());
         model.addAttribute("totalPages", postsPage.getTotalPages());
         model.addAttribute("currentPage", page);
@@ -121,5 +133,69 @@ public class CommController {
 			return "CommWrite";
 		}
 	}
+	
+	// 게시글 세부 내용 조회
+	@RequestMapping("/goWriteDetail")
+	public String postDetail(@RequestParam("idx") Integer idx, 
+							Model model) {
+       
+		CommEntity post = com_repo.findById(idx).orElse(null);
+
+        if (post == null) {
+            model.addAttribute("message", "Post not found");
+            // return "errorPage";
+        }
+        
+        // 조회수 증가
+        post.setViews(post.getViews() + 1);
+        com_repo.save(post);  // Save the updated views count to the database
+
+        model.addAttribute("post", post);
+        
+        // 게시물에 달린 댓글 목록 불러오기
+        List<MentEntity> comments = ment_repo.findByCbIdx(idx);
+        model.addAttribute("comments", comments);
+
+        return "CommDetail";
+	}
+	
+	// 게시글 디테일 페이지에서 다시 목록으로 가기 위한 메소드
+	@RequestMapping("/goPostList")
+	public String postList() {
+		return "redirect:/goComm";
+	}
+	
+	// 댓글 저장
+    @RequestMapping("/addComment")
+    public String addComment(@RequestParam("cb_idx") Integer cb_idx,
+                             @RequestParam("ccmt_content") String content,
+                             HttpSession session, Model model) {
+
+        // 세션에서 사용자 ID 가져오기
+        String userId = (String) session.getAttribute("userId");
+
+        if (userId == null) {
+            return "redirect:/login"; // 로그인 안 되어있으면 로그인 페이지로
+        }
+
+        // 새로운 댓글 엔티티 생성
+        MentEntity comment = new MentEntity();
+        comment.setCbIdx(cb_idx);
+        comment.setCcmt_content(content);
+        comment.setId(userId);
+
+        // 현재 시간 설정
+        LocalDateTime now = LocalDateTime.now();
+        Timestamp timestamp = Timestamp.valueOf(now);
+        comment.setCreated_at(timestamp);
+        
+        comment.setCcmt_likes(0);
+
+        // 댓글 저장
+        ment_repo.save(comment);
+        
+        // 저장 후 해당 게시글로 리다이렉트
+        return "redirect:/goWriteDetail?idx=" + cb_idx;
+    }
 	
 }

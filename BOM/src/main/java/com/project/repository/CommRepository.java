@@ -25,7 +25,7 @@ public interface CommRepository extends JpaRepository<CommEntity, Integer> {
     Page<CommEntity> findAll(Pageable pageable);
 
     @Modifying
-    @Query("UPDATE CommEntity cb SET cb.cb_views = cb.cb_views + 1 WHERE cb.id = :id")
+    @Query("UPDATE CommEntity cb SET cb.views = cb.views + 1 WHERE cb.id = :id")
     void incrementcount(@Param("id") String id);
 	
 }

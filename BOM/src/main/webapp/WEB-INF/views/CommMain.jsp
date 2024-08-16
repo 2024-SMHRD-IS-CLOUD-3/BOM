@@ -55,13 +55,22 @@
                     </tr>
                 </thead>
                 <tbody>
-                	<c:forEach var="post" items="${posts}">
+                	<c:forEach var="post" items="${topThreePosts}">
+	                		<tr class="popular-row">
+	                            <td>인기글</td>
+	                            <td><a href="goWriteDetail?idx=${post.idx}">${post.cb_title}</a></td>
+	                            <td>${post.id}</td>
+	                            <td>${post.created_at}</td>
+	                           	<td>${post.views}</td>
+                        	</tr>
+                   	</c:forEach>
+	                <c:forEach var="post" items="${posts}">		
 	                		<tr>
 		                		<td>${post.idx}</td>
-		                		<td><a href="goWriteDetail">${post.cb_title}</a></td>
+		                		<td><a href="goWriteDetail?idx=${post.idx}">${post.cb_title}</a></td>
 		                		<td>${post.id}</td>
 		                		<td>${post.created_at}</td>
-		                		<td>${post.cb_views}</td>
+		                		<td>${post.views}</td>
 	                		</tr>
                 	</c:forEach>
                 </tbody>
