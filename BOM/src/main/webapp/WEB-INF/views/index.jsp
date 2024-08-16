@@ -124,9 +124,9 @@
 								</p>
 								<a href="#"
 									class="u-align-center u-btn u-button-style u-custom-color-1 u-custom-font u-text-body-color u-text-hover-black u-btn-1">유모차
-									거래 </a> <a href="#"
+									거래 </a> <a href="goComm"
 									class="u-align-center u-btn u-button-style u-custom-color-1 u-custom-font u-text-body-color u-text-hover-black u-btn-2">육아팁
-									게시판 </a> <a href="#"
+									게시판 </a> <a href="b_board"
 									class="u-align-center u-btn u-button-style u-custom-color-1 u-custom-font u-text-body-color u-text-hover-black u-btn-3">물품거래
 								</a>
 							</div>
