@@ -70,6 +70,9 @@
 							href="b_board" style="padding: 10px 20px;">Market</a></li>
 						<li class="u-nav-item"><a
 							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
+							href="#" style="padding: 10px 20px;">stroller</a></li>
+						<li class="u-nav-item"><a
+							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
 							href="goComm" style="padding: 10px 20px;">Board</a></li>
 						<li class="u-nav-item"><a
 							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
@@ -87,6 +90,8 @@
 									href="./">Home</a></li>
 								<li class="u-nav-item"><a class="u-button-style u-nav-link"
 									href="b_board">Market</a></li>
+								<li class="u-nav-item"><a class="u-button-style u-nav-link"
+									href="#">stroller</a></li>
 								<li class="u-nav-item"><a class="u-button-style u-nav-link"
 									href="goComm">Board</a></li>
 								<li class="u-nav-item"><a class="u-button-style u-nav-link"
