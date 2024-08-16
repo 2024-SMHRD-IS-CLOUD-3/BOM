@@ -15,7 +15,9 @@
 <body>
 
     <header>
-        <h1>BOM</h1>
+          <a href="./" style="text-decoration: none; color: inherit;">
+         <h1>BOM</h1>
+      </a>
         <nav>
              <a href="./">Home</a>
             <div class="dropdown">
@@ -30,6 +32,7 @@
                   <a href="babyCar">유모차</a>
                 </div>
             </div>
+            <a href="car">Board</a>
             <a href="goComm">Board</a>
             <a href="goMyPage">MyPage</a>
         </nav>
@@ -54,7 +57,7 @@
                 </div>
                 <div class="product-details">
                     <div class="seller-info">
-                        <img src="${duInfo}" alt="Seller Icon" class="seller-icon">
+                        <img src="uploads/${duInfo}" alt="Seller Icon" class="seller-icon">
                         <div>
                             <p class="seller-name">${yoyo.id}</p>
                             <p class="region">${duAddr}</p>

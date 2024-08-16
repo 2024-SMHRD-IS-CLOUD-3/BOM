@@ -31,6 +31,7 @@
                   <a href="babyCar">유모차</a>
                 </div>
             </div>
+            <a href="car">Stroller</a>
             <a href="goComm">Board</a>
             <a href="goMyPage">MyPage</a>
         </nav>
