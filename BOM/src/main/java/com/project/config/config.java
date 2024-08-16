@@ -12,7 +12,7 @@ public class config implements WebMvcConfigurer{
                 .addResourceLocations("file:///C:/Users/smhrd/git/bom/BOM/src/uploads/");
         
         registry.addResourceHandler("/forComm/**")
-        .addResourceLocations("file:///C:/Users/smhrd/git/bom/BOM/forComm");
+        .addResourceLocations("file:///C:/Users/smhrd/git/bom/BOM/src/forComm/");
 
         registry.addResourceHandler("/babyCar/**")
         .addResourceLocations("file:///C:/Users/smhrd/git/bom/BOM/src/babyCar/");

@@ -46,14 +46,7 @@
                     <h2 id="postTitle">${post.cb_title}</h2>
                     <p>${post.cb_content}</p>
                 </div>
-
-                <div class="post-footer">
-                    <div class="like-comment-section">
-                        <span class="like-count">좋아요 0</span>
-                        <span class="comment-count">댓글 0</span>
-                    </div>
-                </div>
-
+                
 				<!-- If there's an attached file -->
 	            <c:if test="${post.cb_file != null}">
 	                <div class="post-file">
@@ -63,7 +56,7 @@
 				            				post.cb_file.toLowerCase().endsWith('.png') || 
 				            				post.cb_file.toLowerCase().endsWith('.gif')}">
 				                <!-- 이미지 파일일 경우 이미지를 본문에 표시 -->
-				                <img src="${uploadDir}/${post.cb_file}" alt="첨부 이미지" style="max-width: 100%; height: auto;">
+				                <img src="forComm/${post.cb_file}" alt="첨부 이미지" style="max-width: 100%; height: auto;">
 				            </c:when>
 				            <c:otherwise>
 				                <!-- 이미지가 아닌 파일은 다운로드 링크로 표시 -->
@@ -72,6 +65,13 @@
 				        </c:choose>
 	                </div>
 	            </c:if>
+	            
+                <div class="post-footer">
+                    <div class="like-comment-section">
+                        <span class="like-count">좋아요 0</span>
+                        <span class="comment-count">댓글 0</span>
+                    </div>
+                </div>
 
                 <div class="comment-section">
                     <div class="comment-bot-warning">클린봇이 악성 댓글을 감지합니다.</div>

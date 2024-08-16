@@ -1,1 +1,1 @@
-select * from COMMUNITY_INFO;
+select * from ;
