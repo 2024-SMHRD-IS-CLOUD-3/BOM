@@ -1,12 +1,19 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
 body {
-  background:url(images/bg00.jpg) ;
+  background: url(images/bg00.jpg);
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 .login-container {
@@ -16,6 +23,7 @@ body {
   width: 350px;
   padding: 20px;
   text-align: center;
+  font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 .login-header {
@@ -23,6 +31,7 @@ body {
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
+  font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 .login-icon {
@@ -45,17 +54,20 @@ body {
 .login-header h2 {
   margin: 0;
   color: #579b55;
+  font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 form {
   display: flex;
   flex-direction: column;
+  font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 form label {
   text-align: left;
   margin-bottom: 5px;
   color: #333;
+  font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 form input[type="text"],
@@ -65,12 +77,14 @@ form input[type="password"] {
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 14px;
+  font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 .remember-me {
   display: flex;
   align-items: center;
   margin-bottom: 15px;
+  font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 .remember-me input {
@@ -85,6 +99,7 @@ button {
   border-radius: 50px;
   font-size: 16px;
   cursor: pointer;
+  font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 button:hover {
@@ -95,12 +110,14 @@ button:hover {
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
+  font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 .extra-links a {
   color: #579b55;
   text-decoration: none;
   font-size: 12px;
+  font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 .extra-links a:hover {

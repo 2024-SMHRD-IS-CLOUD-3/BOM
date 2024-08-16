@@ -1,6 +1,12 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Pretendard-Regular', Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #e0e0e0;
@@ -17,7 +23,7 @@ header {
 header h1 {
     margin: 0;
     color: white;
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Pretendard-Regular', cursive; /* 폰트 변경 */
 }
 
 nav {
@@ -29,6 +35,7 @@ nav a {
     color: black;
     text-decoration: none;
     margin: 0 15px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
     font-weight: bold;
     transition: color 0.3s ease;
 }
@@ -51,6 +58,7 @@ nav a.active {
     z-index: 1;
     border-radius: 4px;
     min-width: 160px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 .dropdown-content a {
@@ -59,6 +67,7 @@ nav a.active {
     text-decoration: none;
     display: block;
     font-size: 0.9em;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 .dropdown-content a:hover {
@@ -70,6 +79,7 @@ nav a.active {
     padding: 10px 20px;
     background-color: #69c173;
     color: white;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
     border: none;
     border-radius: 5px;
     font-size: 1em;
@@ -94,6 +104,7 @@ nav a.active {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 .image-preview {
@@ -114,21 +125,25 @@ nav a.active {
 
 .form-container {
     flex: 1;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 form {
     display: flex;
     flex-direction: column;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 label {
     margin-bottom: 10px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
     font-weight: bold;
 }
 
 input[type="text"], textarea, select {
     margin-bottom: 20px;
     padding: 10px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
     border-radius: 5px;
     border: 1px solid #ccc;
 }
@@ -141,12 +156,14 @@ textarea {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 .file-select-btn {
     background-color: #69c173;
     color: white;
     padding: 10px 20px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
     border-radius: 5px;
     cursor: pointer;
     margin-right: 10px;
@@ -164,6 +181,7 @@ input[type="checkbox"] {
 .submit-btn {
     background-color: #69c173;
     color: white;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
     border: none;
     padding: 10px 20px;
     font-size: 1em;

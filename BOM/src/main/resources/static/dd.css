@@ -1,134 +1,150 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
 body {
-   font-family: Arial, sans-serif;
-   margin: 0;
-   padding: 0;
-   background-color: #f0f0f0;
+    font-family: 'Pretendard-Regular', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
 }
 
 header {
-   background: linear-gradient(to right, #6a9bc6, #89d499);
-   padding: 20px;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
+    background: linear-gradient(to right, #6a9bc6, #89d499);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header h1 {
-   margin: 0;
-   color: white;
-   font-family: 'Comic Sans MS', cursive;
+    margin: 0;
+    color: white;
+    font-family: 'Pretendard-Regular', cursive; /* 폰트 변경 */
 }
 
 nav {
-   display: flex;
-   align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 nav a {
-   color: black;
-   text-decoration: none;
-   margin: 0 15px;
-   font-weight: bold;
-   transition: color 0.3s ease;
+    color: black;
+    text-decoration: none;
+    margin: 0 15px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 nav a.active {
-   color: #f50c6e;
+    color: #f50c6e;
 }
 
 .dropdown {
-   position: relative;
+    position: relative;
 }
 
 .dropdown-content {
-   display: none;
-   position: absolute;
-   top: 100%; /* Parent height */
-   left: 0;
-   background-color: white;
-   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-   z-index: 1;
-   border-radius: 4px;
-   min-width: 160px;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 4px;
+    min-width: 160px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 .dropdown-content a {
-   color: black;
-   padding: 12px 16px;
-   text-decoration: none;
-   display: block;
-   font-size: 0.9em;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9em;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 .dropdown-content a:hover {
-   background-color: #f1f1f1;
+    background-color: #f1f1f1;
 }
 
 .dropdown:hover .dropdown-content {
-   display: block;
+    display: block;
 }
 
 .products {
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
-   gap: 20px;
-   padding: 20px;
-   max-width: 1200px;
-   margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 .product-card {
-   background-color: white;
-   padding: 15px;
-   border-radius: 10px;
-   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-   text-align: center;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
-/* 이미지 크기를 설정하는 CSS */
 .product-card .image img {
-   width: 150px;
-   height: 150px;
-   object-fit: cover; /* 이미지가 잘리지 않도록 비율을 유지하면서 크기 조정 */
-   border-radius: 10px; /* 선택적으로 둥근 모서리 추가 */
-   
-}   
-   
- .card-photo img { height :
-   150px;
-   width: 150px;
-   border-radius: 10px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-photo img {
+    height: 150px;
+    width: 150px;
+    border-radius: 10px;
 }
 
 .card-desc {
-   margin-top: 10px;
+    margin-top: 10px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 .card-title {
-   font-size: 1.2em;
-   margin: 10px 0;
+    font-size: 1.2em;
+    margin: 10px 0;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 .price {
-   font-size: 1.1em;
-   color: #e74c3c;
+    font-size: 1.1em;
+    color: #e74c3c;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 .card-region-name {
-   color: #888;
-   margin-top: 5px;
+    color: #888;
+    margin-top: 5px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 .card-counts {
-   margin-top: 10px;
-   color: #888;
+    margin-top: 10px;
+    color: #888;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 .write-btn {
     background-color: #69c173;
     color: white;
-    border: none; /* 테두리 없음 */
+    border: none;
     padding: 10px 20px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
     font-size: 1em;
     cursor: pointer;
     border-radius: 5px;
@@ -143,23 +159,21 @@ nav a.active {
 
 .scroll-to-top {
     position: fixed;
-    width: 50px;         /* 버튼의 가로 크기 */
-    height: 50px;        /* 버튼의 세로 크기 */
-    border-radius: 50%;  /* 버튼을 동그라미로 만들기 */
-    bottom: 20px;        /* 화면 아래에서 20px 위에 위치 */
-    right: 20px;         /* 화면 오른쪽에서 20px 왼쪽에 위치 */
-    background-color: #69c173; /* 버튼 배경색 */
-    color: white;        /* 텍스트 색상 */
-    border: none;        /* 테두리 없음 */
-    font-size: 1em;      /* 폰트 크기 */
-    cursor: pointer;     /* 마우스 커서 모양을 손 모양으로 변경 */
-    z-index: 1000;       /* 다른 요소들 위에 버튼이 보이도록 z-index 설정 */
-    display: none;       /* 기본적으로 버튼을 숨김 */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    bottom: 20px;
+    right: 20px;
+    background-color: #69c173;
+    color: white;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    z-index: 1000;
+    display: none;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
-
 
 .scroll-to-top:hover {
     background-color: #57a763;
 }
-
-

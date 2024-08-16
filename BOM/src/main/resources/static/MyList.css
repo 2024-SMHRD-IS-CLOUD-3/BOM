@@ -1,6 +1,14 @@
 @charset "UTF-8";
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
     background-color: #f2f2f2;
     margin: 0;
     padding: 0;
@@ -10,7 +18,6 @@ body {
     justify-content: flex-start;
 }
 
-
 header {
     width: 100%;
     background-color: #66bb6a;
@@ -19,6 +26,7 @@ header {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 .navbar {
@@ -34,6 +42,7 @@ header {
     font-size: 24px;
     font-weight: bold;
     color: white;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 .nav-icons {
@@ -73,6 +82,7 @@ header {
     display: flex;
     align-items: center;
     border-bottom: 1px solid #b0b0b0;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 .profile-info {
@@ -92,16 +102,13 @@ header {
     font-size: 24px;
     font-weight: bold;
     margin-right: 10px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 .favorite-heart {
     font-size: 24px;
     color: red;
     margin-right: auto;
-}
-.faborite-score{
-	font-size:24px;
-	
 }
 
 .profile-btn {
@@ -111,6 +118,7 @@ header {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 .profile-btn:hover {
@@ -122,6 +130,7 @@ header {
     max-width: 1200px;
     padding: 20px;
     background-color: #f2f2f2;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 .menu-list {
@@ -135,6 +144,7 @@ header {
     margin: 10px 0;
     display: flex;
     align-items: center;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
 .menu-list li::before {
