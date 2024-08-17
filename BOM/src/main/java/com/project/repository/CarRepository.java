@@ -17,6 +17,7 @@ public interface CarRepository extends JpaRepository<CarEntity, Long> {
 	@Query("SELECT d FROM CarEntity d ORDER BY d.car_idx DESC")
 	List<CarEntity> findAllDesc();
 	
+
 	
 
 }

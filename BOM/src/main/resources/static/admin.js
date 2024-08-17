@@ -1,4 +1,4 @@
-// 상태 처리 함수
+/*// 상태 처리 함수
 function processStatus(postId) {
     // 드롭다운 메뉴에서 선택된 값을 가져옵니다.
     const selectedStatus = document.getElementById(`status-${postId}`).value;
@@ -27,8 +27,8 @@ function processStatus(postId) {
     })
     .catch((error) => {
         console.error('Error:', error);
-    });
-}
+    });*/
+/*}*/
 
 // 검색 기능 (추가적인 기능이 필요할 경우 작성)
 function searchPosts() {
