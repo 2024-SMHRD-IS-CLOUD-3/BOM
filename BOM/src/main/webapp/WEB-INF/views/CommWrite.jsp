@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="writing.css">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="nicepage.css">
+    <link rel="stylesheet" href="dd.css">
 </head>
 <body>
     <header class="u-clearfix u-gradient u-header u-header" id="sec-b9bc"
