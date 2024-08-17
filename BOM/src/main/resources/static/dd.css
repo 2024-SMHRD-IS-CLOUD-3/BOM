@@ -137,6 +137,56 @@ nav a.active {
     border-radius: 10px;
 }
 
+/* 프로필보기 버튼 왼쪽에 여백 */
+.profile-btn{
+	margin-left: 20px;	
+}
+
+/* 프로필 사진 크기 확대 */
+.profile-image{
+	width: 100px;
+	height: 100px;
+}
+
+/* 하트 오른쪽 여백 */
+.favorite-heart{
+	margin-right: 10px;
+}
+
+/* 메뉴 리스트 영역의 크기 조정 */
+.menu-section {
+    width: 100%; /* 섹션 너비를 100%로 설정 */
+    max-width: 1200px; /* 최대 너비 설정 */
+    padding: 10px 20px; /* 섹션 내부에 상하 10px, 좌우 20px의 여백 추가 */
+    background-color: #f2f2f2; /* 배경색 설정 */
+    font-family: 'Pretendard-Regular', Arial, sans-serif;
+    margin: 20px auto; /* 상하 여백 추가 및 중앙 정렬 */
+    box-sizing: border-box; /* padding을 포함하여 크기 계산 */
+}
+
+/* 메뉴 리스트 수정 */
+.menu-list a {
+    font-size: 30px; /* 원하는 글씨 크기 설정 */
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 유지 */
+    color: black; /* 링크 색상 설정 */
+    text-decoration: none; /* 밑줄 제거 */
+    margin: 10px 0; /* 여백 설정 */
+    display: block; /* 블록 형태로 설정 (선택 사항) */
+}
+
+/* 메뉴에 마우스 갖다대면 애니메이션 효과 적용 */
+.list:hover{
+	animation: pulse 1.0s; /* 애니메이션 1초 동안 실행 */
+	color: blue;
+}
+
+/* 닉네임 글씨 크기 확대 및 애니메이션 효과 적용 */
+.username{
+	font-size: 35px;
+	animation: heartBeat 1.0s;
+}
+
+
 .card-photo img {
     height: 150px;
     width: 150px;

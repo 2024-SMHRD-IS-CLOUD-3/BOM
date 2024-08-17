@@ -2,6 +2,7 @@ package com.project.controller;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,18 +38,40 @@ public class MessageController {
 	// 쪽지함 보여주는 메서드
 	@RequestMapping("/messageList")
 	private String messageList(Model model, HttpSession session) {
+		// 메세지 테이블의 전체 데이터를 가져오기
 		List<MessageEntity> list = meRepo.findAllOrderBySendAtDesc();
 		String userId = (String) session.getAttribute("userId");
 
-		for (int i = 0; i < list.size(); i++) {
-			if (list.get(i).getAccept_m().equals(userId)) {
-				model.addAttribute("list", list.get(i));
-			}
-		}
-		
-		//여기 안에 보낸 메세지 로직 추가
+		// 전체 데이터 중 조건에 맞는 데이터만 저장할 리스트 생성
+		List<MessageEntity> selectMessage = new ArrayList<>();
 
+		 // 수신한 메시지를 필터링하여 리스트에 추가
+		for (MessageEntity message : list) {
+	        if (message.getAccept_m().equals(userId)) {
+	        	selectMessage.add(message);
+	        }
+	    }
+	    
+		// 로그 출력으로 데이터 확인
+	    System.out.println("선택된 메시지 개수: " + selectMessage.size());
 		
+	    // 수신한 메시지 리스트를 모델에 추가
+	    model.addAttribute("selectMessage", selectMessage);
+	    
+	    //여기 안에 보낸 메세지 로직 추가
+	    // 전체 데이터 중 조건에 맞는 데이터만 저장할 리스트 생성
+ 		List<MessageEntity> sendMessage = new ArrayList<>();
+ 		for (MessageEntity messageSend : list) {
+	        if (messageSend.getSend_m().equals(userId)) {
+	        	sendMessage.add(messageSend);
+	        }
+	    }
+	    
+ 		// 로그 출력으로 데이터 확인
+	    System.out.println("선택된 메시지 개수: " + sendMessage.size());
+		
+	    // 수신한 메시지 리스트를 모델에 추가
+	    model.addAttribute("sendMessage", sendMessage);
 		
 		return "message";
 	}
@@ -77,8 +100,6 @@ public class MessageController {
 		if (optionalEntity.get().getB_idx().equals(idx)){
 			model.addAttribute("write", optionalEntity.get().getId());
 		}
-		
-		
 			
 		return "messageWrite";
 	}
@@ -89,7 +110,7 @@ public class MessageController {
 	private String sendMessage(HttpSession session,
 			@RequestParam("m_title") String title,
 			@RequestParam("m_content") String content,
-			@RequestParam("accept_m") String accept,
+			@RequestParam("write") String accept,
 			Model model
 			) {
 		String userId = (String) session.getAttribute("userId");
@@ -106,9 +127,7 @@ public class MessageController {
 
 		meRepo.save(msEntity);
 		
-		
-		
-		return "";
+		return "redirect:/b_board";
 		
 	}
 	

@@ -13,6 +13,7 @@
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
 <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
 <link rel="stylesheet" href="dd.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 
 <body>
@@ -110,19 +111,20 @@
             <img src="uploads/${user.userFile}" class="profile-image">
             <span class="username">${user.name}</span>
             <span class="favorite-heart">❤️</span><span class="faborite-score">${user.score}</span>
-            <a href="goMyPage"><button class="profile-btn" id="profileBtn">프로필 보기</button></a>
+            <a href="goMyPage"><button class="profile-btn" id="profileBtn">프로필 수정</button></a>
         </div>
     </section>
 
     <section class="menu-section">
         <ul class="menu-list">
-            <li><a href="#favorites">관심 목록</a></li>
-            <li><a href="#sales">판매 목록</a></li>
-            <li><a href="#purchases">구매 목록</a></li>
-            <li><a href="#board-activity">게시판 활동 내역</a></li>
-            <li><a href="#stroller-trades">유모차 매매 내역</a></li>
-            <li><a href="logout">로그아웃</a></li>
-            <li><a href="exit">탈퇴 하기</a></li>
+        	<li><a href="messageList" class="list">내 쪽지함</a></li>
+            <li><a href="#favorites" class="list">관심 목록</a></li>
+            <li><a href="#sales" class="list">판매 목록</a></li>
+            <li><a href="#purchases" class="list">구매 목록</a></li>
+            <li><a href="#board-activity" class="list">게시판 활동 내역</a></li>
+            <li><a href="#stroller-trades" class="list">유모차 매매 내역</a></li>
+            <li><a href="logout" class="list">로그아웃</a></li>
+            <li><a href="exit" class="list">탈퇴 하기</a></li>
         </ul>
     </section>
 </body>

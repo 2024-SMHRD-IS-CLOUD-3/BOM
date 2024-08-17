@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -52,11 +54,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach var="list" items="${list}">
+                        <c:forEach var="message" items="${selectMessage}">
                             <tr>
-                                <td>${list.send_m}</td>
-                                <td><a href="goMessageDetail?id=${list.m_idx}">${list.m_title}</a></td>
-                                <td>${list.send_at}</td>
+                                <td>${message.send_m}</td>
+                                <td><a href="goMessageDetail?id=${message.m_idx}">${message.m_title}</a></td>
+                                <td>
+                                	<fmt:formatDate value="${message.send_at}" pattern="yyyy-MM-dd HH:mm:ss" />
+                               	</td>
                                 <td>
                                     <button class="reply-btn">답장</button>
                                     <button class="delete-btn">삭제</button>
@@ -80,11 +84,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach var=list items="${sentMessages}">
+                         <c:forEach var=messageSend items="${sendMessage}">
                             <tr>
-                                <td>${message.receiverName}</td>
-                                <td><a href="goMessageDetail?id=${message.id}">${message.subject}</a></td>
-                                <td>${message.date}</td>
+                                <td>${messageSend.accept_m}</td>
+                                <td><a href="goMessageDetail?id=${messageSend.m_idx}">${messageSend.m_title}</a></td>
+                                <td>
+                                	<fmt:formatDate value="${messageSend.send_at}" pattern="yyyy-MM-dd HH:mm:ss" />
+                               	</td>
                                 <td>
                                     <button class="delete-btn">삭제</button>
                                 </td>

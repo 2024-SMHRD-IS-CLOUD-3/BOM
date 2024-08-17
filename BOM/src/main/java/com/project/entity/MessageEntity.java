@@ -20,6 +20,7 @@ public class MessageEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long m_idx;  // 쪽지 식별자
+	
 	private String send_m; // 작성자
 	private String accept_m; // 수신자
 	private String m_title; // 쪽지제목
