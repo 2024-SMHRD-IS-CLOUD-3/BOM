@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이미지 업로드 폼</title>
+    <title>중고거래 게시글 작성</title>
     <link rel="stylesheet" href="writing.css">
 </head>
 <body>

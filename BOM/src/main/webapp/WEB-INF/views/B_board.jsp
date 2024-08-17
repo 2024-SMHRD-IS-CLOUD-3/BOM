@@ -41,7 +41,7 @@
         <section class="products" id="product-grid">
      <c:forEach items="${deal}" var="deal"> 
             <article class="product-card">
-                <a class="card-link" href="writeOr?idx=${deal.b_idx}">
+                <a class="card-link" href="goDetail?idx=${deal.b_idx}">
                     <div class="image">
                         <img alt="파일 경로 확인" src="uploads/${deal.filenames}" />
                     </div>

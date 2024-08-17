@@ -32,7 +32,7 @@
                   <a href="babyCar">유모차</a>
                 </div>
             </div>
-            <a href="car">Board</a>
+            <a href="car">Stroller</a>
             <a href="goComm">Board</a>
             <a href="goMyPage">MyPage</a>
         </nav>
@@ -63,8 +63,8 @@
                             <p class="region">${duAddr}</p>
                         </div>
                         <div class="seller-buttons">
-                        <button class="change-btn">수정하기</button>
-                        <button class="del-btn">삭제하기</button>
+                       <a href="dealModify?idx=${yoyo.b_idx}"> <button class="change-btn">수정하기</button></a>
+                        <a href="goDelete?idx=${yoyo.b_idx}"><button class="del-btn">삭제하기</button></a>
                     </div>
                         
                     </div>
@@ -76,7 +76,7 @@
                     </p>
                 </div>
                
-                <a href="goChat?idx=${yoyo.b_idx}"> <button class="chat-btn">채팅하기</button></a>
+                <a href="goChat?idx=${yoyo.b_idx}"> <button class="chat-btn">쪽지보내기</button></a>
            	
             </div>
               
