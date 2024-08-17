@@ -149,9 +149,10 @@ nav a.active {
 }
 
 .card-title {
-    font-size: 1.2em;
     margin: 10px 0;
     font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
+	font-size: 19px;
+	color: black;
 }
 
 .price {
