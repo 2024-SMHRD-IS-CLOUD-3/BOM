@@ -1,6 +1,5 @@
 package com.project.entity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,18 +14,16 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "chat_info")
-public class ChatEntity {
-
+@Table(name = "message_info")
+public class MessageEntity {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "chat_idx")
-	private Long chatIdx;
-	
-	private Long croom_idx;
-	private String chatter;
-	private String chat;
-	private String emoticon;
-	private java.time.LocalDateTime created_at;
+	private Long m_idx;  // 쪽지 식별자
+	private String send_m; // 작성자
+	private String accept_m; // 수신자
+	private String m_title; // 쪽지제목
+	private String m_content; // 쪽지내용
+	private java.util.Date send_at; // 보낸일자
 	
 }

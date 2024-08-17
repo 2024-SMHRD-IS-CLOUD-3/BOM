@@ -192,13 +192,32 @@ public class CarController {
 	}
 
 	@RequestMapping("goCarDetail")
-	public String carDetail(Long idx, Model model) {
+	public String carDetail(Long idx, Model model,HttpSession session) {
 		List<CarEntity> car = carRepo.findAll();
 		List<UserEntity> user = repo.findAll();
-
+		String userId = (String) session.getAttribute("userId");
+		if(!userId.equals("test")) {
+			for (int i = 0; i < car.size(); i++) {
+				for (int l = 0; l < user.size(); l++) {
+					if (user.get(l).getId().equals(car.get(i).getId())) {
+						model.addAttribute("id", user.get(l).getId());
+			
+					}
+				}
+			} 
+				
+			
+		} else {
+			model.addAttribute("id", "test");
+		}
+		
+		
+		
+		
 		for (int i = 0; i < car.size(); i++) {
 			if (car.get(i).getCar_idx().equals(idx)) {
 				model.addAttribute("car", car.get(i));
+				System.out.println("메롱메롱"+ car.get(i));
 			for (int l = 0; l < user.size(); l++) {
 				if (user.get(l).getId().equals(car.get(i).getId())) {
 					model.addAttribute("id", user.get(l).getId());
