@@ -13,25 +13,31 @@
 </head>
 
 <body>
-    <div class="container">
         <header>
-            <div class="header-container">
-                <nav class="main-nav">
-                    <div class="logo">
-                        <h1>BOM</h1>
-                    </div>
-                </nav>
-                <nav class="main-nav">
-                    <ul>
-                        <li><a href="./">Home</a></li>
-                        <li><a href="b_board">Market</a></li>
-                        <li><a href="goComm">Board</a></li>
-                        <li><a href="goMyPage">MyPage</a></li>
-                    </ul>
-                </nav>
+          <a href="./" style="text-decoration: none; color: inherit;">
+         <h1>BOM</h1>
+      </a>
+              <nav>
+              <a href="./">Home</a>
+            <div class="dropdown">
+                <a href="b_board" class="active">Market</a>
+                <div class="dropdown-content">
+                     <a href="boyC">남아의류</a>
+                  <a href="girlC">여아의류</a>
+                  <a href="toy">장난감류</a>
+                  <a href="book">도서교구</a>
+                  <a href="furniture">아이가구</a>
+                  <a href="newBorn">육아출산</a>
+                  <a href="babyCar">유모차</a>
+                </div>
+            </div>
+            <a href="car">Stroller</a>
+            <a href="goComm">Board</a>
+            <a href="goMyPage">MyPage</a>
+        </nav>
             </div>
         </header>
-
+    <div class="container">
         <main>
             <!-- Search bar -->
             <div class="search-bar">
