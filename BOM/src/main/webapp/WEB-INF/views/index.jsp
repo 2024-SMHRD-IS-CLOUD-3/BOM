@@ -13,6 +13,7 @@
 <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
 <script class="u-script" type="text/javascript" src="nicepage.js"
 	defer=""></script>
+	<link rel="stylesheet" href="dd.css">
 <meta name="generator" content="Nicepage 6.15.2, nicepage.com">
 
 <link id="u-theme-google-font" rel="stylesheet"
@@ -27,8 +28,7 @@
 }
 </script>
 <script>
-
-
+	
 </script>
 
 <meta name="theme-color" content="#478ac9">
@@ -71,11 +71,20 @@
 						<li class="u-nav-item"><a
 							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
 							href="./" style="padding: 10px 20px;">Home</a></li>
-						<li class="u-nav-item"><a
+
+
+						<li class="u-nav-item">
+							<div class="dropdown">
+								<a class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
+									href="b_board" style="padding: 10px 20px;">Market</a>
+								<div class="dropdown-content">
+									<a href="boyC">남아의류</a> <a href="girlC">여아의류</a> <a href="toy">장난감류</a>
+									<a href="book">도서교구</a> <a href="furniture">아이가구</a> <a href="newBorn">육아출산</a> <a href="babyCar">유모차</a>
+								</div>
+							</div>
+						</li>
+						<li class="u-nav-item"><a id="car"
 							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
-							href="b_board" style="padding: 10px 20px;">Market</a></li>
-						<li class="u-nav-item"><a
-							id="car" class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
 							href="car" style="padding: 10px 20px;">Stroller</a></li>
 						<li class="u-nav-item"><a
 							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
@@ -150,6 +159,6 @@
 				</div>
 			</div>
 		</div>
-	</section>	
+	</section>
 </body>
 </html>
