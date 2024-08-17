@@ -52,11 +52,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach var="message" items="${receivedMessages}">
+                        <c:forEach var="list" items="${list}">
                             <tr>
-                                <td>${message.senderName}</td>
-                                <td><a href="goMessageDetail?id=${message.id}">${message.subject}</a></td>
-                                <td>${message.date}</td>
+                                <td>${list.send_m}</td>
+                                <td><a href="goMessageDetail?id=${list.m_idx}">${list.m_title}</a></td>
+                                <td>${list.send_at}</td>
                                 <td>
                                     <button class="reply-btn">답장</button>
                                     <button class="delete-btn">삭제</button>
@@ -80,7 +80,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach var="message" items="${sentMessages}">
+                        <c:forEach var=list items="${sentMessages}">
                             <tr>
                                 <td>${message.receiverName}</td>
                                 <td><a href="goMessageDetail?id=${message.id}">${message.subject}</a></td>

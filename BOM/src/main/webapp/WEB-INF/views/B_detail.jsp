@@ -72,7 +72,7 @@
                     </p>
                 </div>
                
-                <a href="goChat?idx=${yoyo.b_idx}"> <button class="chat-btn">채팅하기</button></a>
+                <a href="smessage?idx=${yoyo.b_idx}"> <button class="chat-btn">쪽지보내기</button></a>
            	
             </div>
               

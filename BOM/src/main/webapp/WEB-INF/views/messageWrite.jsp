@@ -37,20 +37,23 @@
             <div class="message-detail-box">
                 <div class="message-header">
                     <div>
-                        <strong>보낸 사람:</strong> ${message.senderName}
+                        <strong>보낸 사람:</strong> ${id}
                     </div>
                     <div>
-                        <strong>받은 시간:</strong> ${message.date}
+                        <strong>받는 사람:</strong> ${write}
                     </div>
                 </div>
                 <div class="message-subject">
-                    <strong>제목:</strong> ${message.subject}
+                    <strong>제목:</strong> 
+<input type="text" id="title" name="b_title" placeholder="제목을 입력해 주세요">
                 </div>
                 <div class="message-body">
-                    <p>${message.body}</p>
+                 <textarea id="description" name="b_content" rows="5" placeholder="게시글 내용을 작성해주세요."></textarea>
                 </div>
                 <div class="message-actions">
                     <div class="message-actions">
+                       
+                        <button class="inbox-btn" onclick="'"> 완료</button>
                         <button class="inbox-btn" onclick="window.location.href='inbox.html'">쪽지함으로 돌아가기</button>
                     </div>
                     
