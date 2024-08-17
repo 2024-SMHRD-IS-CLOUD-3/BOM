@@ -1,5 +1,12 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
@@ -15,12 +22,14 @@ body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     border-radius: 12px;
     overflow: hidden;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 /* Header */
 header {
     background-color: #4CAF50;
     padding: 10px 0;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 .header-container {
@@ -42,12 +51,14 @@ header {
     margin: 0;
     font-size: 24px;
     font-weight: 700;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 /* Navigation Bar */
 nav {
     background-color: #4CAF50;
     border-radius: 0 0 12px 12px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 nav ul {
@@ -65,6 +76,7 @@ nav ul li a {
     text-decoration: none;
     border-radius: 6px;
     transition: background-color 0.3s ease;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 nav ul li a:hover {
@@ -74,6 +86,7 @@ nav ul li a:hover {
 /* Main Content */
 main {
     padding: 30px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 .board-table {
@@ -86,6 +99,7 @@ main {
     border: none;
     padding: 15px 20px;
     text-align: left;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 .board-table th {
@@ -93,11 +107,12 @@ main {
     color: white;
     font-size: 20px;
     border-radius: 6px 6px 0 0;
-}
-.popular-row {
-    background-color: black !important; /* 연한 초록색 배경 */
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
+.popular-row {
+    background-color: black !important;
+}
 
 .board-table td {
     background-color: #f1f1f1;
@@ -118,6 +133,7 @@ main {
 .pagination {
     text-align: center;
     padding: 20px 0;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 .pagination a {
@@ -150,6 +166,7 @@ footer {
     font-size: 14px;
     margin-top: 40px;
     border-radius: 0 0 12px 12px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 /* Search Bar */
@@ -166,16 +183,19 @@ footer {
     border: 1px solid #ddd;
     box-shadow: none;
     transition: all 0.3s ease;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 .search-bar input[type="text"]:focus {
     outline: none;
     border-color: #4CAF50;
 }
+
 /* Back Button */
 .back-button {
     text-align: center;
     margin-top: 20px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 /* Post Detail Styles */
@@ -184,6 +204,7 @@ footer {
     border: 1px solid #eee;
     border-radius: 10px;
     margin-bottom: 20px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 .post-header {
@@ -191,6 +212,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 .author-info {
@@ -202,40 +224,46 @@ footer {
     width: 40px;
     height: 40px;
     background-color: #ccc;
-    -radius: 50%;
+    border-radius: 50%;
     margin-right: 10px;
 }
 
 .author-name {
     font-weight: 500;
     margin-right: 10px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 .post-date {
     color: #999;
     font-size: 0.9em;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 .post-content {
     font-size: 1.1em;
     margin-bottom: 20px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 .post-footer {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 .like-comment-section {
     display: flex;
     gap: 20px;
     font-size: 1em;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 .comment-section {
     padding-top: 10px;
     border-top: 1px solid #eee;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 .comment-bot-warning {
@@ -245,6 +273,7 @@ footer {
     margin-bottom: 10px;
     font-size: 0.9em;
     color: #777;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 textarea {
@@ -254,6 +283,7 @@ textarea {
     border-radius: 5px;
     margin-bottom: 10px;
     resize: none;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 button {
@@ -263,16 +293,20 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 button:hover {
     background-color: #555;
 }
+
 /* View Count */
 .view-count {
     font-size: 0.9em;
     color: #777;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
+
 select {
     padding: 10px;
     border-radius: 5px;
@@ -281,6 +315,7 @@ select {
     color: #333;
     font-size: 16px;
     cursor: pointer;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 select:focus {
@@ -291,7 +326,8 @@ select:focus {
 .status-action {
     display: flex;
     align-items: center;
-    gap: 10px; /* 드롭다운과 버튼 사이의 간격 */
+    gap: 10px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 .status-action select {
@@ -302,6 +338,7 @@ select:focus {
     color: #333;
     font-size: 16px;
     cursor: pointer;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 .status-action button {
@@ -311,6 +348,7 @@ select:focus {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
 .status-action button:hover {
