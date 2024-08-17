@@ -45,7 +45,7 @@
                 
                 <div class="post-content">
                     <h2 id="postTitle">${post.cb_title}</h2>
-                    <p>${post.cb_content}</p>
+                    <p style="white-space: pre-line;">${post.cb_content}</p>
                 </div>
                 
 				<!-- If there's an attached file -->

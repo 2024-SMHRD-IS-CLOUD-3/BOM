@@ -351,3 +351,13 @@ form[action="goCommWrite"] button:hover {
     background-color: #f7f7f7;
     font-weight: bold;
 }
+
+/* a태그 파란색 글씨로 바뀌는 현상 없애고 싶엉 */
+ a {
+    color: inherit;  /* 부모 요소의 글꼴 색상을 상속받도록 설정 */
+    text-decoration: none;  /* 밑줄 제거 */
+  }
+
+  a:visited {
+    color: inherit;  /* 방문한 링크의 색상도 상속 */
+  }
