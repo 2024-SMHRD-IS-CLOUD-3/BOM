@@ -58,7 +58,7 @@
 					<c:forEach var="deal" items="${deal}">
 						<tr>
 							<td>${deal.car_idx}</td>
-							<td><a href="goWriteDetail">${deal.car_title}</a></td>
+							<td><a href="goCarDetail?idx=${deal.car_idx}">${deal.car_title}</a></td>
 							<td>${deal.id}</td>
 							<td>${deal.card_at}</td>
 							<td>

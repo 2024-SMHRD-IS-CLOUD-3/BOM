@@ -33,7 +33,12 @@
                   <a href="babyCar">유모차</a>
                 </div>
             </div>
-            <a href="goCarWrite">stroller</a>
+            <a href="goCarWrite">Stroller</a>
+            	<div class="dropdown-content">
+                  <a href="boyC">유모차 판매</a>
+                  <a href="girlC">유모차 구입</a>
+              
+                </div>
             <a href="goComm">Board</a>
             <a href="goMyPage">MyPage</a>
         </nav>
@@ -69,7 +74,7 @@
             </article>
       </c:forEach>
         </section>
-        <a href="gogo"><button class="write-btn">글 쓰기</button></a>
+       
         <button class="scroll-to-top" onclick="scrollToTop()">↑</button>
     </main>
     

@@ -47,6 +47,9 @@ public class CarController {
 
 	@Autowired
 	private CarRepository carRepo;
+	
+
+	
 
 	@RequestMapping("/car")
 	public String car(HttpSession session) {
@@ -60,7 +63,7 @@ public class CarController {
 
 			return "redirect:/pathAdmin";
 		} else {
-			return "redirect:/goCar";
+			return "redirect:/gogo";
 		}
 
 	}
@@ -103,7 +106,12 @@ public class CarController {
 	private String goCar(Model model) {
 
 		List<CarEntity> entity = carRepo.findAllDesc();
-		model.addAttribute("list", entity);
+		for(int i =0; i<entity.size(); i++) {
+		if(entity.get(i).getCar_cours().equals("완료")) {
+			model.addAttribute("list", entity.get(i).getCar_cours());
+		}
+		}
+		
 
 		return "stroller";
 
@@ -190,25 +198,26 @@ public class CarController {
 
 		for (int i = 0; i < car.size(); i++) {
 			if (car.get(i).getCar_idx().equals(idx)) {
-
 				model.addAttribute("car", car.get(i));
-			}
-		}
-
-		for (int l = 0; l < user.size(); l++) {
-			if (user.get(l).getId().equals("test")) {
-
-				String duInfo = user.get(l).getUserFile();
-				if (duInfo != null) {
-					duInfo = "forComm/duInfo";
-				} else {
-					duInfo = "uploads/free-icon-person-4203951.png";
+			for (int l = 0; l < user.size(); l++) {
+				if (user.get(l).getId().equals(car.get(i).getId())) {
+					model.addAttribute("id", user.get(l).getId());
+					String duInfo = user.get(l).getUserFile();
+					if (duInfo != null) {
+						duInfo = "forComm/duInfo";
+					} else {
+						duInfo = "uploads/free-icon-person-4203951.png";
+					}
+					model.addAttribute("duInfo", duInfo);
 				}
-				model.addAttribute("duInfo", duInfo);
-			}
+		}
+
+		
 
 		}
 
-		return "CarDetail";
+		
 	}
+		return "CarDetail";
+}
 }
