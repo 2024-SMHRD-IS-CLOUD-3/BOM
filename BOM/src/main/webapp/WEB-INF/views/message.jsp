@@ -62,8 +62,8 @@
                                     <fmt:formatDate value="${message.send_at}" pattern="yyyy-MM-dd HH:mm:ss" />
                                 </td>
                                 <td>
-                                    <button class="reply-btn">답장</button>
-                                    <button class="delete-btn">삭제</button>
+                                    <a href="reSendMessage?idx=${message.m_idx}"><button class="reply-btn">답장</button></a>
+                                     <a href="deleteMessage?idx=${message.m_idx}"><button class="delete-btn">삭제</button></a>
                                 </td>
                             </tr>
                         </c:forEach>

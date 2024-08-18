@@ -118,7 +118,7 @@ public class MessageController {
 		Optional<DealEntity> optionalEntity = dealRepo.findById(idx);
 	 
 		if (optionalEntity.get().getB_idx().equals(idx)){
-			model.addAttribute("write", optionalEntity.get().getId());
+			model.addAttribute("sender", optionalEntity.get().getId());
 		}
 			
 		return "messageWrite";
@@ -140,7 +140,7 @@ public class MessageController {
 		msEntity.setSend_m(userId);
 		msEntity.setM_title(title);
 		msEntity.setAccept_m(accept);
-		msEntity.setSend_m(userId);
+		
 		LocalDateTime now = LocalDateTime.now();
 		Timestamp timestamp = Timestamp.valueOf(now);
 		msEntity.setSend_at(timestamp);
@@ -151,6 +151,29 @@ public class MessageController {
 		
 	}
 	
+	// 답장 메서드
+	@RequestMapping("/reSendMessage")
+	private String reSendMessage(HttpSession session, Model model, Long idx) {
+		String userId = (String) session.getAttribute("userId");
+		model.addAttribute("id", userId);
+		
+		Optional<MessageEntity> optionalEntity = meRepo.findById(idx);
+	 
+		if (optionalEntity.get().getM_idx().equals(idx)){
+			model.addAttribute("sender", optionalEntity.get().getSend_m());
+		}
+			
+		return "messageWrite";
+	
+	}
+	
+	// 삭제 메서드
+	@RequestMapping("/deleteMessage")
+	public String deleteMessage(Long idx) {
+		meRepo.deleteById(idx);
+		return "redirect:/messageList";
+	}
+
 	
 	
 	

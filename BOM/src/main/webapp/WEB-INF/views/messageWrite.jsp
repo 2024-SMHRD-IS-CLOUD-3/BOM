@@ -41,9 +41,9 @@
                         <strong>보낸 사람: </strong>${id}
                     </div>
                     <div>
-                        <strong>받는 사람: </strong>${write}
+                        <strong>받는 사람: </strong>${sender}
                         <!-- 숨겨진 필드로 write 값을 전송 -->
-            			<input type="hidden" name="write" value="${write}">
+            			<input type="hidden" name="write" value="${sender}">
                     </div>
                 </div>
                 <div class="message-subject">
@@ -56,11 +56,14 @@
                 <div class="message-actions">
                     <div class="message-actions">
                         <button class="inbox-btn" type="submit"> 완료</button>
-                        <button class="inbox-btn" onclick="window.location.href='inbox.html'">쪽지함으로 돌아가기</button>
-                       </form>
-                    </div>
+                         <a href="#"> <button class="inbox-btn" >쪽지함으로 돌아가기</button></a>
+                        
+                        
                     
+                    </div>
                 </div>
+                   </form>
+                  
             </div>
         </main>
 

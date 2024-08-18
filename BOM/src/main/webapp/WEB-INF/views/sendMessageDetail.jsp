@@ -51,9 +51,9 @@
                     <p>${list.m_content}</p>
                 </div>
                 <div class="message-actions">
-                    <button class="reply-btn">답장</button>
-                    <button class="delete-btn">삭제</button>
-                    <button class="inbox-btn" onclick="window.location.href='inbox.html'">쪽지함으로 돌아가기</button>
+                     <a href="reSendMessage?idx=${list.m_idx}"><button class="reply-btn">답장</button></a>
+                  <a href="deleteMessage?idx=${list.m_idx}">  <button class="delete-btn">삭제</button></a>
+                   <a href="messageList"> <button class="inbox-btn" >쪽지함으로 돌아가기</button></a>
                 </div>
             </div>
         </main>
