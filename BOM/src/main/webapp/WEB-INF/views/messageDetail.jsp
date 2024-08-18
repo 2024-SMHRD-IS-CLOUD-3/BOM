@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -37,17 +38,17 @@
             <div class="message-detail-box">
                 <div class="message-header">
                     <div>
-                        <strong>보낸 사람:</strong> ${message.senderName}
+                        <strong>보낸 사람:</strong> ${list.accept_m}
                     </div>
                     <div>
-                        <strong>받은 시간:</strong> ${message.date}
+                        <strong>받은 시간:</strong> ${list.send_at}
                     </div>
                 </div>
                 <div class="message-subject">
-                    <strong>제목:</strong> ${message.subject}
+                    <strong>제목:</strong> ${list.m_title}
                 </div>
                 <div class="message-body">
-                    <p>${message.body}</p>
+                    <p>${list.m_content}</p>
                 </div>
                 <div class="message-actions">
                     <button class="reply-btn">답장</button>

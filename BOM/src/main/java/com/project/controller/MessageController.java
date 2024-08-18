@@ -87,13 +87,16 @@ public class MessageController {
 				model.addAttribute("list", list.get(i));
 			}
 		}
-		return "";
+		return "messageDetail";
 	}
 
 	// 메세지 작성하러가는 메서드
 	@RequestMapping("/smessage")
 	private String smessage(HttpSession session, Model model, Long idx) {
 		String userId = (String) session.getAttribute("userId");
+		if(userId == null) {
+			return "redirect:/login";
+		}
 		model.addAttribute("id", userId);
 		Optional<DealEntity> optionalEntity = dealRepo.findById(idx);
 	 
@@ -120,7 +123,7 @@ public class MessageController {
 		msEntity.setSend_m(userId);
 		msEntity.setM_title(title);
 		msEntity.setAccept_m(accept);
-	
+		msEntity.setSend_m(userId);
 		LocalDateTime now = LocalDateTime.now();
 		Timestamp timestamp = Timestamp.valueOf(now);
 		msEntity.setSend_at(timestamp);

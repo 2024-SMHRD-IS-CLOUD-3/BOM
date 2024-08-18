@@ -26,7 +26,7 @@
                     <ul>
                         <li><a href="./">Home</a></li>
                         <li><a href="b_board">Market</a></li>
-                         <li><a href="car">Stroller</a></li>  
+                        <li><a href="car">Stroller</a></li>  
                         <li><a href="goComm">Board</a></li>
                         <li><a href="goMyPage">MyPage</a></li>
                     </ul>
@@ -59,8 +59,8 @@
                                 <td>${message.send_m}</td>
                                 <td><a href="goMessageDetail?id=${message.m_idx}">${message.m_title}</a></td>
                                 <td>
-                                	<fmt:formatDate value="${message.send_at}" pattern="yyyy-MM-dd HH:mm:ss" />
-                               	</td>
+                                    <fmt:formatDate value="${message.send_at}" pattern="yyyy-MM-dd HH:mm:ss" />
+                                </td>
                                 <td>
                                     <button class="reply-btn">답장</button>
                                     <button class="delete-btn">삭제</button>
@@ -84,13 +84,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                         <c:forEach var=messageSend items="${sendMessage}">
+                        <c:forEach var="messageSend" items="${sendMessage}">
                             <tr>
                                 <td>${messageSend.accept_m}</td>
-                                <td><a href="goMessageDetail?id=${messageSend.m_idx}">${messageSend.m_title}</a></td>
+                                <td><a href="receiveMessage?idx=${messageSend.m_idx}">${messageSend.m_title}</a></td>
                                 <td>
-                                	<fmt:formatDate value="${messageSend.send_at}" pattern="yyyy-MM-dd HH:mm:ss" />
-                               	</td>
+                                    <fmt:formatDate value="${messageSend.send_at}" pattern="yyyy-MM-dd HH:mm:ss" />
+                                </td>
                                 <td>
                                     <button class="delete-btn">삭제</button>
                                 </td>
