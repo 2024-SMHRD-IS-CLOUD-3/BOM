@@ -1,23 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BOM의 유모차</title>
-    <link rel="stylesheet" href="dd.css">
-    
-    <script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BOM</title>
 
-</script>
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="nicepage.css">
+
+<link rel="stylesheet" href="dd.css">
 </head>
 
 <body>
-    <header class="u-clearfix u-gradient u-header u-header" id="sec-b9bc"
+	<header class="u-clearfix u-gradient u-header u-header" id="sec-b9bc"
 		data-animation-name="" data-animation-duration="0"
 		data-animation-delay="0" data-animation-direction="">
 		<div class="u-clearfix u-sheet u-sheet-1">
@@ -49,27 +49,21 @@
 						<li class="u-nav-item"><a
 							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
 							href="./" style="padding: 10px 20px;">Home</a></li>
-						
-						
+
+
 						<li class="u-nav-item">
-						<div class="dropdown">
-						<a
-							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
-							href="b_board" style="padding: 10px 20px;">Market</a>
-							<div class="dropdown-content">
-                     <a href="boyC">남아의류</a>
-                  <a href="girlC">여아의류</a>
-                  <a href="toy">장난감류</a>
-                  <a href="book">도서교구</a>
-                  <a href="furniture">아이가구</a>
-                  <a href="newBorn">육아출산</a>
-                  <a href="babyCar">유모차</a>
-                </div>
+							<div class="dropdown">
+								<a
+									class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
+									href="b_board" style="padding: 10px 20px;">Market</a>
+								<div class="dropdown-content">
+									<a href="boyC">남아의류</a> <a href="girlC">여아의류</a> <a href="toy">장난감류</a>
+									<a href="book">도서교구</a> <a href="furniture">아이가구</a> <a
+										href="newBorn">육아출산</a> <a href="babyCar">유모차</a>
+								</div>
 							</div>
-							</li>
-						<li class="u-nav-item">
-						
-						<a id="car"
+						</li>
+						<li class="u-nav-item"><a id="car"
 							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
 							href="car" style="padding: 10px 20px;">Stroller</a></li>
 						<li class="u-nav-item"><a
@@ -106,43 +100,34 @@
 		</div>
 	</header>
 
-    <main>
-        <section class="products" id="product-grid">
-     <c:forEach items="${list}" var="deal"> 
-            <article class="product-card">
-                <a class="card-link" href="goDetail?idx=${deal.car_idx}">
-                    <div class="image">
-                        <img alt="파일 경로 확인" src="stroller/${deal.car_file}" />
-                    </div>
-                    <div class="card-desc">
-                        <h2 class="card-title">${deal.car_title}</h2>
-                        <div class="price">
-                            ${deal.car_price}
-                        </div>
-                        <div class="region">
-                            ${duAddr}
-                        </div>
-                        <div class="card-counts">
-                            <span class="like-counts">
-                                관심 0
-                            </span>
-                            ∙
-                            <span class="chat-counts">
-                                채팅 0
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </article>
-      </c:forEach>
-        </section>
-       
-        <button class="scroll-to-top" onclick="scrollToTop()">↑</button>
-    </main>
-    
-    
+	<main>
+		<section class="products" id="product-grid">
+			<c:forEach items="${stList}" var="stList">
+				<article class="product-card">
+					<a class="card-link" href="goCarDetail?idx=${stList.car_idx}">
+						<div class="image">
+							<img alt="파일 경로 확인" src="stroller/${stList.car_file}" />
+						</div>
+						<div class="card-desc">
+							<h2 class="card-title">${stList.car_title}</h2>
+							<div class="price">${stList.car_price}원</div>
+							<div class="rank"> ${stList.car_rank}급</div>
+							<div class="card-counts">
+								<span class="like-counts"> 관심 0 </span> ∙ <span
+									class="chat-counts"> 채팅 0 </span>
+							</div>
+						</div>
+					</a>
+				</article>
+			</c:forEach>
+		</section>
+		<a href="gogo"><button class="write-btn">글 쓰기</button></a>
+		<button class="scroll-to-top" onclick="scrollToTop()">↑</button>
+	</main>
 
-    <script>
+
+
+	<script>
 
 
 function renderProducts(deal) {
@@ -163,8 +148,8 @@ function renderProducts(deal) {
                         <div class="price">
                             ${product.price}
                         </div>
-                        <div class="region">
-                            ${product.region}
+                        <div class="rank">
+                            ${product.rank}
                         </div>
                         <div class="card-counts">
                             <span class="like-counts">

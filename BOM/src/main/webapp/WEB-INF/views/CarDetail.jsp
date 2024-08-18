@@ -62,6 +62,8 @@
                         </div>
                     </div>
                     <h2 id="product-title">${car.car_title}</h2>
+                    
+                    <p id="product-rank" class="rank">${car.car_rank}급</p>
                     <p id="product-price" class="price">${car.car_price}원</p>
                     <p id="product-description" class="description">
                         ${car.car_content}

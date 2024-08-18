@@ -196,7 +196,8 @@ public class DealController {
 		return "B_detail";
 
 	}
-
+	
+	// 게시글 삭제
 	@RequestMapping("/goDelete")
 	public String goDelete(Long idx) {
 		dealRepo.deleteById(idx);
@@ -204,6 +205,7 @@ public class DealController {
 	}
 
 	
+	// 수정하기 위한 게시판으로 이동
 	@RequestMapping("/dealModify")
 	public String dealModify(Model model,String dealId, DealEntity entity, Long idx, HttpSession session) {
 		
@@ -222,23 +224,6 @@ public class DealController {
 		return "B_modify";
 	}
 
-	@RequestMapping("/goRoom")
-	public String room() {
-		return "room";
-	}
 
-	@RequestMapping("/goChat")
-	public String chat(Model model, Long idx) {
-		List<DealEntity> deal = dealRepo.findAll();
-		System.out.println(idx);
-		for (int i = 0; i < deal.size(); i++) {
-			if (deal.get(i).getB_idx().equals(idx)) {
-				System.out.println(deal.get(i));
-				model.addAttribute("chat", deal.get(i));
-			}
-		}
-
-		return "chat";
-	}
 
 }

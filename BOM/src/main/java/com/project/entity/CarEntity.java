@@ -43,7 +43,7 @@ public class CarEntity {
 	private String car_title;
 	
 	// 유모차 상태
-	private String car_rank;
+	private String car_rank = "A";
 	
 	// 유모차 가격
 	private Long car_price;

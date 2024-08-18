@@ -47,9 +47,6 @@ public class CarController {
 
 	@Autowired
 	private CarRepository carRepo;
-	
-
-	
 
 	@RequestMapping("/car")
 	public String car(HttpSession session) {
@@ -77,42 +74,33 @@ public class CarController {
 
 		return "admin";
 	}
-	
+
 	@RequestMapping("/updateStatus")
-	public String updateStatus(@RequestParam("car_idx") Long car_idx, 
-	                           @RequestParam("car_cours") String car_cours) {
+	public String updateStatus(@RequestParam("car_idx") Long car_idx, @RequestParam("car_cours") String car_cours) {
 
-	    Optional<CarEntity> optionalEntity = carRepo.findById(car_idx);
-	   
-	    
-	    System.out.println(car_cours+"를 보여줘");
-	    if (optionalEntity.isPresent()) {
-	        CarEntity entity = optionalEntity.get();
-	
-	        
-	        // 사용자가 선택한 car_cours 값을 설정
-	        entity.setCar_cours(car_cours);
-	        carRepo.save(entity);  // 변경 사항을 저장
-	        System.out.println("업데이트된 car_cours: " + entity.getCar_cours());
-	    } else {
-	        System.out.println("해당 ID로 엔티티를 찾을 수 없습니다: " + car_idx);
-	        // 오류 처리 로직
-	    }
+		Optional<CarEntity> optionalEntity = carRepo.findById(car_idx);
 
-	    return "redirect:/pathAdmin";
+		System.out.println(car_cours + "를 보여줘");
+		if (optionalEntity.isPresent()) {
+			CarEntity entity = optionalEntity.get();
+
+			// 사용자가 선택한 car_cours 값을 설정
+			entity.setCar_cours(car_cours);
+			carRepo.save(entity); // 변경 사항을 저장
+			System.out.println("업데이트된 car_cours: " + entity.getCar_cours());
+		} else {
+			System.out.println("해당 ID로 엔티티를 찾을 수 없습니다: " + car_idx);
+			// 오류 처리 로직
+		}
+
+		return "redirect:/pathAdmin";
 	}
 
 	@RequestMapping("goCar")
 	private String goCar(Model model) {
 
-		List<CarEntity> entity = carRepo.findAllDesc();
-		for(int i =0; i<entity.size(); i++) {
-		if(entity.get(i).getCar_cours().equals("완료")) {
-			model.addAttribute("list", entity.get(i).getCar_cours());
-		}
-		}
-		
-
+		List<CarEntity> entity = carRepo.findAllByCarCoursDesc();
+		model.addAttribute("stList", entity);
 		return "stroller";
 
 	}
@@ -192,51 +180,111 @@ public class CarController {
 	}
 
 	@RequestMapping("goCarDetail")
-	public String carDetail(Long idx, Model model,HttpSession session) {
+	public String carDetail(Long idx, Model model, HttpSession session) {
 		List<CarEntity> car = carRepo.findAll();
 		List<UserEntity> user = repo.findAll();
 		String userId = (String) session.getAttribute("userId");
-		if(!userId.equals("test")) {
+
+		if (!userId.equals("test")) {
 			for (int i = 0; i < car.size(); i++) {
 				for (int l = 0; l < user.size(); l++) {
 					if (user.get(l).getId().equals(car.get(i).getId())) {
 						model.addAttribute("id", user.get(l).getId());
-			
+
 					}
 				}
-			} 
-				
-			
+			}
+
 		} else {
 			model.addAttribute("id", "test");
 		}
-		
-		
-		
-		
+
 		for (int i = 0; i < car.size(); i++) {
 			if (car.get(i).getCar_idx().equals(idx)) {
 				model.addAttribute("car", car.get(i));
-				System.out.println("메롱메롱"+ car.get(i));
-			for (int l = 0; l < user.size(); l++) {
-				if (user.get(l).getId().equals(car.get(i).getId())) {
-					model.addAttribute("id", user.get(l).getId());
-					String duInfo = user.get(l).getUserFile();
-					if (duInfo != null) {
-						duInfo = "forComm/duInfo";
-					} else {
-						duInfo = "uploads/free-icon-person-4203951.png";
+				System.out.println("메롱메롱" + car.get(i));
+				for (int l = 0; l < user.size(); l++) {
+					if (user.get(l).getId().equals(car.get(i).getId())) {
+						model.addAttribute("id", user.get(l).getId());
+						String duInfo = user.get(l).getUserFile();
+						if (duInfo != null) {
+							duInfo = "forComm/duInfo";
+						} else {
+							duInfo = "uploads/free-icon-person-4203951.png";
+						}
+						model.addAttribute("duInfo", duInfo);
 					}
-					model.addAttribute("duInfo", duInfo);
 				}
+
+			}
+
 		}
-
-		
-
+		if (userId.equals("test")) {
+			return "CarDetailAdmin";
 		}
-
-		
-	}
 		return "CarDetail";
-}
+	}
+
+	@RequestMapping("/carAdmin")
+	public String carAdmin(Model model, String dealId, CarEntity entity, Long idx) {
+		Optional<CarEntity> optionalEntity = carRepo.findById(idx);
+		List<CarEntity> car = carRepo.findAll();
+		List<UserEntity> user = repo.findAll();
+
+		if (optionalEntity.isPresent()) {
+			entity = optionalEntity.get();
+
+			model.addAttribute("deal", entity);
+
+			model.addAttribute("file", "stroller/"+entity.getCar_file());
+		}
+
+		return "CarAdminMode";
+	}
+
+	@RequestMapping("/adminWrite")
+	public String adminWrite(@ModelAttribute CarEntity updatedEntity, @RequestParam("car_title") String title,
+			@RequestParam("car_price") Long price, @RequestParam("car_rank") String rank,
+			@RequestParam("car_content") String description, @RequestParam("file") MultipartFile file,
+			@RequestParam("car_cours") String cours, HttpSession session, RedirectAttributes redirectAttributes,
+			Long idx) {
+
+		if (file.isEmpty()) {
+			redirectAttributes.addFlashAttribute("message", "파일이 비어 있습니다.");
+
+		}
+
+		String uuid = UUID.randomUUID().toString();
+		String filename = uuid + "_" + file.getOriginalFilename();
+		Path path = Paths.get(savePath + filename);
+
+		try {
+			Files.copy(file.getInputStream(), path);
+		} catch (IOException e) {
+			e.printStackTrace();
+			redirectAttributes.addFlashAttribute("message", "파일 업로드 실패.");
+			return "redirect:/goWrite";
+		}
+		Optional<CarEntity> optionalEntity = carRepo.findById(idx);
+
+		System.out.println("자라거부기" + idx);
+		CarEntity entity = optionalEntity.get();
+		entity.setCar_title(title);
+		entity.setCar_price(price);
+		entity.setId("test");
+		entity.setCar_rank(rank);
+		entity.setCar_cours(cours);
+		entity.setCar_content(description);
+		entity.setCar_file(filename);
+
+		LocalDateTime now = LocalDateTime.now();
+		Timestamp timestamp = Timestamp.valueOf(now);
+		entity.setCard_at(timestamp);
+
+		carRepo.save(entity);
+
+		redirectAttributes.addFlashAttribute("message", "게시물 등록 완료.");
+		return "redirect:/goCar";
+	}
+
 }

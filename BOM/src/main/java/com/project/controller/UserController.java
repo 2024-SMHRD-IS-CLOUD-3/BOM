@@ -55,10 +55,17 @@ public class UserController {
    private UserRepository repo;
 
    @RequestMapping("/")
-   public String main() {
-      return "index";
+   public String main(HttpSession session) {
+	   UserEntity loginInfo = (UserEntity) session.getAttribute("LoginInfo");
+	   if(loginInfo == null) {
+		   return "index";
+	   } else if(loginInfo.getId().equals("test")) {
+		   return "adminIndex";
+	   } else {
+      return "index";}
    }
-
+   
+   
    @RequestMapping("/goJoin")
    public String goJoin() {
 
