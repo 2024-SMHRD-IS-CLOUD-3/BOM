@@ -123,13 +123,12 @@ public class CarController {
 	@RequestMapping("/goCarWrite")
 	private String goCarWrite(HttpSession session, Model model) {
 		UserEntity loginInfo = (UserEntity) session.getAttribute("LoginInfo");
-		if (loginInfo.getId() != null) {
+		if (!loginInfo.getId().equals("test")) {
 			model.addAttribute("id", loginInfo.getId());
 			return "strollerWrite";
 		} else if (loginInfo.getId().equals("test")) {
 			return "admin";
-		} else {
-
+		} else{
 			return "redirect:/doLogin";
 		}
 	}

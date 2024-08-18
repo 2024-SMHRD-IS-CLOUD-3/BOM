@@ -159,6 +159,7 @@ main {
     margin-bottom: 30px;
 }
 
+
 .board-table th, .board-table td {
     border: none;
     padding: 15px 20px;
@@ -172,6 +173,7 @@ main {
     font-size: 20px;
     border-radius: 6px 6px 0 0;
     font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
+    font-style: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
 }
 
 .popular-row {

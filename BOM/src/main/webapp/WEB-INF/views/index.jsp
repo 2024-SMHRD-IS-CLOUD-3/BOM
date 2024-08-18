@@ -145,11 +145,13 @@
 								<p class="u-align-center u-custom-font u-text u-text-2">
 									유모차 직접 수거, 클리닝, 판매까지 한번에<br>동네라서 가능한 것, BOM에서 함께해봄
 								</p>
-								<a href="#"
+								<a href="goCarWrite"
 									class="u-align-center u-btn u-button-style u-custom-color-1 u-custom-font u-text-body-color u-text-hover-black u-btn-1">유모차
-									거래 </a> <a href="goComm"
+									거래 </a> 
+								<a href="goComm"
 									class="u-align-center u-btn u-button-style u-custom-color-1 u-custom-font u-text-body-color u-text-hover-black u-btn-2">육아팁
-									게시판 </a> <a href="b_board"
+									게시판 </a> 
+								<a href="b_board"
 									class="u-align-center u-btn u-button-style u-custom-color-1 u-custom-font u-text-body-color u-text-hover-black u-btn-3">물품거래
 								</a>
 							</div>

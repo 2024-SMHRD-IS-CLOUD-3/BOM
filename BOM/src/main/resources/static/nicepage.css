@@ -15474,6 +15474,7 @@ div.u-video,
 }
 .u-nav-container .u-nav-item .u-nav-item {
   display: block;
+  font-size: 30px;
 }
 .u-nav-container .u-nav-item:hover > .u-nav-popup:not(.fake) {
   visibility: visible;
@@ -15744,6 +15745,7 @@ div.u-video,
     grid-template-columns: repeat(6, 16.66666667%);
   }
 }
+
 .u-menu .u-nav-container .u-popup-left {
   right: 0;
 }
@@ -44646,7 +44648,7 @@ a.u-link.u-text-hover-grey-90:hover {
 
 .u-header .u-btn-1 {
   background-image: none;
-  font-size: 3rem;
+  font-size: 55px;
   font-weight: 700;
   font-family: "58f3024d-26d0-c241-41e8-71c24ce6469e";
   padding: 0;
