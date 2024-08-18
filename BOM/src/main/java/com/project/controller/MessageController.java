@@ -42,6 +42,7 @@ public class MessageController {
 		List<MessageEntity> list = meRepo.findAllOrderBySendAtDesc();
 		String userId = (String) session.getAttribute("userId");
 
+		// 받은 메세지 로직
 		// 전체 데이터 중 조건에 맞는 데이터만 저장할 리스트 생성
 		List<MessageEntity> selectMessage = new ArrayList<>();
 
@@ -58,7 +59,9 @@ public class MessageController {
 	    // 수신한 메시지 리스트를 모델에 추가
 	    model.addAttribute("selectMessage", selectMessage);
 	    
-	    //여기 안에 보낸 메세지 로직 추가
+	    //========================================================
+	    
+	    //보낸 메세지 로직 추가
 	    // 전체 데이터 중 조건에 맞는 데이터만 저장할 리스트 생성
  		List<MessageEntity> sendMessage = new ArrayList<>();
  		for (MessageEntity messageSend : list) {
@@ -76,9 +79,9 @@ public class MessageController {
 		return "message";
 	}
 
-	// 메세지 디테일 메서드
-	@RequestMapping("/receiveMessage")
-	private String receiveMessage(Model model, HttpSession session, Long idx) {
+	// 보낸 메세지 디테일 메서드
+	@RequestMapping("/sMessage")
+	private String sendMessage(Model model, HttpSession session, Long idx) {
 		List<MessageEntity> list = meRepo.findAllOrderBySendAtDesc();
 		String userId = (String) session.getAttribute("userId");
 
@@ -87,7 +90,21 @@ public class MessageController {
 				model.addAttribute("list", list.get(i));
 			}
 		}
-		return "messageDetail";
+		return "sendMessageDetail";
+	}
+	
+	// 받은 메세지 디테일 메서드
+	@RequestMapping("/rMessage")
+	private String receiveMessage(Model model, HttpSession session, Long idx) {
+		List<MessageEntity> list = meRepo.findAllOrderBySendAtDesc();
+		String userId = (String) session.getAttribute("userId");
+		
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).getM_idx().equals(idx)) {
+				model.addAttribute("list", list.get(i));
+			}
+		}
+		return "receiveMessageDetail";
 	}
 
 	// 메세지 작성하러가는 메서드

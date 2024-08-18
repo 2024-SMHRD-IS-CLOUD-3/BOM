@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>받은 쪽지</title>
+    <title>보낸 쪽지</title>
     <link rel="stylesheet" href="messagedetail.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
@@ -38,7 +38,7 @@
             <div class="message-detail-box">
                 <div class="message-header">
                     <div>
-                        <strong>보낸 사람:</strong> ${list.accept_m}
+                        <strong>받는 사람:</strong> ${list.accept_m}
                     </div>
                     <div>
                         <strong>받은 시간:</strong> ${list.send_at}

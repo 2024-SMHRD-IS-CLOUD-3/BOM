@@ -57,7 +57,7 @@
                         <c:forEach var="message" items="${selectMessage}">
                             <tr>
                                 <td>${message.send_m}</td>
-                                <td><a href="goMessageDetail?id=${message.m_idx}">${message.m_title}</a></td>
+                                <td><a href="rMessage?idx=${message.m_idx}">${message.m_title}</a></td>
                                 <td>
                                     <fmt:formatDate value="${message.send_at}" pattern="yyyy-MM-dd HH:mm:ss" />
                                 </td>
@@ -87,7 +87,7 @@
                         <c:forEach var="messageSend" items="${sendMessage}">
                             <tr>
                                 <td>${messageSend.accept_m}</td>
-                                <td><a href="receiveMessage?idx=${messageSend.m_idx}">${messageSend.m_title}</a></td>
+                                <td><a href="sMessage?idx=${messageSend.m_idx}">${messageSend.m_title}</a></td>
                                 <td>
                                     <fmt:formatDate value="${messageSend.send_at}" pattern="yyyy-MM-dd HH:mm:ss" />
                                 </td>
