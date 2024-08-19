@@ -119,7 +119,8 @@
 						value="${empty deal.car_price ? '가격을 입력하세요.' : deal.car_price}">
 
 					<label for="description">내용</label>
-					<textarea id="description" name="car_content" rows="5">${empty deal.car_content ? '내용을 입력하세요.' : deal.car_content}
+					<textarea id="description" name="car_content" rows="5" >원글자가 남긴 내용입니다.   >>
+					${empty deal.car_content ? '내용을 입력하세요.' : deal.car_content}
 					</textarea>
 
 

@@ -113,10 +113,12 @@
 
 				<h2 id="product-title">${yoyo.b_title}</h2>
 				<p id="product-price" class="price">${yoyo.how_much}원</p>
-				<p id="product-description" class="description">
+				<p id="product-description" class="description" style="white-space: pre-line;">
 					${yoyo.b_content}</p>
 			</div>
 
+			
+	
 			<a href="smessage?idx=${yoyo.b_idx}">
 				<button class="chat-btn">쪽지보내기</button>
 			</a>
@@ -126,8 +128,8 @@
 	</main>
 
 
-	</script>
-	<!--  <script src="market_d.js"></script> -->
+	
+
 </body>
 
 </html>
