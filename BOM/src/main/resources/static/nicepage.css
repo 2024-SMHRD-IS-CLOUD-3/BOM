@@ -7748,6 +7748,7 @@ section.u-image:not(.u-hover-box),
 }
 .u-image-square {
   border-radius: 0;
+  
 }
 [data-post-link],
 [data-href] {
