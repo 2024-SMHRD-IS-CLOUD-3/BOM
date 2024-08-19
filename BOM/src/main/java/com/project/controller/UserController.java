@@ -95,7 +95,7 @@ public class UserController {
 //      return fileName;
 //   }
 
-   // Flask 데이터 가져오기
+    //Flask 데이터 가져오기
 //   @RequestMapping("/dataRequest") // POST로 변경
 //   @ResponseBody // AJAX 요청에 대한 응답을 직접 반환
 //   public String flask(@RequestParam("file") MultipartFile file, HttpSession session) {

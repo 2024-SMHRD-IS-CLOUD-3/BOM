@@ -83,7 +83,7 @@ nav a.active {
     left: 0;
     background-color: white;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 10; /* 드롭다운 메뉴가 헤더 위로 오도록 설정 */
+    z-index: 30; /* 드롭다운 메뉴가 헤더 위로 오도록 설정 */
     border-radius: 4px;
     min-width: 160px;
     font-family: 'Pretendard-Regular', Arial, sans-serif;
@@ -106,7 +106,7 @@ nav a.active {
     left: 0;
     background-color: white;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 10; /* 드롭다운 메뉴가 헤더 위로 오도록 설정 */
+    z-index: 30; /* 드롭다운 메뉴가 헤더 위로 오도록 설정 */
     border-radius: 4px;
     min-width: 160px;
     font-family: 'Pretendard-Regular', Arial, sans-serif;
