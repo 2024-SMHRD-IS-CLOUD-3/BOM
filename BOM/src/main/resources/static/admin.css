@@ -6,351 +6,190 @@
 }
 
 body {
-    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
+    font-family: 'Pretendard-Regular', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #e0e0e0;
 }
 
-/* Container */
-.container {
-    width: 1200px;
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    border-radius: 12px;
-    overflow: hidden;
-    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
-}
-
-/* Header */
 header {
-    background-color: #4CAF50;
-    padding: 10px 0;
-    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
-}
-
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.logo {
-    flex: 1;
-    text-align: left;
-}
-
-.logo h1 {
-    color: white;
-    margin: 0;
-    font-size: 24px;
-    font-weight: 700;
-    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
-}
-
-/* Navigation Bar */
-nav {
-    background-color: #4CAF50;
-    border-radius: 0 0 12px 12px;
-    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
-}
-
-nav ul {
-    list-style: none;
-    padding: 10px 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-around;
-}
-
-nav ul li a {
-    color: white;
-    padding: 12px 10px;
-    display: block;
-    text-decoration: none;
-    border-radius: 6px;
-    transition: background-color 0.3s ease;
-    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
-}
-
-nav ul li a:hover {
-    background-color: #4CAF50;
-}
-
-/* Main Content */
-main {
-    padding: 30px;
-    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
-}
-
-.board-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 30px;
-}
-
-.board-table th, .board-table td {
-    border: none;
-    padding: 15px 20px;
-    text-align: left;
-    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
-}
-
-.board-table th {
-    background-color: #4CAF50;
-    color: white;
-    font-size: 20px;
-    border-radius: 6px 6px 0 0;
-    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
-}
-
-.popular-row {
-    background-color: black !important;
-}
-
-.board-table td {
-    background-color: #f1f1f1;
-    border-bottom: 2px solid #eaeaea;
-    font-size: 16px;
-    color: #555;
-}
-
-.board-table tr:last-child td {
-    border-bottom: none;
-}
-
-.board-table tr:hover td {
-    background-color: #f1f1f1;
-}
-
-/* Pagination */
-.pagination {
-    text-align: center;
-    padding: 20px 0;
-    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
-}
-
-.pagination a {
-    color: #4CAF50;
-    padding: 10px 16px;
-    text-decoration: none;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    margin: 0 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.pagination a.active {
-    background-color: #4CAF50;
-    color: white;
-    border-color: #4CAF50;
-}
-
-.pagination a:hover {
-    background-color: #4CAF50;
-    color: white;
-}
-
-/* Footer */
-footer {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 14px;
-    margin-top: 40px;
-    border-radius: 0 0 12px 12px;
-    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
-}
-
-/* Search Bar */
-.search-bar {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.search-bar input[type="text"] {
-    width: 60%;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    box-shadow: none;
-    transition: all 0.3s ease;
-    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
-}
-
-.search-bar input[type="text"]:focus {
-    outline: none;
-    border-color: #4CAF50;
-}
-
-/* Back Button */
-.back-button {
-    text-align: center;
-    margin-top: 20px;
-    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
-}
-
-/* Post Detail Styles */
-.post-detail {
+    background: linear-gradient(to right, #6a9bc6, #89d499);
     padding: 20px;
-    border: 1px solid #eee;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
-}
-
-.post-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
-    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
-.author-info {
+header h1 {
+    margin: 0;
+    color: white;
+    font-family: 'Pretendard-Regular', cursive; /* 폰트 변경 */
+}
+
+nav {
     display: flex;
     align-items: center;
 }
 
-.author-icon {
-    width: 40px;
-    height: 40px;
-    background-color: #ccc;
-    border-radius: 50%;
-    margin-right: 10px;
+nav a {
+    color: black;
+    text-decoration: none;
+    margin: 0 15px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-.author-name {
-    font-weight: 500;
-    margin-right: 10px;
-    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
+nav a.active {
+    color: #f50c6e;
 }
 
-.post-date {
-    color: #999;
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 4px;
+    min-width: 160px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
     font-size: 0.9em;
-    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
-.post-content {
-    font-size: 1.1em;
-    margin-bottom: 20px;
-    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
 }
 
-.post-footer {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
-}
-
-.like-comment-section {
-    display: flex;
-    gap: 20px;
-    font-size: 1em;
-    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
-}
-
-.comment-section {
-    padding-top: 10px;
-    border-top: 1px solid #eee;
-    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
-}
-
-.comment-bot-warning {
-    background-color: #f0f0f0;
-    padding: 10px;
+.back-btn {
+    margin-left: 350px; 
+    padding: 10px 20px;
+    background-color: #69c173;
+    color: white;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
+    border: none;
     border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.back-btn:hover {
+    background-color: #57a763;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.upload-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
+}
+
+.image-preview {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 40px;
+}
+
+.image-preview img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px dashed #ccc;
+    padding: 20px;
+}
+
+.form-container {
+    flex: 1;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
+}
+
+label {
     margin-bottom: 10px;
-    font-size: 0.9em;
-    color: #777;
-    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
+    font-weight: bold;
+}
+
+input[type="text"], textarea, select {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 10px;
     resize: none;
-    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
 }
 
-button {
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
-}
-
-button:hover {
-    background-color: #555;
-}
-
-/* View Count */
-.view-count {
-    font-size: 0.9em;
-    color: #777;
-    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
-}
-
-select {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    background-color: #f1f1f1;
-    color: #333;
-    font-size: 16px;
-    cursor: pointer;
-    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
-}
-
-select:focus {
-    outline: none;
-    border-color: #4CAF50;
-}
-
-.status-action {
+.file-upload {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
+    margin-bottom: 20px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
-.status-action select {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    background-color: #f1f1f1;
-    color: #333;
-    font-size: 16px;
-    cursor: pointer;
-    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
-}
-
-.status-action button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
+.file-select-btn {
+    background-color: #69c173;
     color: white;
-    border: none;
+    padding: 10px 20px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
     border-radius: 5px;
     cursor: pointer;
-    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
+    margin-right: 10px;
+    display: inline-block;
 }
 
-.status-action button:hover {
-    background-color: #45a049;
+.file-select-btn:hover {
+    background-color: #57a763;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.submit-btn {
+    background-color: #69c173;
+    color: white;
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+.submit-btn:hover {
+    background-color: #57a763;
 }
