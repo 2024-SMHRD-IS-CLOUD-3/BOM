@@ -8,18 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post Detail</title>
     <link rel="stylesheet" href="styles.css">
+       <link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="nicepage.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <header class="u-clearfix u-gradient u-header u-header" id="sec-b9bc"
+  	<header class="u-clearfix u-gradient u-header u-header" id="sec-b9bc"
 		data-animation-name="" data-animation-duration="0"
 		data-animation-delay="0" data-animation-direction="">
 		<div class="u-clearfix u-sheet u-sheet-1">
 			<p class="u-align-center u-text u-text-body-alt-color u-text-1">
 				<a
 					class="u-active-none u-border-none u-btn u-button-link u-button-style u-custom-font u-hover-none u-none u-text-body-alt-color u-btn-1"
-					data-href="./">BOM </a>
+					href="./">BOM </a>
 			</p>
 			<nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
 				<div class="menu-collapse u-custom-font"
@@ -44,34 +45,31 @@
 						<li class="u-nav-item"><a
 							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
 							href="./" style="padding: 10px 20px;">Home</a></li>
-						
-						
-						<li class="u-nav-item">
-						<div class="dropdown">
-						<a
-							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
-							href="b_board" style="padding: 10px 20px;">Market</a>
-							<div class="dropdown-content">
-                     <a href="boyC">남아의류</a>
-                  <a href="girlC">여아의류</a>
-                  <a href="toy">장난감류</a>
-                  <a href="book">도서교구</a>
-                  <a href="furniture">아이가구</a>
-                  <a href="newBorn">육아출산</a>
-                  <a href="babyCar">유모차</a>
-                </div>
-							</div>
-							</li>
+
+
 						<li class="u-nav-item">
 							<div class="dropdown">
-						<a id="car"
-							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
-							href="car" style="padding: 10px 20px;">Stroller</a>
-							<div class="dropdown-content">
-									<a href="car">유모차 매입 신청</a> <a href="goCar">유모차 구매</a>
-									
+								<a
+									class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
+									href="b_board" style="padding: 10px 20px;">Market</a>
+								<div class="dropdown-content">
+									<a href="boyC">남아의류</a> <a href="girlC">여아의류</a> <a href="toy">장난감류</a>
+									<a href="book">도서교구</a> <a href="furniture">아이가구</a> <a
+										href="newBorn">육아출산</a> <a href="babyCar">유모차</a>
 								</div>
-						</div>
+							</div>
+						</li>
+						<li class="u-nav-item">
+							<div class="dropdown">
+								<a id="car"
+									class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
+									href="car" style="padding: 10px 20px;">Stroller</a>
+								<div class="dropdown-content">
+									<a href="car">유모차 매입 신청</a> <a href="goCar">유모차 구매</a>
+
+								</div>
+							</div>
+
 						</li>
 						<li class="u-nav-item"><a
 							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
@@ -106,8 +104,9 @@
 			</nav>
 		</div>
 	</header>
-
-        <main>
+  
+    <div class="container">
+          <main>
             <div class="post-detail">
                 <div class="post-header">
                     <div class="author-info">
@@ -189,9 +188,6 @@
             </div>
         </main>
 
-        <footer>
-            <p>@BOM</p>
-        </footer>
     </div>
     <script>
 /*         // URL에서 쿼리 파라미터를 가져오는 함수

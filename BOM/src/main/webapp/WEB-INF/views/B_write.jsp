@@ -83,7 +83,7 @@
 
 	<main>
 		<div style="text-align: left; margin-top: 20px;">
-			<button onclick="goBack()" class="back-btn">← 돌아가기</button>
+			<button onclick="goBack()" class="back-btn">← 돌아가기 </button>
 		</div>
 		<div class="upload-container">
 			<div class="image-preview">
