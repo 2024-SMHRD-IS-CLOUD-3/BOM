@@ -67,14 +67,16 @@
                 </div>
                 <div class="message-subject">
                     <strong>제목:</strong> 
-<input type="text" id="title" name="m_title" placeholder="제목을 입력해 주세요">
+<input type="text" id="title" name="m_title" placeholder="제목을 입력해 주세요" style="width: 695px; height: 50px;">
                 </div>
-                <div class="message-body">
-                 <textarea id="description" name="m_content" rows="5" placeholder="게시글 내용을 작성해주세요."></textarea>
-                </div>
-                <div class="message-actions">
-                    <div class="message-actions">
-                        <button class="inbox-btn" type="submit"> 완료</button>
+<div class="message-body" style="padding: 0; margin: 0;">
+    <textarea id="description" name="m_content" rows="5" placeholder="게시글 내용을 작성해주세요." style="width: 700px; height: 500px; margin: 0; padding: 10px; box-sizing: border-box; resize: none; overflow-y: auto;"></textarea>
+    <div class="message-actions">
+        <!-- 추가 내용 -->
+    </div>
+    
+    
+                      <button class="inbox-btn" type="submit"> 완료</button>
                          <a href="#"> <button class="inbox-btn" >쪽지함으로 돌아가기</button></a>
                         
                         
