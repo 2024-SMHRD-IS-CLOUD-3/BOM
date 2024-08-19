@@ -124,7 +124,9 @@
 								<td><fmt:formatDate value="${messageSend.send_at}"
 										pattern="yyyy-MM-dd HH:mm:ss" /></td>
 								<td>
-									<button class="delete-btn">삭제</button>
+									<a
+									href="deleteMessage?idx=${messageSend.m_idx}"><button
+											class="delete-btn">삭제</button></a>
 								</td>
 							</tr>
 						</c:forEach>
