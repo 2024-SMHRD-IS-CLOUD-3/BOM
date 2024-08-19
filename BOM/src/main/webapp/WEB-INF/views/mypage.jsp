@@ -12,25 +12,36 @@
 </head>
 
 <body>
-	<header>
-		<div class="navbar">
-			<div class="logo" id="logo">BOM</div>
-			<div class="nav-icons">
-				<img src="./images/free-icon-bulletin-board-12094191.png"
-					alt="Icon 1" class="icon" id="icon1"> <img
-					src="./images/free-icon-chat-5962500.png" alt="Icon 2" class="icon"
-					id="icon2"> <img
-					src="./images/free-icon-baby-stroller-4080582.png" alt="Icon 3"
-					class="icon" id="icon3">
-				<div class="nav-icons1">
-					<img src="./images/free-icon-magnifying-glass-49116.png"
-						alt="Icon 4" class="icon" id="icon4"> <img
-						src="./images/free-icon-person-4203951.png" alt="Icon 5"
-						class="icon" id="icon5">
-				</div>
-			</div>
-		</div>
-	</header>
+ <header>
+	   <div class="container">
+        <a href="./" style="text-decoration: none; color: inherit;">
+            <h1>BOM</h1>
+        </a>
+        <nav>
+             <a href="./">Home</a>
+            <div class="dropdown">
+                <a href="b_board" class="active">Market</a>
+                <div class="dropdown-content">
+                     <a href="boyC">남아의류</a>
+                  <a href="girlC">여아의류</a>
+                  <a href="toy">장난감류</a>
+                  <a href="book">도서교구</a>
+                  <a href="furniture">아이가구</a>
+                  <a href="newBorn">육아출산</a>
+                  <a href="babyCar">유모차</a>
+                </div>
+            </div>
+            <a href="goCarWrite">Stroller</a>
+               <div class="dropdown-content">
+                  <a href="boyC">유모차 판매</a>
+                  <a href="girlC">유모차 구입</a>
+              
+                </div>
+            <a href="goComm">Board</a>
+            <a href="goMyPage">MyPage</a>
+        </nav>
+         </div>
+    </header>
 
 	<section class="profile-section">
 		<div class="profile-info">
