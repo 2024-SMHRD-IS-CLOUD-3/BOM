@@ -120,6 +120,7 @@
 			</form>
 		</div>
 
+
 	<div class="product-container" style="display: flex; flex-direction: column; align-items: center;">
     <!-- 첫 번째 행: 이미지와 제품 정보 -->
     <div class="content-wrapper" style="display: flex; justify-content: space-between; width: 100%; align-items: flex-start;">
@@ -241,13 +242,9 @@
 
       
         window.onload = function () {
-            const firstImage = document.querySelector('.image-item img'); // 첫 번째 이미지 선택
             const previewImage = document.getElementById('preview-image');
 
-            // 첫 번째 이미지가 있으면 프리뷰로 설정
-            if (firstImage) {
-                previewImage.src = firstImage.src;
-            }
+            
 
             // 이미지 클릭 시 프리뷰로 설정하는 함수
             document.querySelectorAll('.image-item img').forEach(img => {
