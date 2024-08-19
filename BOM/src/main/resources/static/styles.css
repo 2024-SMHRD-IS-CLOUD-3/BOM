@@ -17,8 +17,16 @@ header > *,
 footer > * {
   position: relative;
 }
+
+body {
+    font-family: 'Pretendard-Regular', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+
 header {
-	position: relative; /* 헤더는 상단에 위치, 스크롤 시 고정되지 않음 */	
     background-image: url('./images/bg.jpg'); /* 첫페이지 이미지를 헤드이미지로 사용해보잣! */
     background-repeat: no-repeat;
     background-position: top; /* 이미지의 상단만 보여주기 */
@@ -37,6 +45,7 @@ header h1 {
     color: white;
     font-family: 'Pretendard-Regular', cursive; /* 폰트 변경 */
 }
+
 
 header .container {
     max-width: 1200px;
@@ -91,6 +100,19 @@ nav a.active {
     font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 추가 */
 }
 
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 10; /* 드롭다운 메뉴가 헤더 위로 오도록 설정 */
+    border-radius: 4px;
+    min-width: 160px;
+    font-family: 'Pretendard-Regular', Arial, sans-serif;
+    overflow: visible; /* 드롭다운 메뉴 내에서 잘리지 않도록 설정 */
+}
 
 .dropdown-content a:hover {
     background-color: #f1f1f1;
@@ -99,6 +121,7 @@ nav a.active {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
 
 
 /* Container */
@@ -419,3 +442,41 @@ form[action="goCommWrite"] button:hover {
   a:visited {
     color: inherit;  /* 방문한 링크의 색상도 상속 */
   }
+
+  .image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.image-item {
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;  /* 커서를 손가락 모양으로 변경 */
+}
+
+.image-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* 마우스를 올렸을 때 약간의 확대 효과 */
+}
+
+.image-item img:hover {
+    transform: scale(1.05); /* 확대 효과 */
+}
+
+/* 이미지 프리뷰 스타일 */
+.image-preview {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.image-preview img {
+    max-width: 100%;
+    max-height: 400px;
+    border-radius: 8px;
+}
+  
