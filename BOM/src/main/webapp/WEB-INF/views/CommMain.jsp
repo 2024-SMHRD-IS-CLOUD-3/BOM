@@ -180,9 +180,6 @@
 				</div>
 			</c:if>
 		</main>
-		<footer>
-			<p>@BOM</p>
-		</footer>
 	</div>
 	<script src="script.js"></script>
 </body>
