@@ -256,7 +256,7 @@ h2 {
 }
 
 .message-btn {
-    margin-left: 490px;
+    margin-left: auto;
     padding: 10px 20px;
     width:120px;
     background-color: #69c173;
