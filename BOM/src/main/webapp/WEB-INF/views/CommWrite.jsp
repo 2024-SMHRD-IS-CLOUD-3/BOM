@@ -19,7 +19,7 @@
 			<p class="u-align-center u-text u-text-body-alt-color u-text-1">
 				<a
 					class="u-active-none u-border-none u-btn u-button-link u-button-style u-custom-font u-hover-none u-none u-text-body-alt-color u-btn-1"
-					data-href="./">BOM </a>
+					href="./">BOM </a>
 			</p>
 			<nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
 				<div class="menu-collapse u-custom-font"
