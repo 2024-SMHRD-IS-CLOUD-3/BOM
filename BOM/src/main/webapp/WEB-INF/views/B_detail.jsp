@@ -80,28 +80,36 @@
 
 <body>
 
-	<header>
-		<a href="./" style="text-decoration: none; color: inherit;">
-			<h1>BOM</h1>
-		</a>
-		<nav>
-			<a href="./">Home</a>
-			<div class="dropdown">
-				<a href="b_board" class="active">Market</a>
-				<div class="dropdown-content">
-					<a href="boyC">남아의류</a> <a href="girlC">여아의류</a> <a href="toy">장난감류</a>
-					<a href="book">도서교구</a> <a href="furniture">아이가구</a> <a
-						href="newBorn">육아출산</a> <a href="babyCar">유모차</a>
-				</div>
-			</div>
-			<a href="goCarWrite">Stroller</a>
-			<div class="dropdown-content">
-				<a href="boyC">유모차 판매</a> <a href="girlC">유모차 구입</a>
-
-			</div>
-			<a href="goComm">Board</a> <a href="goMyPage">MyPage</a>
-		</nav>
-	</header>
+    <header>
+      <div class="container">
+        <a href="./" style="text-decoration: none; color: inherit;">
+            <h1>BOM</h1>
+        </a>
+        <nav>
+             <a href="./">Home</a>
+            <div class="dropdown">
+                <a href="b_board" class="active">Market</a>
+                <div class="dropdown-content">
+                     <a href="boyC">남아의류</a>
+                  <a href="girlC">여아의류</a>
+                  <a href="toy">장난감류</a>
+                  <a href="book">도서교구</a>
+                  <a href="furniture">아이가구</a>
+                  <a href="newBorn">육아출산</a>
+                  <a href="babyCar">유모차</a>
+                </div>
+            </div>
+            <a href="goCarWrite">Stroller</a>
+               <div class="dropdown-content">
+                  <a href="boyC">유모차 판매</a>
+                  <a href="girlC">유모차 구입</a>
+              
+                </div>
+            <a href="goComm">Board</a>
+            <a href="goMyPage">MyPage</a>
+        </nav>
+         </div>
+    </header>
 
 	<main>
 
@@ -147,7 +155,7 @@
 
             <div style="margin-top: 20px;">
            
-                <button onclick="showPopup();" style="padding: 10px 20px; font-size: 16px; background-color: #f44336; color: white; border: none; border-radius: 5px; cursor: pointer;">쪽지보내기</button>
+                <button onclick="showPopup();" class="">쪽지보내기</button>
                 
             </div>
         </div>
