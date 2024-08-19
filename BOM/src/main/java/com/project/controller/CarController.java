@@ -19,6 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -38,6 +39,7 @@ public class CarController {
 
 	@Value("${file.upload-dir.stroller}")
 	private String savePath;
+
 
 	@Autowired
 	private DealRepository dealRepo;
@@ -97,10 +99,15 @@ public class CarController {
 	}
 
 	@RequestMapping("goCar")
-	private String goCar(Model model) {
+	private String goCar(Model model, HttpSession session) {
 
 		List<CarEntity> entity = carRepo.findAllByCarCoursDesc();
 		model.addAttribute("stList", entity);
+		String userId = (String) session.getAttribute("userId");
+		if (userId == null) {
+			return "login";
+		}
+
 		return "stroller";
 
 	}
@@ -180,44 +187,13 @@ public class CarController {
 
 	@RequestMapping("goCarDetail")
 	public String carDetail(Long idx, Model model, HttpSession session) {
-		List<CarEntity> car = carRepo.findAll();
-		List<UserEntity> user = repo.findAll();
+		Optional<CarEntity> car = carRepo.findById(idx);
+		Optional<UserEntity> user = repo.findById(car.get().getId());
 		String userId = (String) session.getAttribute("userId");
-
-		if (!userId.equals("test")) {
-			for (int i = 0; i < car.size(); i++) {
-				for (int l = 0; l < user.size(); l++) {
-					if (user.get(l).getId().equals(car.get(i).getId())) {
-						model.addAttribute("id", user.get(l).getId());
-
-					}
-				}
-			}
-
-		} else {
-			model.addAttribute("id", "test");
-		}
-
-		for (int i = 0; i < car.size(); i++) {
-			if (car.get(i).getCar_idx().equals(idx)) {
-				model.addAttribute("car", car.get(i));
-				System.out.println("메롱메롱" + car.get(i));
-				for (int l = 0; l < user.size(); l++) {
-					if (user.get(l).getId().equals(car.get(i).getId())) {
-						model.addAttribute("id", user.get(l).getId());
-						String duInfo = user.get(l).getUserFile();
-						if (duInfo != null) {
-							duInfo = "forComm/duInfo";
-						} else {
-							duInfo = "uploads/free-icon-person-4203951.png";
-						}
-						model.addAttribute("duInfo", duInfo);
-					}
-				}
-
-			}
-
-		}
+		model.addAttribute("car", car.get());
+		model.addAttribute("user", user.get().getUserFile());
+		System.out.println("스트롤러에 카가 없어?"+ user.get().getUserFile());
+		
 		if (userId.equals("test")) {
 			return "CarDetailAdmin";
 		}
@@ -286,4 +262,16 @@ public class CarController {
 		return "redirect:/goCar";
 	}
 
+	
+	   @GetMapping("/showPopUp")
+	    public String showPopup(Long idx, Model model, HttpSession session) {
+		  Optional<CarEntity> list = carRepo.findById(idx);
+		  
+		   model.addAttribute("consumer", session.getId());
+		   model.addAttribute("list", list.get());
+		   
+		   
+		   
+	        return "popUp"; 
+	    }
 }

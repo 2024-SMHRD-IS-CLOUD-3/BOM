@@ -48,7 +48,7 @@
   
         <!-- 돌아가기 버튼 추가 -->
         <div style="text-align: left; margin: 20px 0;" >
-        <form action="car_main" method="get">
+        <form action="goCar" method="get">
             <button type="submit" class="back-btn">← 돌아가기</button>
         </form>
         </div>        
@@ -64,9 +64,9 @@
                 </div>
                 <div class="product-details">
                     <div class="seller-info">
-                        <img src="${img}" alt="Seller Icon" class="seller-icon">
+                        <img src="uploads/${user}" alt="Seller Icon" class="seller-icon">
                         <div>
-                            <p class="seller-name">${id}</p>
+                            <p class="seller-name">${car.id}</p>
                             <p class="region"></p>
                         </div>
                     </div>

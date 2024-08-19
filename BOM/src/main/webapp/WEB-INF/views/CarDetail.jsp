@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Page</title>
     <link rel="stylesheet" href="market_d.css">
+      
 </head>
 
 <body>
@@ -52,42 +53,38 @@
             <button type="submit" class="back-btn">← 돌아가기</button>
         </form>
         </div>        
-            <div class="product-container">
-                <div class="slider">
-                
-                   
-                    <div class="slides">
-                        <!-- 이미지 슬라이드가 필요한 경우 이곳에 이미지를 추가할 수 있습니다. -->
-                        <img src="stroller/${car.car_file}" id="product-image" class="slide" alt="Product Image">
-                    </div>
-                 
+        <div class="product-container">
+            <div class="slider">
+                <div class="slides">
+                    <!-- 이미지 슬라이드가 필요한 경우 이곳에 이미지를 추가할 수 있습니다. -->
+                    <img src="stroller/${car.car_file}" id="product-image" class="slide" alt="Product Image">
                 </div>
-                <div class="product-details">
-                    <div class="seller-info">
-                        <img src="${duInfo}" alt="Seller Icon" class="seller-icon">
-                        <div>
-                            <p class="seller-name">${id}</p>
-                            <p class="region"></p>
-                        </div>
-                    </div>
-                    <h2 id="product-title">${car.car_title}</h2>
-                    
-                    <p id="product-rank" class="rank">${car.car_rank}급</p>
-                    <p id="product-price" class="price">${car.car_price}원</p>
-                    <p id="product-description" class="description">
-                        ${car.car_content}
-                    </p>
-                </div>
-               
-                <a href="goChat?idx=${car.car_idx}"> <button class="chat-btn">채팅하기</button></a>
-           	
             </div>
-              
+            <div class="product-details">
+                <div class="seller-info">
+                    <img src="uploads/${user}" alt="Seller Icon" class="seller-icon">
+                    <div>
+                        <p class="seller-name">${id}</p>
+                        <p class="region"></p>
+                    </div>
+                </div>
+                <h2 id="product-title">${car.car_title}</h2>
+                <p id="product-rank" class="rank">${car.car_rank}급</p>
+                <p id="product-price" class="price">${car.car_price}원</p>
+                <p id="product-description" class="description">
+                    ${car.car_content}
+                </p>
+            </div>
+               
+        
+                <input type="button" value="구매하기" onclick="showPopup()"/>
+        </div>
     </main>
-
-
-    </script>
-   <!--  <script src="market_d.js"></script> -->
+<script type="text/javascript">
+        function showPopup() { window.open("showPopUp?idx=${car.car_idx}", "구매하기", "width=400, height=800, left=100, top=50"); }
+        </script>
+ 
+  
 </body>
 
 </html>
