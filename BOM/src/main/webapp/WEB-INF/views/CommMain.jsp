@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="dropdown">
-                <a href="goCarWrite">Stroller</a>
+                <a href="goCar">Stroller</a>
                 <div class="dropdown-content">
                     <a href="boyC">유모차 판매</a>
                     <a href="girlC">유모차 구입</a>
