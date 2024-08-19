@@ -86,9 +86,6 @@
             </div>
         </main>
 
-        <footer>
-            <p>@BOM</p>
-        </footer>
     </div>
 </body>
 
