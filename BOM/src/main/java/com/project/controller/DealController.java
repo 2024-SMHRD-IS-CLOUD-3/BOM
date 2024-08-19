@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -19,6 +20,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -66,45 +68,65 @@ public class DealController {
 
 	// 중고거래 게시판 작성
 	@RequestMapping("/dealWrite")
-	public String dealWrite(@RequestParam("b_title") String title, @RequestParam("how_much") Long price,
-			@RequestParam("category") String category, @RequestParam("b_content") String description,
-			@RequestParam("file") MultipartFile file, HttpSession session, RedirectAttributes redirectAttributes) {
+	public String dealWrite(@RequestParam("b_title") String title, 
+	                        @RequestParam("how_much") Long price,
+	                        @RequestParam("category") String category, 
+	                        @RequestParam("b_content") String description,
+	                        @RequestPart("files[]") MultipartFile[] files,  // 수정된 부분
+	                        HttpSession session, 
+	                        RedirectAttributes redirectAttributes) {
 
-		String userId = (String) session.getAttribute("userId");
-		if (file.isEmpty()) {
-			redirectAttributes.addFlashAttribute("message", "파일이 비어 있습니다.");
-			return "redirect:/goWrite";
-		}
+	    String userId = (String) session.getAttribute("userId");
+	    
+	    // 파일이 비어 있는지 확인
+	    if (files.length == 0 || files[0].isEmpty()) {
+	        redirectAttributes.addFlashAttribute("message", "파일이 비어 있습니다.");
+	        return "redirect:/goWrite";
+	    }
+	    
+	    // 파일 저장을 위한 StringBuilder를 사용해 파일 이름들을 연결할 수 있습니다.
+	    StringBuilder filenames = new StringBuilder();
+	    
+	    for (MultipartFile file : files) {
+	        if (!file.isEmpty()) {
+	            String uuid = UUID.randomUUID().toString();
+	            String filename = uuid + "_" + file.getOriginalFilename();
+	            Path path = Paths.get(savePath + filename);
 
-		String uuid = UUID.randomUUID().toString();
-		String filename = uuid + "_" + file.getOriginalFilename();
-		Path path = Paths.get(savePath + filename);
+	            try {
+	                // 파일 저장
+	                Files.copy(file.getInputStream(), path);
+	                // 파일 이름 추가
+	                filenames.append(filename).append(";");
+	            } catch (IOException e) {
+	                e.printStackTrace();
+	                redirectAttributes.addFlashAttribute("message", "파일 업로드 실패.");
+	                return "redirect:/goWrite";
+	            }
+	        }
+	    }
+	    System.out.println("파일 개수: " + files.length);
+	    // DealEntity에 데이터 저장
+	    DealEntity entity = new DealEntity();
+	    entity.setB_title(title);
+	    entity.setHow_much(price);
+	    entity.setCategory(category);
+	    entity.setB_content(description);
+	    entity.setFilenames(filenames.toString()); // 모든 파일 이름들을 연결하여 저장
+	    entity.setId(userId);
 
-		try {
-			Files.copy(file.getInputStream(), path);
-		} catch (IOException e) {
-			e.printStackTrace();
-			redirectAttributes.addFlashAttribute("message", "파일 업로드 실패.");
-			return "redirect:/goWrite";
-		}
+	    LocalDateTime now = LocalDateTime.now();
+	    Timestamp timestamp = Timestamp.valueOf(now);
+	    entity.setCreated_at(timestamp);
 
-		DealEntity entity = new DealEntity();
-		entity.setB_title(title);
-		entity.setHow_much(price);
-		entity.setCategory(category);
-		entity.setB_content(description);
-		entity.setFilenames(filename);
-		entity.setId(userId);
+	    // 데이터베이스에 저장
+	    dealRepo.save(entity);
 
-		LocalDateTime now = LocalDateTime.now();
-		Timestamp timestamp = Timestamp.valueOf(now);
-		entity.setCreated_at(timestamp);
-
-		dealRepo.save(entity);
-
-		redirectAttributes.addFlashAttribute("message", "게시물 등록 완료.");
-		return "redirect:/b_board";
+	    redirectAttributes.addFlashAttribute("message", "게시물 등록 완료.");
+	    return "redirect:/b_board";
 	}
+
+
 
 	// 중고거래 게시판 수정
 	@RequestMapping("/modifyWrite")
@@ -154,48 +176,71 @@ public class DealController {
 	@RequestMapping("/goDetail")
 	public String goDetail(Model model, HttpSession session, Long idx) {
 
-		List<DealEntity> deal = dealRepo.findAll();
+	    // DealEntity와 UserEntity 가져오기
+	    List<DealEntity> deal = dealRepo.findAll();
+	    List<UserEntity> user = repo.findAll();
 
-		List<UserEntity> user = repo.findAll();
+	    System.out.println("보여죵" + idx);
 
-		System.out.println("보여죵" + idx);
-		for (int i = 0; i < deal.size(); i++) {
-			if (deal.get(i).getB_idx().equals(idx)) {
-				model.addAttribute("yoyo", deal.get(i));
-				for (int l = 0; l < user.size(); l++) {
-					if (deal.get(i).getId().equals(user.get(l).getId())) {
+	    // 해당 게시물 찾기
+	    for (int i = 0; i < deal.size(); i++) {
+	        if (deal.get(i).getB_idx().equals(idx)) {
+	            
+	            // DealEntity를 모델에 추가
+	            model.addAttribute("yoyo", deal.get(i));
+	            
+	            // UserEntity 찾기
+	            for (int l = 0; l < user.size(); l++) {
+	                if (deal.get(i).getId().equals(user.get(l).getId())) {
 
-						model.addAttribute("user", user.get(l));
-						model.addAttribute("duAddr", user.get(l).getAddr());
+	                    model.addAttribute("user", user.get(l));
+	                    model.addAttribute("duAddr", user.get(l).getAddr());
 
-						String duInfo = user.get(l).getUserFile();
-						if (duInfo != null) {
-							model.addAttribute("duInfo", duInfo);
-						} else {
-							duInfo = "free-icon-person-4203951.png";
-							model.addAttribute("duInfo", duInfo);
-						}
+	                    // 사용자 파일 처리
+	                    String duInfo = user.get(l).getUserFile();
+	                    if (duInfo != null) {
+	                        model.addAttribute("duInfo", duInfo);
+	                    } else {
+	                        duInfo = "free-icon-person-4203951.png";
+	                        model.addAttribute("duInfo", duInfo);
+	                    }
 
-						deal.get(i).setB_views(deal.get(i).getB_views() + 1);
+	                    // 게시물의 조회수 증가
+	                    deal.get(i).setB_views(deal.get(i).getB_views() + 1);
 
+	                    // 파일 이름을 분리하여 리스트로 변환
+	                    String filenames = deal.get(i).getFilenames();
+	                    if (filenames != null && !filenames.isEmpty()) {
+	                        String[] fileArray = filenames.split(";");
+	                        List<String> fileList = Arrays.asList(fileArray);
+	                        model.addAttribute("fileList", fileList);
+	                        
+	                        System.out.println("파일이름 리스트로 나오나확인 "+ fileList);
+	                    }
+	                }
+	            }
+	          
+	        }
+	        
+	    }
+			for (int i = 0; i < deal.size(); i++) {
+				if (deal.get(i).getB_idx().equals(idx)) {
+					String userId = (String) session.getAttribute("userId");
+					if(deal.get(i).getId().equals(userId)) {
+						return "B_WriteDetail";
+								
 					}
-
 				}
 			}
-		}
+			return "B_detail";
+	        
+	        
+	    }
 
-		for (int i = 0; i < deal.size(); i++) {
-			if (deal.get(i).getB_idx().equals(idx)) {
-				String userId = (String) session.getAttribute("userId");
-				if(deal.get(i).getId().equals(userId)) {
-					return "B_WriteDetail";
-							
-				}
-			}
-		}
-		return "B_detail";
+	   
+	
 
-	}
+
 	
 	// 게시글 삭제
 	@RequestMapping("/goDelete")

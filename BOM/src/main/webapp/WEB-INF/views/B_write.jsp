@@ -112,7 +112,7 @@
 						placeholder="게시글 내용을 작성해주세요."></textarea>
 
 					<div class="file-upload">
-						<input type="file" id="imageUpload" name="file" multiple
+						<input type="file" id="imageUpload" name="files[]" multiple
 							style="display: none;" onchange="loadImage(event)"> <label
 							for="imageUpload" class="file-select-btn">파일선택</label>
 					</div>

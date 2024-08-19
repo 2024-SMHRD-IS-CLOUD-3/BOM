@@ -12,6 +12,16 @@ body {
     background-color: #e0e0e0;
 }
 
+#product-description{
+   font-family: 'Pretendard-Regular', Arial, sans-serif;
+   font-size:18px;
+   margin-bottom : 20px;
+}
+#region{
+   font-family: 'Pretendard-Regular', Arial, sans-serif;
+   font-size:22px;
+}
+
 body,
 section,
 header,
@@ -179,7 +189,7 @@ nav a.active {
     right: 10px;
 }
 
-.product-details {
+#product-details {
     flex: 1;
     margin-left: 20px;
     font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
@@ -198,7 +208,12 @@ nav a.active {
     margin-right: 10px;
 }
 
-.seller-name {
+#product-price {
+   font-family: 'Pretendard-Regular', Arial, sans-serif;
+   font-size: 36px;
+}
+
+#seller-name {
     font-weight: bold;
     margin: 0;
     font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
@@ -247,3 +262,9 @@ h2 {
 .chat-btn:hover {
     background-color: #57a763;
 }
+
+
+
+
+
+
