@@ -38,7 +38,7 @@
 </g></svg>
 					</a>
 				</div>
-<<<<<<< HEAD
+
 				<div class="u-custom-menu u-nav-container">
 					<ul class="u-custom-font u-nav u-unstyled u-nav-1">
 						<li class="u-nav-item"><a
@@ -77,13 +77,14 @@
 							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
 							href="goMyList" style="padding: 10px 20px;">MyPage</a></li>
 					</ul>
-=======
-			</div>
-			<div class="dropdown">
-				<a id="car" class="active" href="car" style="padding: 10px 20px;">Stroller</a>
-				<div class="dropdown-content">
-					<a href="car">유모차 매입 신청</a> <a href="goCar">유모차 구매</a>
->>>>>>> branch 'main' of https://github.com/2024-SMHRD-IS-CLOUD-3/bom.git
+
+				</div>
+				<div class="dropdown">
+					<a id="car" class="active" href="car" style="padding: 10px 20px;">Stroller</a>
+					<div class="dropdown-content">
+						<a href="car">유모차 매입 신청</a> <a href="goCar">유모차 구매</a>
+
+					</div>
 				</div>
 			</nav>
 		</div>
@@ -103,10 +104,10 @@
 
 				<form id="upload-form" action="modifyWrite?idx=${deal.b_idx}"
 					method="post" enctype="multipart/form-data">
-					
+
 					<!-- 카테고리 선택 -->
-					<label for="category">카테고리</label> 
-					<select id="category" name="category">
+					<label for="category">카테고리</label> <select id="category"
+						name="category">
 						<option value="남아의류">남아의류</option>
 						<option value="여아의류">여아의류</option>
 						<option value="장난감류">장난감류</option>
@@ -117,36 +118,38 @@
 					</select>
 
 					<!-- 제목 입력 -->
-					<label for="title">제목</label> 
-					<input type="text" id="title" name="b_title"
+					<label for="title">제목</label> <input type="text" id="title"
+						name="b_title"
 						value="${empty deal.b_title ? '제목을 입력하세요. ': deal.b_title}">
 
 					<!-- 가격 입력 -->
-					<label for="price">가격</label> 
-					<input type="text" id="price" name="how_much"
+					<label for="price">가격</label> <input type="text" id="price"
+						name="how_much"
 						value="${empty deal.how_much ? '가격을 입력하세요.' : deal.how_much}">
 
 					<!-- 내용 입력 -->
 					<label for="description">내용</label>
-					<textarea id="description" name="b_content" rows="5">${empty deal.b_content ? '내용을 입력하세요.' : deal.b_content}</textarea>
-<!-- 파일 업로드 -->
-<div class="file-upload">
-    <input type="file" id="imageUpload" name="file" style="display: none;" onchange="handleFileChange(event)">
-    <label for="imageUpload" class="file-select-btnx">파일선택</label>
-    
-    <!-- 파일 이름 표시 -->
-    <div class="file-name-display">
-        <c:if test="${not empty deal.filenames}">
+					<textarea id="description" name="b_content" rows="5"
+						style="white-space: pre-line;">${empty deal.b_content ? '내용을 입력하세요.' : deal.b_content}</textarea>
+					<!-- 파일 업로드 -->
+					<div class="file-upload">
+						<input type="file" id="imageUpload" name="file"
+							style="display: none;" onchange="handleFileChange(event)">
+						<label for="imageUpload" class="file-select-btnx">파일선택</label>
+
+						<!-- 파일 이름 표시 -->
+						<div class="file-name-display">
+							<c:if test="${not empty deal.filenames}">
             ${deal.filenames} <!-- 첫 번째 파일 이름을 표시 -->
-        </c:if>
-        <c:if test="${empty deal.filenames}">
+							</c:if>
+							<c:if test="${empty deal.filenames}">
             파일이 선택되지 않았습니다.
         </c:if>
-    </div>
-</div>
+						</div>
+					</div>
 
-<!-- 파일 삭제 버튼 -->
-<button type="button" onclick="removeFile()">이미지 삭제</button>
+					<!-- 파일 삭제 버튼 -->
+					<button type="button" onclick="removeFile()">이미지 삭제</button>
 					<br>
 
 					<!-- 제출 버튼 -->
@@ -158,57 +161,59 @@
 	</main>
 
 	<script>
-    let selectedFile = null; // 선택된 파일을 저장할 변수
+		let selectedFile = null; // 선택된 파일을 저장할 변수
 
-    function handleFileChange(event) {
-        const imagePreview = document.getElementById('preview');
-        const fileInput = document.getElementById('imageUpload');
-        const fileNameDisplay = document.querySelector('.file-name-display'); // 파일 이름을 표시할 요소
-        const files = event.target.files;
+		function handleFileChange(event) {
+			const imagePreview = document.getElementById('preview');
+			const fileInput = document.getElementById('imageUpload');
+			const fileNameDisplay = document
+					.querySelector('.file-name-display'); // 파일 이름을 표시할 요소
+			const files = event.target.files;
 
-        if (files.length > 0) {
-            const file = files[0]; // 하나의 파일만 허용
-            selectedFile = file; // 선택된 파일 저장
+			if (files.length > 0) {
+				const file = files[0]; // 하나의 파일만 허용
+				selectedFile = file; // 선택된 파일 저장
 
-            // 파일 이름 표시
-            if (fileNameDisplay) {
-                fileNameDisplay.textContent = file.name;
-            }
+				// 파일 이름 표시
+				if (fileNameDisplay) {
+					fileNameDisplay.textContent = file.name;
+				}
 
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                imagePreview.src = e.target.result; // 미리보기 이미지 업데이트
-                imagePreview.alt = file.name; // alt 속성에 파일 이름 할당
-            };
-            reader.readAsDataURL(file); // 파일 읽기
-        }
-    }
+				const reader = new FileReader();
+				reader.onload = function(e) {
+					imagePreview.src = e.target.result; // 미리보기 이미지 업데이트
+					imagePreview.alt = file.name; // alt 속성에 파일 이름 할당
+				};
+				reader.readAsDataURL(file); // 파일 읽기
+			}
+		}
 
-    function removeFile() {
-        const imagePreview = document.getElementById('preview');
-        const fileInput = document.getElementById('imageUpload');
-        const fileNameDisplay = document.querySelector('.file-name-display'); // 파일 이름을 표시할 요소
+		function removeFile() {
+			const imagePreview = document.getElementById('preview');
+			const fileInput = document.getElementById('imageUpload');
+			const fileNameDisplay = document
+					.querySelector('.file-name-display'); // 파일 이름을 표시할 요소
 
-        // 미리보기 이미지와 파일 입력 초기화
-        imagePreview.src = 'uploads/KakaoTalk_20240817_110031317.png'; // 기본 이미지로 변경
-        imagePreview.alt = 'Image Preview';
-        fileInput.value = ''; // 파일 입력 초기화
-        selectedFile = null; // 선택된 파일 초기화
+			// 미리보기 이미지와 파일 입력 초기화
+			imagePreview.src = 'uploads/KakaoTalk_20240817_110031317.png'; // 기본 이미지로 변경
+			imagePreview.alt = 'Image Preview';
+			fileInput.value = ''; // 파일 입력 초기화
+			selectedFile = null; // 선택된 파일 초기화
 
-        // 파일 이름 초기화
-        if (fileNameDisplay) {
-            fileNameDisplay.textContent = '파일이 선택되지 않았습니다.';
-        }
-    }
+			// 파일 이름 초기화
+			if (fileNameDisplay) {
+				fileNameDisplay.textContent = '파일이 선택되지 않았습니다.';
+			}
+		}
 
-    document.getElementById('upload-form').onsubmit = function(e) {
-        // 선택된 파일이 없으면 기본적으로 폼이 제출되지 않도록 할 수도 있습니다.
-        if (!selectedFile) {
-            e.preventDefault();
-            alert('파일을 선택해주세요.');
-        }
-    };
-</script>
+		document.getElementById('upload-form').onsubmit = function(e) {
+			// 선택된 파일이 없으면 기본적으로 폼이 제출되지 않도록 할 수도 있습니다.
+			if (!selectedFile) {
+				e.preventDefault();
+				alert('파일을 선택해주세요.');
+			}
+		};
+	</script>
 
 </body>
 </html>
