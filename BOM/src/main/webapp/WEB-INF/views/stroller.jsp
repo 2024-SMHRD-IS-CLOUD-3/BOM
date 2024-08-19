@@ -22,7 +22,7 @@
         <nav>
              <a href="./">Home</a>
             <div class="dropdown">
-                <a href="b_board" class="active">Market</a>
+                <a href="b_board">Market</a>
                 <div class="dropdown-content">
                      <a href="boyC">남아의류</a>
                   <a href="girlC">여아의류</a>
@@ -33,7 +33,7 @@
                   <a href="babyCar">유모차</a>
                 </div>
             </div>
-            <a href="goCarWrite">Stroller</a>
+            <a href="goCarWrite"  class="active">Stroller</a>
                <div class="dropdown-content">
                   <a href="boyC">유모차 판매</a>
                   <a href="girlC">유모차 구입</a>

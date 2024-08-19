@@ -19,7 +19,7 @@
         <a href="./" style="text-decoration: none; color: inherit;">
             <h1>BOM</h1>
         </a>
-        <nav>
+         <nav>
              <a href="./">Home</a>
             <div class="dropdown">
                 <a href="b_board" class="active">Market</a>
@@ -33,7 +33,7 @@
                   <a href="babyCar">유모차</a>
                 </div>
             </div>
-            <a href="goCar">Stroller</a>
+            <a href="goCarWrite">Stroller</a>
                <div class="dropdown-content">
                   <a href="boyC">유모차 판매</a>
                   <a href="girlC">유모차 구입</a>

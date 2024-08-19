@@ -26,7 +26,7 @@
         <nav>
             <a href="./">Home</a>
             <div class="dropdown">
-                <a href="b_board" class="active">Market</a>
+                <a href="b_board">Market</a>
                 <div class="dropdown-content">
                     <a href="boyC">남아의류</a>
                     <a href="girlC">여아의류</a>
@@ -44,7 +44,7 @@
                     <a href="girlC">유모차 구입</a>
                 </div>
             </div>
-            <a href="goComm">Board</a>
+            <a href="goComm"  class="active">Board</a>
             <a href="goMyPage">MyPage</a>
         </nav>
     </div>
