@@ -23,8 +23,16 @@
 						href="newBorn">육아출산</a> <a href="babyCar">유모차</a>
 				</div>
 			</div>
-			<a href="car">Stroller</a> <a href="goComm">Board</a> <a
-				href="goMyPage">MyPage</a>
+			<div class="dropdown">
+				<a id="car"
+					class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
+					href="car" style="padding: 10px 20px;">Stroller</a>
+				<div class="dropdown-content">
+					<a href="car">유모차 매입 신청</a> <a href="goCar">유모차 구매</a>
+
+				</div>
+			</div>
+			<a href="goComm">Board</a> <a href="goMyPage">MyPage</a>
 		</nav>
 	</header>
 
@@ -32,88 +40,85 @@
 		<div style="text-align: left; margin-top: 20px;">
 			<button onclick="goBack()" class="back-btn">← 돌아가기</button>
 		</div>
+		
 		<div class="upload-container">
 			<div class="image-preview">
-				<img src="${empty file ? 'uploads/KakaoTalk_20240817_110031317.png' : file }" id="preview" alt="Image Preview">
-			
+				<img
+					src="${empty file ? 'uploads/KakaoTalk_20240817_110031317.png' : file }"
+					id="preview" alt="Image Preview">
+
 			</div>
 			<div class="form-container">
 
 				<form id="upload-form" action="adminWrite?idx=${deal.car_idx}"
 					method="post" enctype="multipart/form-data">
-				
-					</select> 
-					<label for="title">제목</label> 
-					<input type="text" id="title"
-						name="car_title"
-						value="${empty deal.car_title ? '제목을 입력하세요. ': deal.car_title}">
-					<label for="car_rank">rank</label>
-					 <select id="category"
-						name="car_rank">
+					<label for="title">제목</label>
+						 <input type="text" id="title"
+					name="car_title"
+					value="${empty deal.car_title ? '제목을 입력하세요. ': deal.car_title}">
+					<label for="car_rank">rank</label> 
+						<select id="category"
+					name="car_rank">
 
-						<option value="S">S급</option>
-						<option value="A">A급</option>
-						<option value="B">B급</option>
-					
-					</select>
-					<label for="car_cours">cours</label>
-					<select name="car_cours">
-											<option value="신청" ${deal.car_cours == '신청' ? 'selected' : ''}>신청</option>
-											<option value="접수" ${deal.car_cours == '접수' ? 'selected' : ''}>접수</option>
-											<option value="심사" ${deal.car_cours == '심사' ? 'selected' : ''}>심사</option>
-											<option value="매입" ${deal.car_cours == '매입' ? 'selected' : ''}>매입</option>
-											<option value="거절" ${deal.car_cours == '거절' ? 'selected' : ''}>거절</option>
-											<option value="완료" ${deal.car_cours == '완료' ? 'selected' : ''}>완료</option>
-										</select>
-										
-										
-					<label for="price">가격</label> <input type="text" id="car_price"
-						name="car_price"
-						value="${empty deal.car_price ? '가격을 입력하세요.' : deal.car_price}">
-			
-					<label for="description">내용</label>
-					<textarea id="description" name="car_content" rows="5">${empty deal.car_content ? '내용을 입력하세요.' : deal.car_content}
+					<option value="S">S급</option>
+					<option value="A">A급</option>
+					<option value="B">B급</option>
+
+				</select> 
+				<label for="car_cours">cours</label> <select name="car_cours">
+					<option value="신청" ${deal.car_cours == '신청' ? 'selected' : ''}>신청</option>
+					<option value="접수" ${deal.car_cours == '접수' ? 'selected' : ''}>접수</option>
+					<option value="심사" ${deal.car_cours == '심사' ? 'selected' : ''}>심사</option>
+					<option value="매입" ${deal.car_cours == '매입' ? 'selected' : ''}>매입</option>
+					<option value="거절" ${deal.car_cours == '거절' ? 'selected' : ''}>거절</option>
+					<option value="완료" ${deal.car_cours == '완료' ? 'selected' : ''}>완료</option>
+				</select> <label for="price">가격</label> <input type="text" id="car_price"
+					name="car_price"
+					value="${empty deal.car_price ? '가격을 입력하세요.' : deal.car_price}">
+
+				<label for="description">내용</label>
+				<textarea id="description" name="car_content" rows="5">${empty deal.car_content ? '내용을 입력하세요.' : deal.car_content}
 					</textarea>
 
-					
-					    <!-- 이전에 업로드된 파일 목록 -->
-					<div id="existing-files">
-						<c:if test="${not empty deal.car_file}">
-							<ul>
-								<c:forEach var="filename" items="${deal.car_file}">
-									<li class="file-item">
-								
-										<button type="button"
-											onclick="removeExistingFile('${image}')">삭제</button> <input
-										type="hidden" name="existingFiles" value="${image}">
 
-									</li>
-									 </c:forEach>
-                                </ul>
-                            </c:if>
-                        </div>
-									
-									
-									
-									<!-- 새로운 파일 업로드 -->
-									<div class="file-upload">
-    <input type="file" id="imageUpload" name="file" style="display: none;" onchange="handleFileChange(event)"> 
-    <div id="file-name-display">${file}</div>
-    <label for="imageUpload" class="file-select-btn">파일선택</label>
-</div>
-									
-				
-									<br>
-							
-						<button type="submit" class="submit-btn">완료</button>
-						
-					</div>
-					<br>
+				<!-- 이전에 업로드된 파일 목록 -->
+				<div id="existing-files">
+					<c:if test="${not empty deal.car_file}">
+						<ul>
+							<c:forEach var="filename" items="${deal.car_file}">
+								<li class="file-item">
 
-					
-				
+									<button type="button" onclick="removeExistingFile('${image}')">삭제</button>
+									<input type="hidden" name="existingFiles" value="${image}">
+
+								</li>
+							</c:forEach>
+						</ul>
+					</c:if>
+				</div>
+
+
+
+				<!-- 새로운 파일 업로드 -->
+				<div class="file-upload">
+					<input type="file" id="imageUpload" name="file"
+						style="display: none;" onchange="handleFileChange(event)">
+					<div id="file-name-display">${file}</div>
+					<label for="imageUpload" class="file-select-btn">파일선택</label>
+				</div>
+
+
+				<br>
+
+				<button type="submit" class="submit-btn">완료</button>
+			</form>
 			</div>
-	
+			<br>
+
+
+
+		</div>
+
 	</main>
 
 	<script>

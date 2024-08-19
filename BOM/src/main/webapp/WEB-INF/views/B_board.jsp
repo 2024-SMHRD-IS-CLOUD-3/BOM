@@ -54,7 +54,7 @@
 						<li class="u-nav-item">
 							<div class="dropdown">
 								<a
-									class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
+									class="active"
 									href="b_board" style="padding: 10px 20px;">Market</a>
 								<div class="dropdown-content">
 									<a href="boyC">남아의류</a> <a href="girlC">여아의류</a> <a href="toy">장난감류</a>
@@ -63,9 +63,17 @@
 								</div>
 							</div>
 						</li>
-						<li class="u-nav-item"><a id="car"
+						<li class="u-nav-item">
+							<div class="dropdown">
+						<a id="car"
 							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
-							href="car" style="padding: 10px 20px;">Stroller</a></li>
+							href="car" style="padding: 10px 20px;">Stroller</a>
+							<div class="dropdown-content">
+									<a href="car">유모차 매입 신청</a> <a href="goCar">유모차 구매</a>
+									
+								</div>
+						
+						</li>
 						<li class="u-nav-item"><a
 							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
 							href="goComm" style="padding: 10px 20px;">Board</a></li>

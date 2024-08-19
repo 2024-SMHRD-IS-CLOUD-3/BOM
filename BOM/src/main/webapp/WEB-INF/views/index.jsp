@@ -13,7 +13,7 @@
 <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
 <script class="u-script" type="text/javascript" src="nicepage.js"
 	defer=""></script>
-	<link rel="stylesheet" href="dd.css">
+<link rel="stylesheet" href="dd.css">
 <meta name="generator" content="Nicepage 6.15.2, nicepage.com">
 
 <link id="u-theme-google-font" rel="stylesheet"
@@ -75,24 +75,27 @@
 
 						<li class="u-nav-item">
 							<div class="dropdown">
-								<a class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
+								<a
+									class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
 									href="b_board" style="padding: 10px 20px;">Market</a>
 								<div class="dropdown-content">
 									<a href="boyC">남아의류</a> <a href="girlC">여아의류</a> <a href="toy">장난감류</a>
-									<a href="book">도서교구</a> <a href="furniture">아이가구</a> <a href="newBorn">육아출산</a> <a href="babyCar">유모차</a>
+									<a href="book">도서교구</a> <a href="furniture">아이가구</a> <a
+										href="newBorn">육아출산</a> <a href="babyCar">유모차</a>
 								</div>
 							</div>
 						</li>
 						<li class="u-nav-item">
 							<div class="dropdown">
-						<a id="car"
-							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
-							href="car" style="padding: 10px 20px;">Stroller</a>
-							<div class="dropdown-content">
+								<a id="car"
+									class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
+									href="car" style="padding: 10px 20px;">Stroller</a>
+								<div class="dropdown-content">
 									<a href="car">유모차 매입 신청</a> <a href="goCar">유모차 구매</a>
-									
+
 								</div>
-						
+							</div>
+
 						</li>
 						<li class="u-nav-item"><a
 							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
@@ -145,13 +148,11 @@
 								<p class="u-align-center u-custom-font u-text u-text-2">
 									유모차 직접 수거, 클리닝, 판매까지 한번에<br>동네라서 가능한 것, BOM에서 함께해봄
 								</p>
-								<a href="goCarWrite"
+								<a href="car"
 									class="u-align-center u-btn u-button-style u-custom-color-1 u-custom-font u-text-body-color u-text-hover-black u-btn-1">유모차
-									거래 </a> 
-								<a href="goComm"
+									거래 </a> <a href="goComm"
 									class="u-align-center u-btn u-button-style u-custom-color-1 u-custom-font u-text-body-color u-text-hover-black u-btn-2">육아팁
-									게시판 </a> 
-								<a href="b_board"
+									게시판 </a> <a href="b_board"
 									class="u-align-center u-btn u-button-style u-custom-color-1 u-custom-font u-text-body-color u-text-hover-black u-btn-3">물품거래
 								</a>
 							</div>

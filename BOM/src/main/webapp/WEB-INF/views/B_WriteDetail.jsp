@@ -32,6 +32,15 @@
                   <a href="babyCar">유모차</a>
                 </div>
             </div>
+            <div class="dropdown">
+				<a href="car"
+					class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1">
+					Stroller</a>
+				<div class="dropdown-content">
+					<a href="car">유모차 매입 신청</a> <a href="goCar">유모차 구매</a>
+
+				</div>
+			</div>
             <a href="car">Stroller</a>
             <a href="goComm">Board</a>
             <a href="goMyPage">MyPage</a>

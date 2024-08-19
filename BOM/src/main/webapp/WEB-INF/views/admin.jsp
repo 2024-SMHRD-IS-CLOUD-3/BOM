@@ -27,7 +27,29 @@
 				<nav class="main-nav">
 					<ul>
 						<li><a href="./">Home</a></li>
-						<li><a href="b_board">Market</a></li>
+						<li class="u-nav-item">
+							<div class="dropdown">
+								<a
+									class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
+									href="b_board" style="padding: 10px 20px;">Market</a>
+								<div class="dropdown-content">
+									<a href="boyC">남아의류</a> <a href="girlC">여아의류</a> <a href="toy">장난감류</a>
+									<a href="book">도서교구</a> <a href="furniture">아이가구</a> <a
+										href="newBorn">육아출산</a> <a href="babyCar">유모차</a>
+								</div>
+							</div>
+						</li>
+						</li>
+						<li class="u-nav-item">
+							<div class="dropdown">
+								<a id="car"
+									class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
+									href="car" style="padding: 10px 20px;">Stroller</a>
+								<div class="dropdown-content">
+									<a href="car">유모차 매입 신청</a> <a href="goCar">유모차 구매</a>
+
+								</div>
+						</li>
 						<li><a href="goComm">Board</a></li>
 						<li><a href="goMyPage">MyPage</a></li>
 					</ul>
@@ -41,7 +63,7 @@
 				<input type="text" id="searchInput" placeholder="Search posts..."
 					onkeyup="searchPosts()">
 			</div>
-			
+
 			<!-- Table of posts -->
 			<table class="board-table" id="postsTable">
 				<thead>
@@ -65,12 +87,18 @@
 								<div class="status-action">
 									<form action="updateStatus?idx=${deal.car_idx}" method="post">
 										<select name="car_cours">
-											<option value="신청" ${deal.car_cours == '신청' ? 'selected' : ''}>신청</option>
-											<option value="접수" ${deal.car_cours == '접수' ? 'selected' : ''}>접수</option>
-											<option value="심사" ${deal.car_cours == '심사' ? 'selected' : ''}>심사</option>
-											<option value="매입" ${deal.car_cours == '매입' ? 'selected' : ''}>매입</option>
-											<option value="거절" ${deal.car_cours == '거절' ? 'selected' : ''}>거절</option>
-											<option value="완료" ${deal.car_cours == '완료' ? 'selected' : ''}>완료</option>
+											<option value="신청"
+												${deal.car_cours == '신청' ? 'selected' : ''}>신청</option>
+											<option value="접수"
+												${deal.car_cours == '접수' ? 'selected' : ''}>접수</option>
+											<option value="심사"
+												${deal.car_cours == '심사' ? 'selected' : ''}>심사</option>
+											<option value="매입"
+												${deal.car_cours == '매입' ? 'selected' : ''}>매입</option>
+											<option value="거절"
+												${deal.car_cours == '거절' ? 'selected' : ''}>거절</option>
+											<option value="완료"
+												${deal.car_cours == '완료' ? 'selected' : ''}>완료</option>
 										</select>
 										<!-- 숨겨진 필드로 car_idx 전송 -->
 										<input type="hidden" name="car_idx" value="${deal.car_idx}" />

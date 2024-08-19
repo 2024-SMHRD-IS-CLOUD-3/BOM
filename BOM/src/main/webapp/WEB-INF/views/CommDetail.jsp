@@ -63,10 +63,16 @@
 							</div>
 							</li>
 						<li class="u-nav-item">
-						
+							<div class="dropdown">
 						<a id="car"
 							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
-							href="car" style="padding: 10px 20px;">Stroller</a></li>
+							href="car" style="padding: 10px 20px;">Stroller</a>
+							<div class="dropdown-content">
+									<a href="car">유모차 매입 신청</a> <a href="goCar">유모차 구매</a>
+									
+								</div>
+						</div>
+						</li>
 						<li class="u-nav-item"><a
 							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
 							href="goComm" style="padding: 10px 20px;">Board</a></li>
