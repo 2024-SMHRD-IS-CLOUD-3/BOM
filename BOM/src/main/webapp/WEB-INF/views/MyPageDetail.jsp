@@ -12,7 +12,7 @@
 <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
 <script class="u-script" type="text/javascript" src="nicepage.js"
 	defer=""></script>
-	<link rel="stylesheet" href="dd.css">
+<link rel="stylesheet" href="dd.css">
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f26071dc8549ac02492f1a464b072358&libraries=services"></script>
 
@@ -66,14 +66,13 @@
 						</li>
 						<li class="u-nav-item">
 							<div class="dropdown">
-						<a id="car"
-							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
-							href="car" style="padding: 10px 20px;">Stroller</a>
-							<div class="dropdown-content">
+								<a id="car"
+									class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
+									href="car" style="padding: 10px 20px;">Stroller</a>
+								<div class="dropdown-content">
 									<a href="car">유모차 매입 신청</a> <a href="goCar">유모차 구매</a>
-									
+
 								</div>
-						
 						</li>
 						<li class="u-nav-item"><a
 							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
@@ -158,14 +157,14 @@
 			<div id="map"></div>
 			<button class="btn" id="changeLocationBtn" style="margin-top: 10px;">내
 				위치</button>
-			<button class="btn" id="loadLastMarkerBtn" style="margin-top: 10px;">불러오기</button>
+			<button class="btn" id="loadLastMarkerBtn" style="margin-top: 10px;">저장하기</button>
 		</div>
 	</div>
 
 	<script>
     let map;
     let marker;
-    let currentPosition;
+    let rememberMarker;  // 클릭한 위치 좌표를 저장할 변수
 
     // 지도 초기화
     async function initMap() {
@@ -173,7 +172,7 @@
 
         map = new kakao.maps.Map(document.getElementById('map'), {
             center: initialPosition,
-            level: 3 // 지도의 확대 레벨
+            level: 3 // 적절한 확대 레벨 설정
         });
 
         marker = new kakao.maps.Marker({
@@ -181,95 +180,93 @@
             map: map
         });
 
-        currentPosition = initialPosition;
+        // 서버에서 마지막 저장된 위치 불러오기
+        await loadLastMarker();
 
         // 지도에 클릭 이벤트를 등록합니다
         kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
-            // 클릭한 위도, 경도 정보를 가져옵니다 
             let latlng = mouseEvent.latLng;
             
-            // 마커 위치를 클릭한 위치로 옮깁니다
-            marker.setPosition(latlng);
+            // 좌표가 정상적인지 확인합니다
+            if (latlng.getLat() >= -90 && latlng.getLat() <= 90 && latlng.getLng() >= -180 && latlng.getLng() <= 180) {
+                // 마커 위치를 클릭한 위치로 옮깁니다
+                marker.setPosition(latlng);
 
-            // 클릭한 위치의 좌표를 실시간으로 서버에 전송합니다
-            const markerData = `${latlng.getLat()},${latlng.getLng()}`; // 좌표를 문자열로 변환
-
-            const data = {
-                marker: markerData // 좌표 데이터를 marker 컬럼에 맞게 보냅니다.
-            };
-
-            // 좌표를 서버로 실시간 전송
-            fetch('/save-location', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => response.json())
-            .then(result => {
-                if (result.success) {
-                    console.log('좌표가 성공적으로 저장되었습니다.');
-                } else {
-                    console.error('좌표 저장에 실패했습니다.');
-                }
-            })
-            .catch(error => {
-                console.error('좌표 전송 중 오류 발생:', error);
-            });
+                // 클릭한 위치를 rememberMarker에 저장
+                rememberMarker = latlng;
+                console.log('rememberMarker 저장:', rememberMarker);
+            } else {
+                console.error('잘못된 좌표값입니다:', latlng);
+            }
         });
     }
 
-    // 서버에서 마지막 클릭한 위치를 불러옵니다.
+    // 서버에서 마지막 저장된 위치를 불러옵니다
     async function loadLastMarker() {
+    try {
+        const response = await fetch('get-last-location');
+        const data = await response.json();
+
+        if (data.latitude && data.longitude) {
+            const lastPosition = new kakao.maps.LatLng(data.latitude, data.longitude);
+
+            // 마커 위치를 마지막 위치로 옮깁니다
+            marker.setPosition(lastPosition);
+            map.setCenter(lastPosition);
+
+            console.log('마지막 위치가 로드되었습니다:', lastPosition);
+        } else {
+            console.error('마지막 위치가 없습니다.');
+        }
+    } catch (error) {
+        console.error('마지막 위치를 불러오는 중 오류 발생:', error);
+    }
+}
+
+
+    // 저장하기 버튼 클릭 이벤트 - rememberMarker를 서버로 전송
+document.getElementById('loadLastMarkerBtn').addEventListener('click', async function() {
+    if (rememberMarker) {
+        const latitude = rememberMarker.getLat();
+        const longitude = rememberMarker.getLng();
+
         try {
-            const response = await fetch('/get-last-location');
-            const data = await response.json();
+            const response = await fetch('save-location', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: new URLSearchParams({
+                    latitude: latitude,
+                    longitude: longitude
+                })
+            });
 
-            if (data.marker) {
-                const [lat, lng] = data.marker.split(',').map(Number); // 좌표를 분리하고 숫자로 변환
-                let lastPosition = new kakao.maps.LatLng(lat, lng);
+            const result = await response.text();
+            console.log(result);
 
-                // 마커 위치를 마지막 위치로 옮깁니다
-                marker.setPosition(lastPosition);
-                map.setCenter(lastPosition);
-
-                console.log('마지막 위치가 로드되었습니다:', lastPosition);
+            if (result === "좌표가 성공적으로 저장되었습니다.") {
+                alert('위치가 성공적으로 저장되었습니다!');
             } else {
-                console.error('마지막 위치가 없습니다.');
+                alert('위치 저장에 실패했습니다.');
             }
         } catch (error) {
-            console.error('마지막 위치를 불러오는 중 오류 발생:', error);
+            console.error('좌표 전송 중 오류 발생:', error);
         }
+    } else {
+        alert('저장할 위치가 없습니다. 먼저 지도를 클릭하세요.');
     }
+});
 
-    // 내 위치 버튼 클릭 이벤트
-    document.getElementById('changeLocationBtn').addEventListener('click', function() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-                let newPosition = new kakao.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
-                map.setCenter(newPosition);
-                marker.setPosition(newPosition);
-                currentPosition = newPosition;
 
-                console.log('현재 위치:', currentPosition);
-            }, function() {
-                alert('위치를 가져올 수 없습니다.');
-            });
-        } else {
-            alert('이 브라우저에서는 Geolocation이 지원되지 않습니다.');
-        }
-    });
 
-    // 불러오기 버튼 클릭 이벤트
-    document.getElementById('loadLastMarkerBtn').addEventListener('click', function() {
-        loadLastMarker(); // 마지막 위치를 불러오는 함수 호출
-    });
 
     // 페이지 로드 후 지도 초기화
     window.onload = initMap;
 </script>
+
+
 
 
 	<script>

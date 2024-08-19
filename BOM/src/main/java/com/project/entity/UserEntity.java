@@ -28,7 +28,8 @@ public class UserEntity {
     private String addr;
     private Integer score;
     private java.sql.Timestamp joined_at;
-    private String marker;
+    private Double latitude;  // 위도
+    private Double longitude; // 경도
     
     @Column(name = "user_pp")
 	private String userFile;

@@ -1,31 +1,31 @@
 package com.project.controller;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.sql.Date;
 import java.sql.Timestamp;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
+import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.client.MultipartBodyBuilder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,12 +35,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import org.springframework.ui.Model;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 
-import com.project.entity.DealEntity;
-import com.project.entity.FlaskEntity;
 import com.project.entity.UserEntity;
 import com.project.repository.UserRepository;
 
@@ -396,6 +391,56 @@ public class UserController {
 	        return "redirect:/goMyPage";
 	    }
    }
+   
+   @Transactional
+   @PostMapping("/save-location")
+   public ResponseEntity<String> saveLocation(@RequestParam("latitude") Double latitude,
+                                              @RequestParam("longitude") Double longitude,
+                                              HttpSession session) {
+       System.out.println("save-location 호출됨");
+       System.out.println("받은 좌표: 위도=" + latitude + ", 경도=" + longitude);
+       
+       UserEntity user = (UserEntity) session.getAttribute("LoginInfo");
+
+       if (user != null) {
+           System.out.println("사용자 정보 확인: " + user.getId());
+
+           // 위도와 경도 저장
+           user.setLatitude(latitude);
+           user.setLongitude(longitude);
+
+           repo.save(user);
+           System.out.println("좌표가 저장되었습니다: 위도=" + latitude + ", 경도=" + longitude);
+           return ResponseEntity.ok("좌표가 성공적으로 저장되었습니다.");
+       } else {
+           System.out.println("로그인 필요");
+           return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("로그인이 필요합니다.");
+       }
+   }
+
+
+
+
+
+
+
+// 유저의 마지막 저장된 위치 정보를 불러오는 메서드
+   @GetMapping("/get-last-location")
+   public ResponseEntity<Map<String, Double>> getLastLocation(HttpSession session) {
+       UserEntity user = (UserEntity) session.getAttribute("LoginInfo");
+
+       if (user != null && user.getLatitude() != null && user.getLongitude() != null) {
+           Map<String, Double> location = new HashMap<>();
+           location.put("latitude", user.getLatitude());
+           location.put("longitude", user.getLongitude());
+           return ResponseEntity.ok(location);
+       } else {
+           return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);  // 좌표가 없을 때
+       }
+   }
+
+
+
 
 
 
