@@ -18,6 +18,7 @@
 
 <body>
 	  <header>
+	   <div class="container">
         <a href="./" style="text-decoration: none; color: inherit;">
             <h1>BOM</h1>
         </a>
@@ -44,6 +45,7 @@
             <a href="goComm">Board</a>
             <a href="goMyPage">MyPage</a>
         </nav>
+         </div>
     </header>
 	<div class="container">
 		<main>

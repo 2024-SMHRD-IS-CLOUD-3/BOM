@@ -20,6 +20,16 @@ header {
     align-items: center;
 }
 
+header .container {
+    max-width: 1200px;
+    margin: 0 auto; /* 중앙 정렬을 위해 좌우 여백을 자동으로 설정 */
+    width: 100%; /* 너비를 100%로 설정하되, 최대 너비는 1200px로 제한 */
+    display: flex; /* 기존의 flexbox 레이아웃 유지 */
+    justify-content: space-between; /* 요소 간 공간 분배 */
+    align-items: center; /* 세로 정렬 */
+}
+
+
 header h1 {
     margin: 0;
     color: white;
