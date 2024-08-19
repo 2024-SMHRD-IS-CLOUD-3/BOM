@@ -69,7 +69,7 @@
                 <div class="message-subject">
                     <strong>제목:</strong> ${list.m_title}
                 </div>
-                <div class="message-body">
+                <div class="message-body" style="white-space: pre-line;">
                     <p>${list.m_content}</p>
                 </div>
                 <div class="message-actions">

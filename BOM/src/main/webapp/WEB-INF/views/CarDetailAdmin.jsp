@@ -74,7 +74,7 @@
                     
                     <p id="product-rank" class="rank">${car.car_rank}급</p>
                     <p id="product-price" class="price">${car.car_price}원</p>
-                    <p id="product-description" class="description">
+                    <p id="product-description" class="description" style="white-space: pre-line;">
                         ${car.car_content}
                     </p>
                 </div>
