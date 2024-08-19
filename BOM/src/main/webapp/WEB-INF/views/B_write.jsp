@@ -73,7 +73,7 @@
 					<div class="file-upload">
 						<input type="file" id="imageUpload" name="files[]" multiple
 							style="display: none;" onchange="loadImage(event)"> <label
-							for="imageUpload" class="file-select-btn">파일선택</label>
+							for="imageUpload" class="file-select-btnx">파일선택</label>
 					</div>
 					<br>
 

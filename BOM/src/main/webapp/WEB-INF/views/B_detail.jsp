@@ -155,7 +155,7 @@
 
             <div style="margin-top: 20px;">
            
-                <button onclick="showPopup();" class="">쪽지보내기</button>
+                <button onclick="showPopup();" class="message-btn">쪽지보내기</button>
                 
             </div>
         </div>

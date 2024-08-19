@@ -255,7 +255,23 @@ h2 {
     background-color: #57a763;
 }
 
+.message-btn {
+    margin-left: 490px;
+    padding: 10px 20px;
+    width:120px;
+    background-color: #69c173;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Pretendard-Regular', Arial, sans-serif; /* 폰트 변경 */
+}
 
+.message-btn:hover {
+    background-color: #57a763;
+}
 
 .back-btn {
     margin-left: 490px;
