@@ -13,9 +13,10 @@
 </head>
 
 <body>
-
-    <header>
-        <h1>BOM</h1>
+  <header>
+        <a href="./" style="text-decoration: none; color: inherit;">
+            <h1>BOM</h1>
+        </a>
         <nav>
              <a href="./">Home</a>
             <div class="dropdown">
@@ -27,18 +28,15 @@
                   <a href="book">도서교구</a>
                   <a href="furniture">아이가구</a>
                   <a href="newBorn">육아출산</a>
-                  <a href="car_main">유모차</a>
+                  <a href="babyCar">유모차</a>
                 </div>
             </div>
-            <div class="dropdown">
-				<a href="car"
-					class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1">
-					Stroller</a>
-				<div class="dropdown-content">
-					<a href="car">유모차 매입 신청</a> <a href="goCar">유모차 구매</a>
-
-				</div>
-			</div>
+            <a href="goCarWrite">Stroller</a>
+               <div class="dropdown-content">
+                  <a href="boyC">유모차 판매</a>
+                  <a href="girlC">유모차 구입</a>
+              
+                </div>
             <a href="goComm">Board</a>
             <a href="goMyPage">MyPage</a>
         </nav>
