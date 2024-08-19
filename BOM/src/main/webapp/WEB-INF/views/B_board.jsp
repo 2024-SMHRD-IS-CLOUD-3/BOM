@@ -97,7 +97,7 @@
 						</div>
 						<div class="card-desc">
 							<h2 class="card-title">${deal.b_title}</h2>
-							<div class="price">${deal.how_much}</div>
+							<div class="price">${deal.how_much}원</div>
 							<div class="region">${duAddr}</div>
 							<div class="card-counts">
 								<span class="like-counts"> 관심 0 </span> ∙ <span
