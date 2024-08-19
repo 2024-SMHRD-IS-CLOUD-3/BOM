@@ -113,7 +113,7 @@
 							<th>받는 사람</th>
 							<th>제목</th>
 							<th>날짜</th>
-							<th>작업</th>
+							<th>삭제</th>
 						</tr>
 					</thead>
 					<tbody>

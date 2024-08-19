@@ -69,7 +69,7 @@ public class MessageController {
 	        if (messageSend.getSend_m().equals(userId)) {
 	        	sendMessage.add(messageSend);
 	        }
-	    }
+ 		}
 	    
  		// 로그 출력으로 데이터 확인
 	    System.out.println("선택된 메시지 개수: " + sendMessage.size());
