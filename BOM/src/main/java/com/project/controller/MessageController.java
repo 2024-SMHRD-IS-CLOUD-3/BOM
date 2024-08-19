@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -130,7 +131,7 @@ public class MessageController {
 	private String sendMessage(HttpSession session,
 			@RequestParam("m_title") String title,
 			@RequestParam("m_content") String content,
-			@RequestParam("write") String accept,
+			@RequestParam("accept") String accept, // 받는사람
 			Model model
 			) {
 		String userId = (String) session.getAttribute("userId");

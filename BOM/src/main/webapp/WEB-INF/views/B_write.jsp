@@ -81,9 +81,9 @@
 		</div>
 	</header>
 
-	<main>
+		<main>
 		<div style="text-align: left; margin-top: 20px;">
-			<button onclick="goBack()" class="back-btn">← 돌아가기 </button>
+			<button onclick="goBack()" class="back-btn">← 돌아가기</button>
 		</div>
 		<div class="upload-container">
 			<div class="image-preview">
@@ -112,7 +112,7 @@
 						placeholder="게시글 내용을 작성해주세요."></textarea>
 
 					<div class="file-upload">
-						<input type="file" id="imageUpload" name="file"
+						<input type="file" id="imageUpload" name="file" multiple
 							style="display: none;" onchange="loadImage(event)"> <label
 							for="imageUpload" class="file-select-btn">파일선택</label>
 					</div>

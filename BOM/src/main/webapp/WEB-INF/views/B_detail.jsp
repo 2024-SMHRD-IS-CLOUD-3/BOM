@@ -145,15 +145,17 @@
 
 			
 	
-			<a href="smessage?idx=${yoyo.b_idx}">
-				<button class="chat-btn">쪽지보내기</button>
-			</a>
+		
+				<button class="chat-btn" onclick="showPopup()">쪽지보내기</button>
+			
 
 		</div>
 
 	</main>
 
-
+<script type="text/javascript">
+        function showPopup() { window.open("smessage?idx=${yoyo.b_idx}", "쪽지보내기", "width=400, height=800, left=100, top=50"); }
+        </script>
 	
 
 </body>
