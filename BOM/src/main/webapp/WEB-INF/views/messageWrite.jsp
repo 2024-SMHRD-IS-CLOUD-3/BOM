@@ -35,7 +35,7 @@
 			<div class="message-detail-box">
 				<form action="sendMessage" method="post" target="_self"
 					onsubmit="closePopup()">
-					>
+					
 					<div class="message-header">
 						<div>
 							<strong>보낸 사람: </strong>${id}

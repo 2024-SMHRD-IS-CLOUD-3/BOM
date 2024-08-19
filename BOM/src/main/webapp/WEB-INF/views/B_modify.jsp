@@ -133,7 +133,7 @@
 						style="white-space: pre-line;">${empty deal.b_content ? '내용을 입력하세요.' : deal.b_content}</textarea>
 					<!-- 파일 업로드 -->
 					<div class="file-upload">
-						<input type="file" id="imageUpload" name="file"
+						<input type="file" id="imageUpload" name="files[]" multiple
 							style="display: none;" onchange="handleFileChange(event)">
 						<label for="imageUpload" class="file-select-btnx">파일선택</label>
 

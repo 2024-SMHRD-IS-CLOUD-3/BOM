@@ -132,44 +132,56 @@ public class DealController {
 	@RequestMapping("/modifyWrite")
 	public String modifyWrite(@ModelAttribute DealEntity updatedEntity,@RequestParam("b_title") String title, @RequestParam("how_much") Long price,
 			@RequestParam("category") String category, @RequestParam("b_content") String description,
-			@RequestParam("file") MultipartFile file, HttpSession session, RedirectAttributes redirectAttributes, Long idx) {
+			@RequestPart("files[]") MultipartFile[] files, HttpSession session, RedirectAttributes redirectAttributes, Long idx) {
 
-		if (file.isEmpty()) {
-			redirectAttributes.addFlashAttribute("message", "파일이 비어 있습니다.");
-			return "redirect:/goWrite";
-		}
+		  String userId = (String) session.getAttribute("userId");
+		    
+		    // 파일이 비어 있는지 확인
+		    if (files.length == 0 || files[0].isEmpty()) {
+		        redirectAttributes.addFlashAttribute("message", "파일이 비어 있습니다.");
+		        return "redirect:/goWrite";
+		    }
+		    
+		    // 파일 저장을 위한 StringBuilder를 사용해 파일 이름들을 연결할 수 있습니다.
+		    StringBuilder filenames = new StringBuilder();
+		    
+		    for (MultipartFile file : files) {
+		        if (!file.isEmpty()) {
+		            String uuid = UUID.randomUUID().toString();
+		            String filename = uuid + "_" + file.getOriginalFilename();
+		            Path path = Paths.get(savePath + filename);
 
-		String uuid = UUID.randomUUID().toString();
-		String filename = uuid + "_" + file.getOriginalFilename();
-		Path path = Paths.get(savePath + filename);
+		            try {
+		                // 파일 저장
+		                Files.copy(file.getInputStream(), path);
+		                // 파일 이름 추가
+		                filenames.append(filename).append(";");
+		            } catch (IOException e) {
+		                e.printStackTrace();
+		                redirectAttributes.addFlashAttribute("message", "파일 업로드 실패.");
+		                return "redirect:/goWrite";
+		            }
+		        }
+		    }
+		    System.out.println("파일 개수: " + files.length);
+		    // DealEntity에 데이터 저장
+		    DealEntity entity = new DealEntity();
+		    entity.setB_title(title);
+		    entity.setHow_much(price);
+		    entity.setCategory(category);
+		    entity.setB_content(description);
+		    entity.setFilenames(filenames.toString()); // 모든 파일 이름들을 연결하여 저장
+		    entity.setId(userId);
 
-		try {
-			Files.copy(file.getInputStream(), path);
-		} catch (IOException e) {
-			e.printStackTrace();
-			redirectAttributes.addFlashAttribute("message", "파일 업로드 실패.");
-			return "redirect:/goWrite";
-		}
-		Optional<DealEntity> optionalEntity = dealRepo.findById(idx);
-		
-		System.out.println("자라거부기"+idx);
-		DealEntity entity = optionalEntity.get();
-		entity.setB_title(updatedEntity.getB_title());
-		entity.setHow_much(updatedEntity.getHow_much());
-		entity.setCategory(updatedEntity.getCategory());
-		entity.setB_content(updatedEntity.getB_content());
-		entity.setFilenames(filename); 
-	
-		
+		    LocalDateTime now = LocalDateTime.now();
+		    Timestamp timestamp = Timestamp.valueOf(now);
+		    entity.setCreated_at(timestamp);
 
-		LocalDateTime now = LocalDateTime.now();
-		Timestamp timestamp = Timestamp.valueOf(now);
-		entity.setCreated_at(timestamp);
+		    // 데이터베이스에 저장
+		    dealRepo.save(entity);
 
-		   dealRepo.save(entity);
-
-		redirectAttributes.addFlashAttribute("message", "게시물 등록 완료.");
-		return "redirect:/b_board";
+		    redirectAttributes.addFlashAttribute("message", "게시물 등록 완료.");
+		    return "redirect:/b_board";
 	}
 	
 	// 중고거래게시판 디테일
@@ -214,8 +226,8 @@ public class DealController {
 	                        String[] fileArray = filenames.split(";");
 	                        List<String> fileList = Arrays.asList(fileArray);
 	                        model.addAttribute("fileList", fileList);
-	                        
-	                        System.out.println("파일이름 리스트로 나오나확인 "+ fileList);
+	                        model.addAttribute("file", fileList.get(0));
+	                        System.out.println("파일이름 리스트로 나오나확인 "+ fileList.get(0));
 	                    }
 	                }
 	            }

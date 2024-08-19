@@ -112,6 +112,7 @@ public class MessageController {
 	@RequestMapping("/smessage")
 	private String smessage(HttpSession session, Model model, Long idx) {
 		String userId = (String) session.getAttribute("userId");
+		System.out.println("idx확인" + idx);
 		if(userId == null) {
 			return "redirect:/login";
 		}
