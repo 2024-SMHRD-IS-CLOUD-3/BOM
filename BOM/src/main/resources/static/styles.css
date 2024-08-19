@@ -217,6 +217,16 @@ footer {
     z-index: 1000;
 }
 
+
+.submit-btn{
+	background-color:#4CAF50;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+    color: white;
+}
+
 /* Search Bar */
 .search-bar {
     margin-bottom: 20px;
