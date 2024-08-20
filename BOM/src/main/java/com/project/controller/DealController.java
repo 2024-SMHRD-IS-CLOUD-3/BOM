@@ -323,7 +323,7 @@ public class DealController {
 	
 		
 	
-		return "redirect:/deal";
+		return "redirect:/deal ";
 	}
 	
 	
