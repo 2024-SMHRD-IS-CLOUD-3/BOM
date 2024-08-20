@@ -32,12 +32,11 @@
 					style="font-size: 1rem; letter-spacing: 0px; font-family: PretendardVariable; font-weight: 700;">
 					<a
 						class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-						href="./"> <svg class="u-svg-link" viewBox="0 0 24 24">
+						href="#"> <svg class="u-svg-link" viewBox="0 0 24 24">
 							<use xlink:href="#menu-hamburger"></use></svg> <svg
 							class="u-svg-content" version="1.1" id="menu-hamburger"
 							viewBox="0 0 16 16" x="0px" y="0px"
-							xmlns:xlink="http://www.w3.org/1999/xlink"
-							xmlns="http://www.w3.org/2000/svg">
+							xmlns:xlink="http://www.w3.org/2000/svg">
 							<g>
 							<rect y="1" width="16" height="2"></rect>
 							<rect y="7" width="16" height="2"></rect>
@@ -68,7 +67,7 @@
 							<div class="dropdown">
 								<a id="car"
 									class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
-									href="goCar" style="padding: 10px 20px;">Stroller</a>
+									href="car" style="padding: 10px 20px;">Stroller</a>
 								<div class="dropdown-content">
 									<a href="car">유모차 매입 신청</a> <a href="goCar">유모차 구매</a>
 
@@ -258,6 +257,31 @@ document.getElementById('loadLastMarkerBtn').addEventListener('click', async fun
     }
 });
 
+
+// 내 위치 버튼 클릭 이벤트 - GPS로 현재 위치 가져오기
+document.getElementById('changeLocationBtn').addEventListener('click', function() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            let lat = position.coords.latitude;
+            let lng = position.coords.longitude;
+
+            let currentPos = new kakao.maps.LatLng(lat, lng);
+
+            // 마커를 현재 위치로 이동
+            marker.setPosition(currentPos);
+            map.setCenter(currentPos);
+
+            // 현재 위치를 rememberMarker에 저장
+            rememberMarker = currentPos;
+
+            console.log('현재 위치:', currentPos);
+        }, function(error) {
+            console.error('GPS 위치를 가져오는 중 오류 발생:', error);
+        });
+    } else {
+        alert('GPS를 지원하지 않는 브라우저입니다.');
+    }
+});
 
 
 
