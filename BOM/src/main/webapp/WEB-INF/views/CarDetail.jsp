@@ -47,9 +47,9 @@
   
         <!-- 돌아가기 버튼 추가 -->
         <div style="text-align: left; margin: 20px 0;" >
-        <form action="car_main" method="get">
-            <button type="submit" class="back-btn">← 돌아가기</button>
-        </form>
+       	<form action="goCar" method="get">
+				<button type="submit" class="back-btn">← 돌아가기</button>
+			</form>
         </div>        
         <div class="product-container">
             <div class="slider">
