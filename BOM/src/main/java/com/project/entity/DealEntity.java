@@ -39,9 +39,6 @@ public class DealEntity {
 
 	private Integer b_views = 0;
 
-	public void incrementView() {
-		this.b_views++;
-	}
 
 	private String deal_status = "판매중";
 

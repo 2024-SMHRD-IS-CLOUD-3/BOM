@@ -282,6 +282,29 @@ public class DealController {
 	}
 
 	
+	// 판매목록 확인페이지
+	@RequestMapping("/deal")
+	public String deal(HttpSession session,Model model, String id) {
+		   
+		
+		List<DealEntity> list = dealRepo.findById(id);
+		model.addAttribute("deal", list);
+		return "list";
+	}
+	
+	// 판매목록 상태 변경 메서드
+	@RequestMapping("/dealStatus")
+	public String dealStatus(HttpSession session,Model model,Long idx) {
+		String id = session.getId();
+		List<DealEntity> list = dealRepo.findById(id);
+		model.addAttribute("deal", list);
+		return "list";
+	}
+	
+	
+	
+	
+	
 	
 
 

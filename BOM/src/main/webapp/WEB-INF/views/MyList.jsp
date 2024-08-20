@@ -125,7 +125,7 @@
         <ul class="menu-list">
            <li><a href="messageList" class="list">내 쪽지함</a></li>
             <li><a href="#favorites" class="list">관심 목록</a></li>
-            <li><a href="#sales" class="list">판매 목록</a></li>
+            <li><a href="deal?id=${user.id}" class="list">판매 목록</a></li>
             <li><a href="#purchases" class="list">구매 목록</a></li>
             <li><a href="#board-activity" class="list">게시판 활동 내역</a></li>
             <li><a href="#stroller-trades" class="list">유모차 매매 내역</a></li>

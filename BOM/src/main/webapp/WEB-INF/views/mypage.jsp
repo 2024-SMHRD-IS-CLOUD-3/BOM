@@ -56,7 +56,7 @@
 		<ul class="menu-list">
 			<li><a href="messageList">내 쪽지함</a></li>
 			<li><a href="#favorites">관심 목록</a></li>
-			<li><a href="#sales">판매 목록</a></li>
+			<li><a href="deal">판매 목록</a></li>
 			<li><a href="#purchases">구매 목록</a></li>
 			<li><a href="#board-activity">게시판 활동 내역</a></li>
 			<li><a href="#stroller-trades">유모차 매매 내역</a></li>
