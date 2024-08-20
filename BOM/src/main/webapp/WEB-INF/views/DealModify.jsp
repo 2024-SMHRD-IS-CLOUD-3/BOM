@@ -38,6 +38,8 @@
     </style>
 </head>
 <body>
+
+
     <div id="deal">
         <form action="dealModify" method="post" enctype="multipart/form-data">
             <input type="hidden" name="idx" value="${deal.idx}" />
@@ -70,6 +72,7 @@
                                 </ul>
                             </c:if>
                         </div>
+                       
                         <!-- 새로운 파일 업로드 -->
                          <div class="file-upload">
                         <input type="file" id="imageUpload" name="file" style="display: none;" onchange="loadImage(event)">
@@ -98,9 +101,10 @@
     <script src="resources/assets/js/skel.min.js"></script>
     <script src="resources/assets/js/util.js"></script>
     <script src="resources/assets/js/main.js"></script>
+ 	
+ 	<!-- 프리뷰 -->
  	<script>
- 	 
-    function loadImage(event) {
+ 	function loadImage(event) {
         const imagePreview = document.getElementById('preview');
         imagePreview.src = URL.createObjectURL(event.target.files[0]);
         imagePreview.onload = function() {

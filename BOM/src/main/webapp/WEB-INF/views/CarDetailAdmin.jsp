@@ -84,8 +84,7 @@
     </main>
 
 
-    </script>
-   <!--  <script src="market_d.js"></script> -->
+  
 </body>
 
 </html>

@@ -119,7 +119,7 @@
 	</main>
 
 	<script>
-
+	<!-- 프리뷰 이미지 및 파일 이름-->
 	   let selectedFile = null; // 선택된 파일을 저장할 변수
 
 	    function handleFileChange(event) {
@@ -145,7 +145,7 @@
 	            reader.readAsDataURL(file); // 파일 읽기
 	        }
 	    }
-
+	    <!-- 파일 삭제 -->
 	    function removeFile() {
 	        const imagePreview = document.getElementById('preview');
 	        const fileInput = document.getElementById('imageUpload');

@@ -7,69 +7,69 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Product Page</title>
+<title>유저가 판매하는 본인의 글을 볼 때의 페이지</title>
 <link rel="stylesheet" href="market_d.css">
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f26071dc8549ac02492f1a464b072358&libraries=services"></script>
-    
-        <style>
-        .product-container {
-            width: 100%;
-        }
 
-        .content-wrapper {
-            display: flex;
-            justify-content: space-around;
-            align-items: flex-end;
-            margin-top: 20px;
-        }
+<style>
+.product-container {
+	width: 100%;
+}
 
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
-            gap: 10px;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 200px;
-        }
+.content-wrapper {
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-end;
+	margin-top: 20px;
+}
 
-        .image-item {
-            overflow: hidden;
-            border-radius: 8px;
-            cursor: pointer;
-        }
+.image-gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+	gap: 10px;
+	background: rgba(255, 255, 255, 0.8);
+	padding: 10px;
+	border-radius: 8px;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+	max-width: 200px;
+}
 
-        .image-item img {
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
+.image-item {
+	overflow: hidden;
+	border-radius: 8px;
+	cursor: pointer;
+}
 
-        .image-item img:hover {
-            transform: scale(1.05);
-        }
+.image-item img {
+	width: 50px;
+	height: 50px;
+	object-fit: cover;
+	transition: transform 0.3s ease;
+}
 
-        .image-preview {
-            background: rgba(255, 255, 255, 0.8);
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        }
+.image-item img:hover {
+	transform: scale(1.05);
+}
 
-        .image-preview img {
-            max-width: 200px;
-            max-height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
+.image-preview {
+	background: rgba(255, 255, 255, 0.8);
+	padding: 10px;
+	border-radius: 8px;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-        #map {
-            margin-top: 20px;
-        }
-        </style>
+.image-preview img {
+	max-width: 200px;
+	max-height: 200px;
+	object-fit: cover;
+	border-radius: 8px;
+}
+
+#map {
+	margin-top: 20px;
+}
+</style>
 
 </head>
 
@@ -107,58 +107,73 @@
 			</form>
 		</div>
 
-	<div class="product-container" style="display: flex; flex-direction: column; align-items: center;">
-    <!-- 첫 번째 행: 이미지와 제품 정보 -->
-    <div class="content-wrapper" style="display: flex; justify-content: space-between; width: 100%; align-items: flex-start;">
-        <!-- 왼쪽: 이미지 섹션 -->
-        <div class="image-section" style="flex: 1; display: flex; flex-direction: column; align-items: center;">
-            <!-- 이미지 갤러리 -->
-            <div class="image-gallery" style="margin-bottom: 20px;">
-                <c:forEach var="file" items="${fileList}">
-                    <div class="image-item" style="margin-bottom: 10px;">
-                        <img src="uploads/${file}" alt="Product Image" onclick="showPreview(this)" style="width: 100px; height: auto; cursor: pointer;">
-                    </div>
-                </c:forEach>
-            </div>
-            <!-- 프리뷰 이미지 -->
-           <div class="image-preview">
-    <img id="preview-image" src="uploads/${file}" alt="Preview Image" style="max-width: 300px; max-height: 300px;">
-</div>
-        </div>
+		<div class="product-container"
+			style="display: flex; flex-direction: column; align-items: center;">
+			<!-- 첫 번째 행: 이미지와 제품 정보 -->
+			<div class="content-wrapper"
+				style="display: flex; justify-content: space-between; width: 100%; align-items: flex-start;">
+				<!-- 왼쪽: 이미지 섹션 -->
+				<div class="image-section"
+					style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+					<!-- 이미지 갤러리 -->
+					<div class="image-gallery" style="margin-bottom: 20px;">
+						<c:forEach var="file" items="${fileList}">
+							<div class="image-item" style="margin-bottom: 10px;">
+								<img src="uploads/${file}" alt="Product Image"
+									onclick="showPreview(this)"
+									style="width: 100px; height: auto; cursor: pointer;">
+							</div>
+						</c:forEach>
+					</div>
+					<!-- 프리뷰 이미지 -->
+					<div class="image-preview">
+						<img id="preview-image" src="uploads/${file}" alt="Preview Image"
+							style="max-width: 300px; max-height: 300px;">
+					</div>
+				</div>
 
-        <!-- 오른쪽: 제품 상세 정보 -->
-        <div class="product-info" style="flex: 2; text-align: left; margin-left: 50px;">
-            <div class="seller-info" style="display: flex; align-items: center; margin-bottom: 20px;">
-                <img src="uploads/${duInfo}" alt="Seller Icon" class="seller-icon" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">
-                <div>
-                    <p id="seller-name" style="font-size: 18px; font-weight: bold;">${yoyo.id}</p>
-                    <p id="region" style="font-size: 14px;">${duAddr}</p>
-                </div>
-            </div>
+				<!-- 오른쪽: 제품 상세 정보 -->
+				<div class="product-info"
+					style="flex: 2; text-align: left; margin-left: 50px;">
+					<div class="seller-info"
+						style="display: flex; align-items: center; margin-bottom: 20px;">
+						<img src="uploads/${duInfo}" alt="Seller Icon" class="seller-icon"
+							style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">
+						<div>
+							<p id="seller-name" style="font-size: 18px; font-weight: bold;">${yoyo.id}</p>
+							<p id="region" style="font-size: 14px;">${duAddr}</p>
+						</div>
+					</div>
 
-            <h2 id="product-title" style="font-size: 24px; margin-bottom: 10px;">${yoyo.b_title}</h2>
-            <p id="product-price" class="price" style="font-size: 20px; font-weight: bold; color: #333;">${yoyo.how_much}원</p>
-            <p id="product-description" class="description" style="font-size: 16px; line-height: 1.5;">${yoyo.b_content}</p>
+					<h2 id="product-title"
+						style="font-size: 24px; margin-bottom: 10px;">${yoyo.b_title}</h2>
+					<p id="product-price" class="price"
+						style="font-size: 20px; font-weight: bold; color: #333;">${yoyo.how_much}원</p>
+					<p id="product-description" class="description"
+						style="font-size: 16px; line-height: 1.5;">${yoyo.b_content}</p>
 
-            <div style="margin-top: 20px;">
-                <a href="dealModify?idx=${yoyo.b_idx}" style="text-decoration: none;">
-                    <button style="padding: 10px 20px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">수정하기</button>
-                </a>
-                <a href="goDelete?idx=${yoyo.b_idx}" style="text-decoration: none; margin-left: 10px;">
-                    <button style="padding: 10px 20px; font-size: 16px; background-color: #f44336; color: white; border: none; border-radius: 5px; cursor: pointer;">삭제하기</button>
-                </a>
-            </div>
-        </div>
-    </div>
+					<div style="margin-top: 20px;">
+						<a href="dealModify?idx=${yoyo.b_idx}"
+							style="text-decoration: none;">
+							<button
+								style="padding: 10px 20px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">수정하기</button>
+						</a> <a href="goDelete?idx=${yoyo.b_idx}"
+							style="text-decoration: none; margin-left: 10px;">
+							<button
+								style="padding: 10px 20px; font-size: 16px; background-color: #f44336; color: white; border: none; border-radius: 5px; cursor: pointer;">삭제하기</button>
+						</a>
+					</div>
+				</div>
+			</div>
 
 
-    <!-- 지도 추가 -->
-    <div id="map" style="width: 100%; height: 300px; margin-top: 20px;"></div>
-</div>
+			<!-- 지도 추가 -->
+			<div id="map" style="width: 100%; height: 300px; margin-top: 20px;"></div>
+		</div>
 
-		
-			
-		
+
+
+
 
 	</main>
 
@@ -229,7 +244,7 @@
 
     
 
-      
+        <!-- 프리뷰, 갤러리 메서드 -->
         window.onload = function () {
             const firstImage = document.querySelector('.image-item img'); // 첫 번째 이미지 선택
             const previewImage = document.getElementById('preview-image');

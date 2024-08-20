@@ -87,38 +87,6 @@
         }
     }
      </script>
-  <!--   <script>
-         function formatPrice(input) {
-        // 숫자만 허용하고, 천 단위 구분 기호 추가
-        let value = input.value.replace(/[^0-9]/g, ''); // 숫자만 남김
-        if (value) {
-            value = Number(value).toLocaleString(); // 천 단위 구분 기호 추가
-        }
-        /* input.value = value + ' 원'; // '원' 추가 */
-    }
-        document.addEventListener('DOMContentLoaded', function () {
-            const fileInput = document.getElementById('imageUpload');
-            const imagePreview = document.getElementById('preview');
-
-            fileInput.addEventListener('change', function () {
-                const file = fileInput.files[0];
-
-                if (file) {
-                    const reader = new FileReader();
-
-                    reader.onload = function (event) {
-                        imagePreview.src = event.target.result;
-                        imagePreview.style.display = 'block';
-                    };
-
-                    reader.readAsDataURL(file);
-                } else {
-                    imagePreview.src = 'image-placeholder.png';
-                    imagePreview.style.display = 'none';
-                }
-            });
-        });
-    </script> -->
-
+ 
 </body>
 </html>

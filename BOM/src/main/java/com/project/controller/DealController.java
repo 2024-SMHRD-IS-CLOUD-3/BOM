@@ -46,8 +46,8 @@ public class DealController {
 	// 중고거래 게시판 메인페이지(역순정렬 -> 최신글이 제일 위에 보이게)
 	@RequestMapping("/b_board")
 	public String dealMain(Model model, DealEntity entity) {
+		
 		List<DealEntity> list = dealRepo.findAllOrderByBIdxDesc();
-
 		model.addAttribute("deal", list);
 
 		return "B_board";
@@ -62,9 +62,7 @@ public class DealController {
 		if (loginInfo == null) {
 			return "login";
 		} else {
-
 			return "B_write";
-
 		}
 	}
 
@@ -107,7 +105,9 @@ public class DealController {
 	            }
 	        }
 	    }
+	    
 	    System.out.println("파일 개수: " + files.length);
+	   
 	    // DealEntity에 데이터 저장
 	    DealEntity entity = new DealEntity();
 	    entity.setB_title(title);
@@ -127,8 +127,6 @@ public class DealController {
 	    redirectAttributes.addFlashAttribute("message", "게시물 등록 완료.");
 	    return "redirect:/b_board";
 	}
-
-
 
 	// 중고거래 게시판 수정
 	@RequestMapping("/modifyWrite")

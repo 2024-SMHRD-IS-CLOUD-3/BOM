@@ -39,6 +39,9 @@
             <a href="goMyList">MyPage</a>
         </nav>
     </header>
+    
+    
+    
     <main>
         <div style="text-align: left; margin-top: 20px;">
            <form action="car_main" method="get">
@@ -67,9 +70,7 @@
                     <label for="price">가격</label>
                     <input type="text" id="price" name="car_price" placeholder="가격을 입력해 주세요">
 
-
-
-                    <label for="description">내용</label>
+					<label for="description">내용</label>
                     <textarea id="description" name="car_content" rows="5" placeholder="게시글 내용을 작성해주세요."></textarea>
 
                     <div class="file-upload">
@@ -83,6 +84,7 @@
         </div>
     </main>
 
+    <!-- 프리뷰 -->
     <script>
         function loadImage(event) {
             const imagePreview = document.getElementById('preview');
@@ -92,8 +94,6 @@
             }
         }
 
-      
-     
     </script>
 </body>
 </html>

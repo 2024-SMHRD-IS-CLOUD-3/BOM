@@ -7,40 +7,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>이미지 업로드 폼</title>
+<title>중고거래 글 수정 페이지</title>
 <link rel="stylesheet" href="writing.css">
 </head>
 <body>
-	 <header>
-	   <div class="container">
-        <a href="./" style="text-decoration: none; color: inherit;">
-            <h1>BOM</h1>
-        </a>
-        <nav>
-             <a href="./">Home</a>
-            <div class="dropdown">
-                <a href="b_board" class="active">Market</a>
-                <div class="dropdown-content">
-                     <a href="boyC">남아의류</a>
-                  <a href="girlC">여아의류</a>
-                  <a href="toy">장난감류</a>
-                  <a href="book">도서교구</a>
-                  <a href="furniture">아이가구</a>
-                  <a href="newBorn">육아출산</a>
-                  <a href="babyCar">유모차</a>
-                </div>
-            </div>
-            <a href="goCar">Stroller</a>
-               <div class="dropdown-content">
-                  <a href="car">유모차 판매</a>
-                  <a href="goCar">유모차 구입</a>
-              
-                </div>
-            <a href="goComm">Board</a>
-            <a href="goMyList">MyPage</a>
-        </nav>
-         </div>
-    </header>
+	<header>
+		<div class="container">
+			<a href="./" style="text-decoration: none; color: inherit;">
+				<h1>BOM</h1>
+			</a>
+			<nav>
+				<a href="./">Home</a>
+				<div class="dropdown">
+					<a href="b_board" class="active">Market</a>
+					<div class="dropdown-content">
+						<a href="boyC">남아의류</a> <a href="girlC">여아의류</a> <a href="toy">장난감류</a>
+						<a href="book">도서교구</a> <a href="furniture">아이가구</a> <a
+							href="newBorn">육아출산</a> <a href="babyCar">유모차</a>
+					</div>
+				</div>
+				<a href="goCar">Stroller</a>
+				<div class="dropdown-content">
+					<a href="car">유모차 판매</a> <a href="goCar">유모차 구입</a>
+
+				</div>
+				<a href="goComm">Board</a> <a href="goMyList">MyPage</a>
+			</nav>
+		</div>
+	</header>
 
 	<main>
 		<div style="text-align: left; margin-top: 20px;">
@@ -83,20 +77,20 @@
 					<label for="description">내용</label>
 					<textarea id="description" name="b_content" rows="5"
 						style="white-space: pre-line;">${empty deal.b_content ? '내용을 입력하세요.' : deal.b_content}</textarea>
+					
 					<!-- 파일 업로드 -->
 					<div class="file-upload">
 						<input type="file" id="imageUpload" name="files[]" multiple
-							style="display: none;" onchange="handleFileChange(event)">
+							style="display: none;" onchange="loadImage(event)">
 						<label for="imageUpload" class="file-select-btnx">파일선택</label>
-
-						<!-- 파일 이름 표시 -->
+						<!--  이름 표시 -->
 						<div class="file-name-display">
 							<c:if test="${not empty deal.filenames}">
-            ${deal.filenames} <!-- 첫 번째 파일 이름을 표시 -->
+           						 ${deal.filenames} <!-- 첫 번째 파일 이름을 표시 -->
 							</c:if>
 							<c:if test="${empty deal.filenames}">
-            파일이 선택되지 않았습니다.
-        </c:if>
+           						 파일이 선택되지 않았습니다.
+        					</c:if>
 						</div>
 					</div>
 
@@ -113,6 +107,8 @@
 	</main>
 
 	<script>
+	
+	<!-- 파일 수정하면 프리뷰 이미지 바뀌고 파일이름 바뀌는 로직 -->
 		let selectedFile = null; // 선택된 파일을 저장할 변수
 
 		function handleFileChange(event) {

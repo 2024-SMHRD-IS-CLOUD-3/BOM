@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BOM</title>
+<title>중고거래 게시판</title>
 
 <link rel="stylesheet" href="dd.css">
 </head>

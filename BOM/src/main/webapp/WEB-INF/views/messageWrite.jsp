@@ -9,12 +9,15 @@
     <link rel="stylesheet" href="messagedetail.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <script>
-        function closePopup() {
+        
+    <!-- 팝업창 닫는 기능 -->
+    	function closePopup() {
             window.close();
         }
 
+    <!-- 폼태그로 서버에 데이터를 전송하고 창을 닫는 기능 -->
         function submitForm() {
-            // Ajax로 폼 데이터를 전송하고 창을 닫는 방법
+            // Ajax로 폼 데이터를 전송하고 창을 닫는 기능
             var form = document.querySelector('form');
             var formData = new FormData(form);
 
@@ -66,10 +69,7 @@
                     </div>
                     <div class="message-body" style="padding: 0; margin: 0;">
                         <textarea id="description" name="m_content" rows="5" placeholder="게시글 내용을 작성해주세요." style="width: 700px; height: 500px; margin: 0; padding: 10px; box-sizing: border-box; resize: none; overflow-y: auto;"></textarea>
-                        <div class="message-actions">
-                            <!-- 추가 내용 -->
-                        </div>
-
+                       
                         <button class="inbox-btn" type="submit">완료</button>
                         <a href="messageList" class="inbox-btn">쪽지함으로 돌아가기</a>
                     </div>

@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Product Page</title>
+<title>중고거래 글 보기</title>
 <link rel="stylesheet" href="market_d.css">
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f26071dc8549ac02492f1a464b072358&libraries=services"></script>
@@ -121,6 +121,7 @@
 		</div>
 
 
+	<!-- 페이지 컨테이너 -->
 	<div class="product-container" style="display: flex; flex-direction: column; align-items: center;">
     <!-- 첫 번째 행: 이미지와 제품 정보 -->
     <div class="content-wrapper" style="display: flex; justify-content: space-between; width: 100%; align-items: flex-start;">
@@ -135,9 +136,9 @@
                 </c:forEach>
             </div>
             <!-- 프리뷰 이미지 -->
-           <div class="image-preview">
-    <img id="preview-image" src="uploads/${file}" alt="Preview Image" style="max-width: 300px; max-height: 300px;">
-</div>
+            <div class="image-preview">
+  			  <img id="preview-image" src="uploads/${file}" alt="Preview Image" style="max-width: 300px; max-height: 300px;">
+			</div>
         </div>
 
         <!-- 오른쪽: 제품 상세 정보 -->
@@ -167,14 +168,14 @@
     <div id="map" style="width: 100%; height: 300px; margin-top: 20px;"></div>
 </div>
 
-		
-			
-		
-
 	</main>
 
-	<!-- 지도 스크립트 -->
+
+	
 	<script>
+	<!-- 지도 스크립트 -->
+	
+	
         // 글 작성자의 좌표를 변수에 저장합니다. JSP에서 서버 데이터를 자바스크립트 변수로 전달
         var lat = ${user.latitude != null ? user.latitude : '37.5665'}; // 기본값으로 서울 위도 설정
         var lng = ${user.longitude != null ? user.longitude : '126.9780'}; // 기본값으로 서울 경도 설정
@@ -240,7 +241,7 @@
 
     
 
-      
+        <!-- 프리뷰 -->
         window.onload = function () {
             const previewImage = document.getElementById('preview-image');
 

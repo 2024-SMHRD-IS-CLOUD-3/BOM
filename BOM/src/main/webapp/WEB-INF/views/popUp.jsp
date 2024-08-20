@@ -6,6 +6,8 @@
 <head>
     <meta charset="UTF-8">
     <title>구매 페이지</title>
+   
+   
     <style>
     body, html {
       height: 100%;
@@ -46,24 +48,24 @@
     }
   </style>
 </head>
+
+
 <body>
     <div class="container">
-    <!-- 상품 정보 영역-->
-    <div class="title">${list.car_title}</div>
-    <p>${list.car_rank}급</p>
-    <img src="stroller/${list.car_file}" alt="유모차 이미지"/>
-    <p>결제 금액: ${list.car_price}</p>
-  	<p>구매자아이디: ${list.id}
-    <hr>	
+    <!-- 상품 정보-->
+    	<div class="title">${list.car_title}</div>
+   		 <p>${list.car_rank}급</p>
+    	<img src="stroller/${list.car_file}" alt="유모차 이미지"/>
+    	<p>결제 금액: ${list.car_price}</p>
+  		<p>구매자아이디: ${list.id}
+    	<hr>	
   
     <!-- 결제 방법 영역-->
-    <div class="title">결제 방법</div>
-    <div id="payment-method"></div>
-    <div id="agreement"></div> 
-    <button id="payment-button">결제하기</button>
-  </div>
+    	<div class="title">결제 방법</div>
+    	<div id="payment-method"></div>
+    	<div id="agreement"></div> 
+    	<button id="payment-button">결제하기</button>
+	</div>
 
-    
-    
 </body>
 </html>

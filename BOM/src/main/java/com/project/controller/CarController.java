@@ -50,6 +50,7 @@ public class CarController {
 	@Autowired
 	private CarRepository carRepo;
 
+	// stroller를 눌렀을 때 로그인/관리자/일반유저에 따라 페이지 이동
 	@RequestMapping("/car")
 	public String car(HttpSession session) {
 
@@ -59,14 +60,13 @@ public class CarController {
 		}
 
 		if (userId.equals("test")) {
-
 			return "redirect:/pathAdmin";
 		} else {
 			return "redirect:/gogo";
 		}
-
 	}
-
+	
+	// 로그인한 관리자가 stroller를 눌렀을 때 이동
 	@RequestMapping("/pathAdmin")
 	public String pathAdmin(Model model) {
 		List<CarEntity> entity = carRepo.findAllDesc();
@@ -76,57 +76,14 @@ public class CarController {
 
 		return "admin";
 	}
-
-	@RequestMapping("/updateStatus")
-	public String updateStatus(@RequestParam("car_idx") Long car_idx, @RequestParam("car_cours") String car_cours) {
-
-		Optional<CarEntity> optionalEntity = carRepo.findById(car_idx);
-
-		System.out.println(car_cours + "를 보여줘");
-		if (optionalEntity.isPresent()) {
-			CarEntity entity = optionalEntity.get();
-
-			// 사용자가 선택한 car_cours 값을 설정
-			entity.setCar_cours(car_cours);
-			carRepo.save(entity); // 변경 사항을 저장
-			System.out.println("업데이트된 car_cours: " + entity.getCar_cours());
-		} else {
-			System.out.println("해당 ID로 엔티티를 찾을 수 없습니다: " + car_idx);
-			// 오류 처리 로직
-		}
-
-		return "redirect:/pathAdmin";
-	}
-
-	@RequestMapping("goCar")
-	private String goCar(Model model, HttpSession session) {
-
-		List<CarEntity> entity = carRepo.findAllByCarCoursDesc();
-		model.addAttribute("stList", entity);
-		String userId = (String) session.getAttribute("userId");
-		if (userId == null) {
-			return "login";
-		}
-
-		return "stroller";
-
-	}
-
+	
+	// stroller를 눌렀을 때 로그인한 일반 유저의 이동
 	@RequestMapping("/gogo")
 	private String gogo(HttpSession session) {
-
-		UserEntity loginInfo = (UserEntity) session.getAttribute("LoginInfo");
-
-		if (loginInfo == null) {
-			return "login";
-		} else if (loginInfo.getId().equals("test")) {
-			return "redirect:/pathAdmin";
-		} else {
-
-			return "redirect:/goCarWrite";
-		}
+		return "redirect:/goCarWrite";
 	}
-
+	
+	// 유모차 판매글 작성 페이지
 	@RequestMapping("/goCarWrite")
 	private String goCarWrite(HttpSession session, Model model) {
 		UserEntity loginInfo = (UserEntity) session.getAttribute("LoginInfo");
@@ -139,7 +96,16 @@ public class CarController {
 			return "redirect:/doLogin";
 		}
 	}
-
+	
+	// 유모차 거래게시판으로 이동 
+	@RequestMapping("goCar")
+	private String goCar(Model model, HttpSession session) {
+		List<CarEntity> entity = carRepo.findAllByCarCoursDesc();
+		model.addAttribute("stList", entity);
+		return "stroller";
+	}
+	
+	// 유저가 관리에게 유모차를 판매하는 글을 처리하는 로직
 	@Transactional
 	@RequestMapping("/carWrite")
 	private String carWrite(@RequestParam("b_title") String title, @RequestParam("how_much") Long price,
@@ -184,15 +150,20 @@ public class CarController {
 
 		return "index";
 	}
-
+	
+	// 유모차 판매페이지(로그인안했으면 로그인페이지로이동, 유모차를 판매하는 관리자가 보려고 하는 경우 유모차 판매페이지로 이동)
 	@RequestMapping("goCarDetail")
 	public String carDetail(Long idx, Model model, HttpSession session) {
+		
 		Optional<CarEntity> car = carRepo.findById(idx);
 		Optional<UserEntity> user = repo.findById(car.get().getId());
 		String userId = (String) session.getAttribute("userId");
+		
+		if(userId == null) {
+			return "redirect:/login";
+		}
 		model.addAttribute("car", car.get());
 		model.addAttribute("user", user.get().getUserFile());
-		System.out.println("스트롤러에 카가 없어?"+ user.get().getUserFile());
 		
 		if (userId.equals("test")) {
 			return "CarDetailAdmin";
@@ -200,6 +171,7 @@ public class CarController {
 		return "CarDetail";
 	}
 
+	// 매입요청들어온 유모차를 확인하고 관리하는 페이지
 	@RequestMapping("/carAdmin")
 	public String carAdmin(Model model, String dealId, CarEntity entity, Long idx) {
 		Optional<CarEntity> optionalEntity = carRepo.findById(idx);
@@ -217,6 +189,7 @@ public class CarController {
 		return "CarAdminMode";
 	}
 
+	// 관리자가 보수가 완료된 유모차의 판매글을 올리는 로직
 	@RequestMapping("/adminWrite")
 	public String adminWrite(@ModelAttribute CarEntity updatedEntity, @RequestParam("car_title") String title,
 			@RequestParam("car_price") Long price, @RequestParam("car_rank") String rank,
@@ -226,7 +199,6 @@ public class CarController {
 
 		if (file.isEmpty()) {
 			redirectAttributes.addFlashAttribute("message", "파일이 비어 있습니다.");
-
 		}
 
 		String uuid = UUID.randomUUID().toString();
@@ -240,9 +212,8 @@ public class CarController {
 			redirectAttributes.addFlashAttribute("message", "파일 업로드 실패.");
 			return "redirect:/goWrite";
 		}
+		
 		Optional<CarEntity> optionalEntity = carRepo.findById(idx);
-
-		System.out.println("자라거부기" + idx);
 		CarEntity entity = optionalEntity.get();
 		entity.setCar_title(title);
 		entity.setCar_price(price);
@@ -262,7 +233,7 @@ public class CarController {
 		return "redirect:/goCar";
 	}
 
-	
+		// 구매하기 팝업을 위한 로직
 	   @GetMapping("/showPopUp")
 	    public String showPopup(Long idx, Model model, HttpSession session) {
 		  Optional<CarEntity> list = carRepo.findById(idx);
@@ -270,8 +241,22 @@ public class CarController {
 		   model.addAttribute("consumer", session.getId());
 		   model.addAttribute("list", list.get());
 		   
-		   
-		   
 	        return "popUp"; 
 	    }
+	   
+	   // 관리자의 보수 진행정도를 간단하게 변경할 수 있게 한 로직
+		@RequestMapping("/updateStatus")
+		public String updateStatus(@RequestParam("car_idx") Long car_idx, @RequestParam("car_cours") String car_cours) {
+
+			Optional<CarEntity> optionalEntity = carRepo.findById(car_idx);
+
+			if (optionalEntity.isPresent()) {
+				CarEntity entity = optionalEntity.get();
+
+				// 사용자가 선택한 car_cours 값을 설정
+				entity.setCar_cours(car_cours);
+				carRepo.save(entity); // 변경 사항을 저장	
+			} 
+			return "redirect:/pathAdmin";
+		}
 }
