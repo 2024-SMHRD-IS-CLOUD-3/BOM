@@ -286,12 +286,13 @@ public class DealController {
 	
 	// 판매목록 확인페이지
 	@RequestMapping("/deal")
-	public String deal(HttpSession session,Model model, String id) {
-		   
+	public String deal(HttpSession session,Model model) {
+		UserEntity loginInfo = (UserEntity) session.getAttribute("LoginInfo");
+		
 		List<DealEntity> entity = new ArrayList<>();
-		List<DealEntity> list = dealRepo.findByIdx(id);
+		List<DealEntity> list = dealRepo.findByIdx(loginInfo.getId());
 		for(int i=0; i<list.size(); i++) {
-			if(list.get(i).getId().equals(id)) {
+			if(list.get(i).getId().equals(loginInfo.getId())) {
 				entity.add(list.get(i));
 			}
 		}
@@ -323,7 +324,7 @@ public class DealController {
 	
 		
 	
-		return "redirect:/deal ";
+		return "redirect:/deal";
 	}
 	
 	
