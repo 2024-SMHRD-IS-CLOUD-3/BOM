@@ -71,7 +71,7 @@
                      <div class="dropdown">
                   <a id="car"
                      class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
-                     href="car" style="padding: 10px 20px;">Stroller</a>
+                     href="goCar" style="padding: 10px 20px;">Stroller</a>
                      <div class="dropdown-content">
                            <a href="car">유모차 매입 신청</a> <a href="goCar">유모차 구매</a>
                            
@@ -98,7 +98,7 @@
                         <li class="u-nav-item"><a class="u-button-style u-nav-link"
                            href="b_board">Market</a></li>
                         <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                           href="car">Stroller</a></li>
+                           href="goCar">Stroller</a></li>
                         <li class="u-nav-item"><a class="u-button-style u-nav-link"
                            href="goComm">Board</a></li>
                         <li class="u-nav-item"><a class="u-button-style u-nav-link"

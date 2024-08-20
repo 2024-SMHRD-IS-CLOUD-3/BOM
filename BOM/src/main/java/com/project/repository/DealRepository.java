@@ -63,7 +63,10 @@ public interface DealRepository extends JpaRepository<DealEntity, Long> {
 
 	
 	@Query("SELECT d FROM DealEntity d ORDER BY d.b_idx DESC")
-	List<DealEntity> findById(String id);
+	List<DealEntity> findByIdx(String id);
+	
+
+	
 
 	
 

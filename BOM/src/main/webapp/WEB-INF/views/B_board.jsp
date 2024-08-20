@@ -37,12 +37,12 @@
             <a href="goCar">Stroller</a>
                <div class="dropdown-content">
                   <a href="car">유모차 판매</a>
-                  <a href="goCar">유모차 구입</a>
+                  <a href="goCar">유모차 구매</a>
               
                 </div>
               </div>
             <a href="goComm">Board</a>
-            <a href="goMyPage">MyPage</a>
+            <a href="goMyList">MyPage</a>
         </nav>
          </div>
     </header>

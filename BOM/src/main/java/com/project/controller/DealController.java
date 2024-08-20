@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -24,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.project.entity.CarEntity;
 import com.project.entity.DealEntity;
 import com.project.entity.UserEntity;
 import com.project.repository.DealRepository;
@@ -286,19 +288,42 @@ public class DealController {
 	@RequestMapping("/deal")
 	public String deal(HttpSession session,Model model, String id) {
 		   
-		
-		List<DealEntity> list = dealRepo.findById(id);
-		model.addAttribute("deal", list);
+		List<DealEntity> entity = new ArrayList<>();
+		List<DealEntity> list = dealRepo.findByIdx(id);
+		for(int i=0; i<list.size(); i++) {
+			if(list.get(i).getId().equals(id)) {
+				entity.add(list.get(i));
+			}
+		}
+	System.out.println("엥"+entity);
+		model.addAttribute("deal", entity);
 		return "list";
 	}
 	
 	// 판매목록 상태 변경 메서드
 	@RequestMapping("/dealStatus")
-	public String dealStatus(HttpSession session,Model model,Long idx) {
-		String id = session.getId();
-		List<DealEntity> list = dealRepo.findById(id);
-		model.addAttribute("deal", list);
-		return "list";
+	public String dealStatus(Model model,Long idx, @RequestParam("deal_status") String dealStatus) {
+		
+		Optional<DealEntity> list = dealRepo.findById(idx);
+	
+
+
+		if (list.isPresent()) {
+			DealEntity entity = list.get();
+
+		
+			entity.setDeal_status(dealStatus);
+			dealRepo.save(entity); // 변경 사항을 저장
+		
+		} else {
+			System.out.println("해당 ID로 엔티티를 찾을 수 없습니다: " + idx);
+			// 오류 처리 로직
+		}
+		
+	
+		
+	
+		return "redirect:/deal";
 	}
 	
 	

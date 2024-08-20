@@ -40,7 +40,7 @@
               
                 </div>
             <a href="goComm">Board</a>
-            <a href="goMyPage">MyPage</a>
+            <a href="goMyList">MyPage</a>
         </nav>
          </div>
     </header>
