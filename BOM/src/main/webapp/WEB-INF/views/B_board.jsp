@@ -40,7 +40,7 @@
                   <a href="goCar">유모차 구입</a>
               
                 </div>
-               </div>
+             </div>
             <a href="goComm">Board</a>
             <a href="goMyPage">MyPage</a>
         </nav>
