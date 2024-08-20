@@ -99,7 +99,7 @@ public class MessageController {
 	private String receiveMessage(Model model, HttpSession session, Long idx) {
 		List<MessageEntity> list = meRepo.findAllOrderBySendAtDesc();
 		String userId = (String) session.getAttribute("userId");
-		
+		System.out.println("Longidx"+idx);
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).getM_idx().equals(idx)) {
 				model.addAttribute("list", list.get(i));

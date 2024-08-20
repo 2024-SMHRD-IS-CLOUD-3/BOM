@@ -40,7 +40,7 @@
 							<div class="dropdown">
 								<a id="car"
 									class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
-									href="car" style="padding: 10px 20px;">Stroller</a>
+									href="goCar" style="padding: 10px 20px;">Stroller</a>
 								<div class="dropdown-content">
 									<a href="car">유모차 매입 신청</a> <a href="goCar">유모차 구매</a>
 
@@ -49,7 +49,7 @@
 
 						</li>                  
                         <li><a href="goComm">Board</a></li>
-                        <li><a href="goMyPage">MyPage</a></li>
+                        <li><a href="goMyList">MyPage</a></li>
                     </ul>
                 </nav>
             </div>

@@ -32,7 +32,7 @@
 					style="font-size: 1rem; letter-spacing: 0px; font-family: PretendardVariable; font-weight: 700;">
 					<a
 						class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-						href="#"> <svg class="u-svg-link" viewBox="0 0 24 24">
+						href="./"> <svg class="u-svg-link" viewBox="0 0 24 24">
 							<use xlink:href="#menu-hamburger"></use></svg> <svg
 							class="u-svg-content" version="1.1" id="menu-hamburger"
 							viewBox="0 0 16 16" x="0px" y="0px"
@@ -68,7 +68,7 @@
 							<div class="dropdown">
 								<a id="car"
 									class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
-									href="car" style="padding: 10px 20px;">Stroller</a>
+									href="goCar" style="padding: 10px 20px;">Stroller</a>
 								<div class="dropdown-content">
 									<a href="car">유모차 매입 신청</a> <a href="goCar">유모차 구매</a>
 

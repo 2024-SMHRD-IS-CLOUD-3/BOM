@@ -73,7 +73,7 @@
         </style>
         
         <script>
-        function showPopup() { window.open("smessage?idx=${yoyo.b_idx}", "구매하기", "width=860, height=907, left=100, top=50"); }
+        function showPopup() { window.open("smessage?idx=${yoyo.b_idx}", "쪽지보내기", "width=860, height=907, left=100, top=50"); }
         </script>
 
 </head>
@@ -99,10 +99,10 @@
                   <a href="babyCar">유모차</a>
                 </div>
             </div>
-            <a href="goCarWrite">Stroller</a>
+            <a href="goCar">Stroller</a>
                <div class="dropdown-content">
-                  <a href="boyC">유모차 판매</a>
-                  <a href="girlC">유모차 구입</a>
+                  <a href="car">유모차 판매</a>
+                  <a href="goCar">유모차 구입</a>
               
                 </div>
             <a href="goComm">Board</a>

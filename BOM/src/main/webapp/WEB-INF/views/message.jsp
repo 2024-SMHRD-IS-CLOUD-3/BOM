@@ -13,9 +13,6 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
 	rel="stylesheet">
-	<script>
-        function showPopup() { window.open("smessage?idx=${yoyo.b_idx}", "쪽지보내기", "width=860, height=907, left=100, top=50"); }
-        </script>
 </head>
 
 <body>
@@ -94,7 +91,7 @@
 						<c:forEach var="message" items="${selectMessage}">
 							<tr>
 								<td>${message.send_m}</td>
-								<td ><a href="javascript:void(0);" onclick="rMessage(${message.m_idx})">${message.m_title}</a></td>
+								<td><a href="rMessage?idx=${message.m_idx}">${message.m_title}</a></td>
 								<td><fmt:formatDate value="${message.send_at}"
 										pattern="yyyy-MM-dd HH:mm:ss" /></td>
 								<td><a href="reSendMessage?idx=${message.m_idx}"><button

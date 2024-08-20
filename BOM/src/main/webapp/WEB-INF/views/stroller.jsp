@@ -33,10 +33,10 @@
                   <a href="babyCar">유모차</a>
                 </div>
             </div>
-            <a href="goCarWrite"  class="active">Stroller</a>
+            <a href="goCar"  class="active">Stroller</a>
                <div class="dropdown-content">
-                  <a href="boyC">유모차 판매</a>
-                  <a href="girlC">유모차 구입</a>
+                  <a href="car">유모차 판매</a>
+                  <a href="goCar">유모차 구입</a>
               
                 </div>
             <a href="goComm">Board</a>
