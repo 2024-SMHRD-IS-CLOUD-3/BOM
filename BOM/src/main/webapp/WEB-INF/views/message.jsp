@@ -54,10 +54,10 @@
 						</li>
 						<li class="u-nav-item"><a
 							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
-							href="b_board" style="padding: 10px 20px;">Board</a></li>
+							href="goComm" style="padding: 10px 20px;">Board</a></li>
 						<li class="u-nav-item"><a
 							class="u-button-style u-nav-link u-text-active-custom-color-6 u-text-black u-text-hover-custom-color-1"
-							href="myPage" style="padding: 10px 20px; color: #f44336;">MyPage</a>
+							href="goMyList" style="padding: 10px 20px; color: #f44336;">MyPage</a>
 						</li>
 					</ul>
 				</nav>

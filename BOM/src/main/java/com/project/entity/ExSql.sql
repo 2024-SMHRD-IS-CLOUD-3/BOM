@@ -1,3 +1,3 @@
-select * from BABY_CAR_INFO;
+select * from USER_INFO;
 
 Select * from USED_PRODUCT_INFO order by b_idx desc;
