@@ -148,7 +148,7 @@ public class MessageController {
 		msEntity.setSend_at(timestamp);
 
 		meRepo.save(msEntity);
-		
+		System.out.println("잘나오는지 확인해보죠"+msEntity);
 		return "redirect:/b_board";
 		
 	}
