@@ -171,9 +171,10 @@
 
 ## 🤾‍♂️ 트러블슈팅  
 * 문제1 <br>
- 
+ ![디코딩](https://github.com/user-attachments/assets/900b61d8-86ea-4f01-bc1a-4ad910ee6cbf)
  
 * 문제2<br>
-
+![사진출력](https://github.com/user-attachments/assets/34c12040-9d4f-492f-93d5-ecb1c3d91862)
 
 * 문제3<br>
+![채팅기능](https://github.com/user-attachments/assets/358507dc-2bea-4752-b120-95783e570699)
