@@ -98,20 +98,21 @@
 <br>
 
 ## 📌 서비스 흐름도
-![image](https://user-images.githubusercontent.com/25995055/178401048-d6484bda-a2d7-40e1-998b-2bd195cd9f89.png)
+![DF](https://github.com/user-attachments/assets/46aee38f-57d5-455c-a412-76916339d348)
 <br>
 
 ## 📌 ER다이어그램
-![image](https://user-images.githubusercontent.com/25995055/169925318-102784c2-893f-4fd7-bec9-a54c44b669d4.png)
+![키워조_20240808_182945](https://github.com/user-attachments/assets/bf55b1b0-386c-4c87-9f84-c8f7298748d9)
 <br>
 
 ## 🖥 화면 구성
+### 시작화면
 
-### 로그인/회원가입/회원괸리/회원수정/회원탈퇴
+### 로그인/회원가입/마이페이지/마이페이지수정
 ![image](https://user-images.githubusercontent.com/25995055/178401098-95f15a0e-a2de-415e-83d5-883bb4cb0656.png)
 <br>
 
-### 옷 정보/코디 추천(날씨, 팁, 오늘의 코디, 참고할 수 있는 코디)
+### 중고마켓/글쓰기/수정하기/삭제하기
 ![image](https://user-images.githubusercontent.com/25995055/178401127-287e6de2-4396-49fc-a107-59c4d5cd55c7.png)
 <br>
 
