@@ -1,4 +1,4 @@
-# 📎 BOM(팀명: 키워조)
+![image](https://github.com/user-attachments/assets/e9b0c176-e20b-42df-b8bd-436e7657647a)# 📎 BOM(팀명: 키워조)
 ![20240820_175041](https://github.com/user-attachments/assets/a49090a3-6476-4ad2-8d73-ec48f5f56165)
 
 
@@ -107,17 +107,30 @@
 
 ## 🖥 화면 구성
 ### 시작화면
+![startPage](https://github.com/user-attachments/assets/805ba576-4477-43bd-92fb-557cb5a25f38)
+
 
 ### 로그인/회원가입/마이페이지/마이페이지수정
-![image](https://user-images.githubusercontent.com/25995055/178401098-95f15a0e-a2de-415e-83d5-883bb4cb0656.png)
-<br>
+![login](https://github.com/user-attachments/assets/02140d83-629c-4329-9950-fb6d18a779bb)
 
-### 중고마켓/글쓰기/수정하기/삭제하기
-![image](https://user-images.githubusercontent.com/25995055/178401127-287e6de2-4396-49fc-a107-59c4d5cd55c7.png)
-<br>
 
-### 일정/고객센터
-![image](https://user-images.githubusercontent.com/25995055/178401150-861f0e93-0f40-4fae-98c1-2099bf513c8d.png)
+### 중고마켓/글쓰기/수정하기
+![20240822_003615](https://github.com/user-attachments/assets/6b5d7bf2-729e-40f9-bd6d-9dd0a0a0c40f)
+![20240822_003701](https://github.com/user-attachments/assets/093589e3-5960-4f03-bced-ca1f10900ff0)
+![20240822_003715](https://github.com/user-attachments/assets/7ce90792-c652-45ff-8bb3-988d28fcd7bb)
+
+### 유모차 매입(고객)/유모차매입목록,판매(관리자)
+![20240822_003748](https://github.com/user-attachments/assets/e8bf7310-813f-4edd-9a3f-240f415cf01e)
+![20240822_003957](https://github.com/user-attachments/assets/a7bb70c5-cfc7-424c-8ccc-d3f54bb77658)
+![20240822_004013](https://github.com/user-attachments/assets/2c12d59a-5026-46c9-a5b9-5c1d33ba7ea8)
+
+### 내쪽지함
+![20240822_003842](https://github.com/user-attachments/assets/264f4792-42ee-4639-a019-92b7f93644f2)
+![20240822_004920](https://github.com/user-attachments/assets/77cbffe8-792a-4266-80f4-808570580839)
+
+### 게시판/내용확인
+![20240822_003803](https://github.com/user-attachments/assets/04eba25b-5956-4968-a1a4-584399aa505d)
+![20240822_003821](https://github.com/user-attachments/assets/97931703-7823-4921-bf0f-401d202eddc7)
 <br>
 
 ## 👨‍👩‍👦‍👦 팀원 역할
@@ -126,24 +139,28 @@
     <td align="center"><img src="https://item.kakaocdn.net/do/fd49574de6581aa2a91d82ff6adb6c0115b3f4e3c2033bfd702a321ec6eda72c" width="100" height="100"/></td>
     <td align="center"><img src="https://mb.ntdtv.kr/assets/uploads/2019/01/Screen-Shot-2019-01-08-at-4.31.55-PM-e1546932545978.png" width="100" height="100"/></td>
     <td align="center"><img src="https://mblogthumb-phinf.pstatic.net/20160127_177/krazymouse_1453865104404DjQIi_PNG/%C4%AB%C4%AB%BF%C0%C7%C1%B7%BB%C1%EE_%B6%F3%C0%CC%BE%F0.png?type=w2" width="100" height="100"/></td>
+          <td align="center"><img src="https://item.kakaocdn.net/do/fd49574de6581aa2a91d82ff6adb6c0115b3f4e3c2033bfd702a321ec6eda72c" width="100" height="100"/></td>
     <td align="center"><img src="https://i.pinimg.com/236x/ed/bb/53/edbb53d4f6dd710431c1140551404af9.jpg" width="100" height="100"/></td>
     <td align="center"><img src="https://pbs.twimg.com/media/B-n6uPYUUAAZSUx.png" width="100" height="100"/></td>
   </tr>
   <tr>
-    <td align="center"><strong>홍O동</strong></td>
-    <td align="center"><strong>홍O동</strong></td>
-    <td align="center"><strong>홍O동</strong></td>
-    <td align="center"><strong>홍O동</strong></td>
-    <td align="center"><strong>홍O동</strong></td>
+    <td align="center"><strong>지연주</strong></td>
+    <td align="center"><strong>김준서</strong></td>
+    <td align="center"><strong>이지환</strong></td>
+    <td align="center"><strong>이혜리</strong></td>
+    <td align="center"><strong>조근하</strong></td>
+    <td align="center"><strong>한희경</strong></td>
   </tr>
   <tr>
+    <td align="center"><b>PM, Backend</b></td>
+    <td align="center"><b>DataBase, Backend, Frontend</b></td>
     <td align="center"><b>Frontend</b></td>
+    <td align="center"><b>Frontend, 크롤링</b></td>
     <td align="center"><b>Frontend</b></td>
     <td align="center"><b>Backend</b></td>
-    <td align="center"><b>Backend</b></td>
-    <td align="center"><b>Deep Learning</b></td>
   </tr>
   <tr>
+    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
     <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
     <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
     <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
@@ -152,12 +169,11 @@
   </tr>
 </table>
 
-## 🤾‍♂️ 트러블슈팅
-개념: 문제 해결을 위해 문제의 원인을 논리적이고 체계적으로 찾는 일이며 제품이나 프로세스의 운영을 재개
-프로젝트 진행하는 동안 발생했던 이슈 중 가장 기억에 남았던 문제와 해결 프로세스 나열(2~5가지 정도)
-  
-* 문제1<br>
- 문제점 설명 및 해결방안
+## 🤾‍♂️ 트러블슈팅  
+* 문제1 <br>
+ 
  
 * 문제2<br>
- 문제점 설명 및 해결방안
+
+
+* 문제3<br>
