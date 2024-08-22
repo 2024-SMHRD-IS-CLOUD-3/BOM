@@ -130,12 +130,12 @@
 ## 👨‍👩‍👦‍👦 팀원 역할
 <table>
   <tr>
-    <td align="center"><img src="https://item.kakaocdn.net/do/fd49574de6581aa2a91d82ff6adb6c0115b3f4e3c2033bfd702a321ec6eda72c" width="100" height="100"/></td>
-    <td align="center"><img src="https://mb.ntdtv.kr/assets/uploads/2019/01/Screen-Shot-2019-01-08-at-4.31.55-PM-e1546932545978.png" width="100" height="100"/></td>
-      <td align="center"><img src="https://item.kakaocdn.net/do/fd49574de6581aa2a91d82ff6adb6c0115b3f4e3c2033bfd702a321ec6eda72c" width="100" height="100"/></td>
-    <td align="center"><img src="https://mblogthumb-phinf.pstatic.net/20160127_177/krazymouse_1453865104404DjQIi_PNG/%C4%AB%C4%AB%BF%C0%C7%C1%B7%BB%C1%EE_%B6%F3%C0%CC%BE%F0.png?type=w2" width="100" height="100"/></td>          
-    <td align="center"><img src="https://i.pinimg.com/236x/ed/bb/53/edbb53d4f6dd710431c1140551404af9.jpg" width="100" height="100"/></td>
-    <td align="center"><img src="https://pbs.twimg.com/media/B-n6uPYUUAAZSUx.png" width="100" height="100"/></td>
+    <td align="center"><img src="https://github.com/user-attachments/assets/51063068-74d2-498d-b8bc-288be379553a" width="100" height="100"/></td>
+    <td align="center"><img src="https://github.com/user-attachments/assets/99ea3da6-1df0-4280-bf34-82ba07cf09b1" width="100" height="100"/></td>
+    <td align="center"><img src="https://github.com/user-attachments/assets/c4b7b6b5-0207-4692-96f7-17040dd05ab7" width="100" height="100"/></td>
+    <td align="center"><img src="https://github.com/user-attachments/assets/b1f131da-0e85-4249-9104-51d2355c6f14" width="100" height="100"/></td>  
+    <td align="center"><img src="https://github.com/user-attachments/assets/836062fe-0588-4d4b-ad35-dc137a4cb2eb" width="100" height="100"/></td>  
+    <td align="center"><img src="https://github.com/user-attachments/assets/e980f002-1a40-4075-9605-79cecd2d469b" width="100" height="100"/></td>  
   </tr>
   <tr>
     <td align="center"><strong>지연주</strong></td>
@@ -154,14 +154,16 @@
     <td align="center"><b>Backend</b></td>
   </tr>
   <tr>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/YeonjuJi" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/dooooosi" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/hotgimozziman" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/nakirzero" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/ajdajddl2" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/HANHEEKYUNG" target='_blank'>github</a></td>
   </tr>
 </table>
+
+<br>
 
 ## 🤾‍♂️ 트러블슈팅  
 * 문제 <br>
