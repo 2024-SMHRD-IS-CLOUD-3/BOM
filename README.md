@@ -114,13 +114,12 @@
 ![20240822_003715](https://github.com/user-attachments/assets/7ce90792-c652-45ff-8bb3-988d28fcd7bb)
 
 ### 유모차 매입(고객)/유모차매입목록,판매(관리자)
-![20240822_003748](https://github.com/user-attachments/assets/e8bf7310-813f-4edd-9a3f-240f415cf01e)
-![20240822_003957](https://github.com/user-attachments/assets/a7bb70c5-cfc7-424c-8ccc-d3f54bb77658)
-![20240822_004013](https://github.com/user-attachments/assets/2c12d59a-5026-46c9-a5b9-5c1d33ba7ea8)
+![유모차매입판매](https://github.com/user-attachments/assets/e3401d05-f694-40d4-91e9-76ace947c338)
 
 ### 내쪽지함
-![20240822_003842](https://github.com/user-attachments/assets/264f4792-42ee-4639-a019-92b7f93644f2)
-![20240822_004920](https://github.com/user-attachments/assets/77cbffe8-792a-4266-80f4-808570580839)
+![내쪽지함](https://github.com/user-attachments/assets/16d564ae-efde-4615-8107-1ced191e88b5)
+
+
 
 ### 게시판/내용확인
 ![20240822_003803](https://github.com/user-attachments/assets/04eba25b-5956-4968-a1a4-584399aa505d)
