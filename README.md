@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/e9b0c176-e20b-42df-b8bd-436e7657647a)# 📎 BOM(팀명: 키워조)
+# 📎 BOM(팀명: 키워조)
 ![20240820_175041](https://github.com/user-attachments/assets/a49090a3-6476-4ad2-8d73-ec48f5f56165)
 
 
@@ -138,8 +138,8 @@
   <tr>
     <td align="center"><img src="https://item.kakaocdn.net/do/fd49574de6581aa2a91d82ff6adb6c0115b3f4e3c2033bfd702a321ec6eda72c" width="100" height="100"/></td>
     <td align="center"><img src="https://mb.ntdtv.kr/assets/uploads/2019/01/Screen-Shot-2019-01-08-at-4.31.55-PM-e1546932545978.png" width="100" height="100"/></td>
-    <td align="center"><img src="https://mblogthumb-phinf.pstatic.net/20160127_177/krazymouse_1453865104404DjQIi_PNG/%C4%AB%C4%AB%BF%C0%C7%C1%B7%BB%C1%EE_%B6%F3%C0%CC%BE%F0.png?type=w2" width="100" height="100"/></td>
-          <td align="center"><img src="https://item.kakaocdn.net/do/fd49574de6581aa2a91d82ff6adb6c0115b3f4e3c2033bfd702a321ec6eda72c" width="100" height="100"/></td>
+      <td align="center"><img src="https://item.kakaocdn.net/do/fd49574de6581aa2a91d82ff6adb6c0115b3f4e3c2033bfd702a321ec6eda72c" width="100" height="100"/></td>
+    <td align="center"><img src="https://mblogthumb-phinf.pstatic.net/20160127_177/krazymouse_1453865104404DjQIi_PNG/%C4%AB%C4%AB%BF%C0%C7%C1%B7%BB%C1%EE_%B6%F3%C0%CC%BE%F0.png?type=w2" width="100" height="100"/></td>          
     <td align="center"><img src="https://i.pinimg.com/236x/ed/bb/53/edbb53d4f6dd710431c1140551404af9.jpg" width="100" height="100"/></td>
     <td align="center"><img src="https://pbs.twimg.com/media/B-n6uPYUUAAZSUx.png" width="100" height="100"/></td>
   </tr>
@@ -170,11 +170,5 @@
 </table>
 
 ## 🤾‍♂️ 트러블슈팅  
-* 문제1 <br>
+* 문제 <br>
  ![디코딩](https://github.com/user-attachments/assets/900b61d8-86ea-4f01-bc1a-4ad910ee6cbf)
- 
-* 문제2<br>
-![사진출력](https://github.com/user-attachments/assets/34c12040-9d4f-492f-93d5-ecb1c3d91862)
-
-* 문제3<br>
-![채팅기능](https://github.com/user-attachments/assets/358507dc-2bea-4752-b120-95783e570699)
