@@ -1,5 +1,6 @@
 # 📎 BOM(팀명: 키워조)
-![20240820_175041](https://github.com/user-attachments/assets/a49090a3-6476-4ad2-8d73-ec48f5f56165)
+<p align="center"><img src="https://github.com/user-attachments/assets/a49090a3-6476-4ad2-8d73-ec48f5f56165" height="20%" width="30%"></p>
+
 
 
 
@@ -83,16 +84,15 @@
 <br>
 
 ## ⚙ 시스템 아키텍처(구조)  
-![키워조_시스템 아키텍처](https://github.com/user-attachments/assets/bf82fed6-85a1-4047-9b1b-3e5a6a02657e)
-
+<img src="https://github.com/user-attachments/assets/bf82fed6-85a1-4047-9b1b-3e5a6a02657e" height="600px" width="1200px">
 <br>
 
 ## 📌 SW유스케이스
-![유스케이스_다이어그램(240807)](https://github.com/user-attachments/assets/40360af4-5bf4-49c7-8e72-bf42a467e274)
+<img src="https://github.com/user-attachments/assets/40360af4-5bf4-49c7-8e72-bf42a467e274" height="600px" width="1200px">
 <br>
 
 ## 📌 서비스 흐름도
-![DF](https://github.com/user-attachments/assets/46aee38f-57d5-455c-a412-76916339d348)
+<img src="https://github.com/user-attachments/assets/46aee38f-57d5-455c-a412-76916339d348" height="600px" width="1200px">
 <br>
 
 ## 📌 ER다이어그램
@@ -109,21 +109,20 @@
 
 
 ### 중고마켓/글쓰기/수정하기
-![20240822_003615](https://github.com/user-attachments/assets/6b5d7bf2-729e-40f9-bd6d-9dd0a0a0c40f)
-![20240822_003701](https://github.com/user-attachments/assets/093589e3-5960-4f03-bced-ca1f10900ff0)
-![20240822_003715](https://github.com/user-attachments/assets/7ce90792-c652-45ff-8bb3-988d28fcd7bb)
+<img src="https://github.com/user-attachments/assets/6b5d7bf2-729e-40f9-bd6d-9dd0a0a0c40f" height="600px" width="1200px">
+<img src="https://github.com/user-attachments/assets/093589e3-5960-4f03-bced-ca1f10900ff0" height="600px" width="1200px">
+<img src="https://github.com/user-attachments/assets/7ce90792-c652-45ff-8bb3-988d28fcd7bb" height="600px" width="1200px">
 
 ### 유모차 매입(고객)/유모차매입목록,판매(관리자)
-![유모차매입판매](https://github.com/user-attachments/assets/e3401d05-f694-40d4-91e9-76ace947c338)
+<img src="https://github.com/user-attachments/assets/e3401d05-f694-40d4-91e9-76ace947c338" height="600px" width="1200px">
 
 ### 내쪽지함
-![내쪽지함](https://github.com/user-attachments/assets/16d564ae-efde-4615-8107-1ced191e88b5)
-
-
+<img src="https://github.com/user-attachments/assets/16d564ae-efde-4615-8107-1ced191e88b5" height="600px" width="1200px">
 
 ### 게시판/내용확인
-![20240822_003803](https://github.com/user-attachments/assets/04eba25b-5956-4968-a1a4-584399aa505d)
-![20240822_003821](https://github.com/user-attachments/assets/97931703-7823-4921-bf0f-401d202eddc7)
+<img src="https://github.com/user-attachments/assets/04eba25b-5956-4968-a1a4-584399aa505d" height="600px" width="1200px">
+<img src="https://github.com/user-attachments/assets/97931703-7823-4921-bf0f-401d202eddc7" height="600px" width="1200px">
+
 <br>
 
 ## 👨‍👩‍👦‍👦 팀원 역할
