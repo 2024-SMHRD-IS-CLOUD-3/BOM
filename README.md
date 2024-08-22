@@ -83,7 +83,8 @@
 <br>
 
 ## ⚙ 시스템 아키텍처(구조)  
-![서비스 아키텍처](https://user-images.githubusercontent.com/25995055/169925538-15867bd9-aa0b-42fc-a39b-88981e926e51.png)
+![키워조_시스템 아키텍처](https://github.com/user-attachments/assets/bf82fed6-85a1-4047-9b1b-3e5a6a02657e)
+
 <br>
 
 ## 📌 SW유스케이스
