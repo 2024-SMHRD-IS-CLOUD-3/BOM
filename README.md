@@ -84,8 +84,9 @@
 <br>
 
 ## ⚙ 시스템 아키텍처(구조)  
-<img src="https://github.com/user-attachments/assets/bf82fed6-85a1-4047-9b1b-3e5a6a02657e" height="600px" width="1200px">
+<img src="https://github.com/user-attachments/assets/f9cf6cab-6317-40ab-ba0f-6a1e7fc50855" height="600px" width="1200px">
 <br>
+
 
 ## 📌 SW유스케이스
 <img src="https://github.com/user-attachments/assets/40360af4-5bf4-49c7-8e72-bf42a467e274" height="600px" width="1200px">
